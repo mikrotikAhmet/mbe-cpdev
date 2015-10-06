@@ -1,0 +1,86 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<div class="box-account box-recent">
+<?php $_orders = $this->getOrders(); ?>
+    <div class="box-head">
+        <h2><?php echo $this->__('Recent Orders') ?></h2>
+        <?php if( sizeof($_orders->getItems()) > 0 ): ?><a href="<?php echo $this->getUrl('sales/order/history') ?>"><?php echo $this->__('View All') ?></a><?php endif; ?>
+    </div>
+    <div class="clear"></div>
+<?php if( sizeof($_orders->getItems()) > 0 ): ?>
+    <div class="row data-table orders-list" id="my-orders-table">
+        
+        <div class="hidden-xs col-sm-1 col-md-1 order-title"><?php echo $this->__('Order #') ?></div>
+        <div class="col-xs-2 col-sm-1 col-md-1 date-title"><?php echo $this->__('Date') ?></div>
+        <div class="col-xs-4 col-sm-4 col-md-4 ship-to-title"><?php echo $this->__('Ship To') ?></div>
+        <div class="col-xs-3 col-sm-2 col-md-2 order-total-title"><span class="nobr"><?php echo $this->__('Order Total') ?></span></div>
+        <div class="col-xs-3 col-sm-1 col-md-1 status-title text-center"><?php echo $this->__('Status') ?></div>
+        <div class="hidden-xs col-sm-3 col-md-3 options-title">&nbsp;</div>
+    </div>
+        
+            <?php foreach ($_orders as $_order): ?>
+                <div class="row orders-list">
+                    <div class="hidden-xs col-sm-1 col-md-1 order-data"><a href="<?php echo $this->getViewUrl($_order) ?>"><?php echo $_order->getRealOrderId() ?></a></div>
+                    <div class="col-xs-2 col-sm-1 col-md-1 date-data"><a href="<?php echo $this->getViewUrl($_order) ?>"><span class="nobr"><?php echo $this->formatDate($_order->getCreatedAtStoreDate()) ?></span></a></div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 ship-to-data"><a href="<?php echo $this->getViewUrl($_order) ?>"><?php echo $_order->getShippingAddress() ? $this->htmlEscape($_order->getShippingAddress()->getName()) : '&nbsp;' ?></a></div>
+                    <div class="col-xs-3 col-sm-2 col-md-2 order-total-data"><a href="<?php echo $this->getViewUrl($_order) ?>"><?php echo $_order->formatPrice($_order->getGrandTotal()) ?></a></div>
+                    <div class="col-xs-3 col-sm-1 col-md-1 status-data"><a href="<?php echo $this->getViewUrl($_order) ?>"><em><?php echo $_order->getStatusLabel() ?></em></a></div>
+                    <div class="hidden-xs col-sm-2 col-md-3 options-data text-center">
+                        <span class="nobr">
+                        <a href="<?php echo $this->getViewUrl($_order) ?>"><?php echo $this->__('View Order') ?></a>
+                        <?php if ($this->helper('sales/reorder')->canReorder($_order)) : ?>
+                            <span class="separator">|</span> <a href="<?php echo $this->getReorderUrl($_order) ?>" class="link-reorder"><?php echo $this->__('Reorder') ?></a>
+                        <?php endif ?>
+                            <span class="separator">|</span> <a href="<?php echo $this->getUrl('pdf/index/invoices', array('order_id' => $_order->getId())) ?>" class="link-print">PDF</a>
+                        </span>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+    
+    
+    <script type="text/javascript">decorateTable('my-orders-table')</script>
+<?php else: ?>
+    <p><?php echo $this->__('You have placed no orders.'); ?></p>
+<?php endif; ?>
+</div>
+
+<script type="text/javascript">
+    //<![CDATA[
+        
+        jQuery(function(){
+            jQuery(window).resize(function(){
+
+                 if(jQuery(this).width() <= 768){
+                    jQuery('.orders-list').addClass('mobile-view');
+                 } else {
+                    jQuery('.orders-list').removeClass('mobile-view');
+                 }
+              })
+              .resize();//trigger resize on page load
+        });
+    //]]>
+    </script>

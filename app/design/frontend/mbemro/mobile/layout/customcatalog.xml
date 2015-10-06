@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <customcatalog_index translate="label">
+        <label>MBE Custom Catalog Index(All Pages)</label>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="content">
+
+        </reference>
+
+        <reference name="left">
+            <block type="customer/account_navigation" name="customer_account_navigation" before="-" template="customer/account/navigation.phtml">
+                <action method="addLink" translate="label" module="customer"><name>account</name><path>customer/account/</path><label>Account Dashboard</label></action>
+                <action method="addLink" translate="label" module="customer"><name>account_edit</name><path>customer/account/edit/</path><label>Account Information</label></action>
+                <action method="addLink" translate="label" module="customer"><name>address_book</name><path>customer/address/</path><label>Address Book</label></action>
+
+            </block>
+            <block type="checkout/cart_sidebar" name="cart_sidebar" template="checkout/cart/sidebar.phtml">
+                <action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>checkout/cart/sidebar/default.phtml</template></action>
+                <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>checkout/cart/sidebar/default.phtml</template></action>
+                <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>checkout/cart/sidebar/default.phtml</template></action>
+            </block>
+            <block type="catalog/product_compare_sidebar" name="catalog.compare.sidebar" template="catalog/product/compare/sidebar.phtml"/>
+            <remove name="tags_popular"/>
+
+        </reference>
+
+    </customcatalog_index>
+
+    <customcatalog_index_index translate="label">
+        <label>MBE Custom Catalog</label>
+
+        <!-- Mage_Customer -->
+        <update handle="customer_account"/>
+        <reference name="content">
+
+            <block type="core/template" name="customcatalog.index" template="customcatalog/index.phtml"/>
+
+        </reference>
+        <reference name="head">
+            <!-- <action method="addCss"><script>css/customcatalog.css</script></action> -->
+        </reference>
+
+    </customcatalog_index_index>
+
+    <customcatalog_product translate="label">
+        <label>MBE Custom Catalog View/Edit (All Pages)</label>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+
+    </customcatalog_product>
+
+    <customcatalog_product_index translate="label">
+        <label>MBE Custom Catalog View</label>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="content">
+
+            <block type="customcatalog/productlist" name="customcatalog.product.list" template="customcatalog/productlist.phtml"/>
+
+        </reference>
+
+    </customcatalog_product_index>
+
+    <customcatalog_product_search translate="label">
+        <label>MBE Custom Catalog Search</label>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="content">
+
+            <block type="customcatalog/productlist" name="customcatalog.product.list" template="customcatalog/productlist.phtml"/>
+
+        </reference>
+
+    </customcatalog_product_search>
+
+    <customcatalog_product_edit translate="label">
+        <label>MBE Custom Catalog Edit</label>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+
+        <reference name="content">
+
+            <block type="customcatalog/product" name="customcatalog.product.edit" template="customcatalog/product/edit.phtml"/>
+
+        </reference>
+    </customcatalog_product_edit>
+</layout>

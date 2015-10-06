@@ -1,0 +1,58 @@
+<?php echo $this->getChildHtml('customer.discountrule.grid'); ?>
+
+<input type="hidden" name="discount_rules" id="customer_discount_items" />
+<script>
+<?php if(($block = $this->getLayout()->getBlock('customer.discountrule.grid')) && ($_gridJsObject=$block->getJsObjectName())): ?>
+    var customerDiscountItems = $H(<?php echo Mage::getModel('customerdiscountrules/rule')->getCustomerRulesJson() ?>);
+    $('customer_discount_items').value = customerDiscountItems.toQueryString();
+
+    var tabIndex = 1000;
+    <?php echo $_gridJsObject ?>.rowClickCallback = function(grid, event){
+        var trElement = Event.findElement(event, 'tr');
+        var isInput   = Event.element(event).tagName == 'INPUT';
+        if(trElement){
+            var checkbox = Element.getElementsBySelector(trElement, 'input');
+            if(checkbox[0]){
+                var checked = isInput ? checkbox[0].checked : !checkbox[0].checked;
+                <?php echo $_gridJsObject ?>.setCheckboxChecked(checkbox[0], checked);
+            }
+        }
+    };
+    <?php echo $_gridJsObject ?>.initRowCallback = function(grid, row){
+        var checkbox = $(row).getElementsByClassName('checkbox')[0];
+        var discountAmount = $(row).getElementsByClassName('input-text')[0];
+        if(checkbox && discountAmount){
+            checkbox.discountAmountElement = discountAmount;
+            discountAmount.checkboxElement = checkbox;
+            discountAmount.disabled = !checkbox.checked;
+            discountAmount.tabIndex = tabIndex++;
+            Event.observe(discountAmount,'keyup',function(event){
+                var element = Event.element(event);
+                if(element && element.checkboxElement && element.checkboxElement.checked){
+                    customerDiscountItems.set(element.checkboxElement.value, element.value);
+                    $('customer_discount_items').value = customerDiscountItems.toQueryString();
+                }
+            });
+        }
+    };
+    <?php echo $_gridJsObject ?>.checkboxCheckCallback = function(grid, element, checked){
+        if(checked){
+            if(element.discountAmountElement){
+                element.discountAmountElement.disabled = false;
+                customerDiscountItems.set(element.value, element.discountAmountElement.value);
+            }
+        }
+        else{
+            if(element.discountAmountElement){
+                element.discountAmountElement.disabled = true;
+            }
+            customerDiscountItems.unset(element.value);
+        }
+        $('customer_discount_items').value = customerDiscountItems.toQueryString();
+        grid.reloadParams = {'selected_products[]':customerDiscountItems.keys()};
+    }
+    <?php echo $_gridJsObject ?>.rows.each(function(row){
+        <?php echo $_gridJsObject ?>.initRowCallback(<?php echo $_gridJsObject ?>, row)
+    });
+<?php endif; ?>
+</script>

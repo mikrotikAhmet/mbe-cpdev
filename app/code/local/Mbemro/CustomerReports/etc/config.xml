@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<config>
+  <global>
+    
+    <helpers>
+      <customerreports>
+             <class>Mbemro_CustomerReports_Helper</class>
+      </customerreports>
+    </helpers>
+    <blocks>
+      <customerreports>
+          <class>Mbemro_CustomerReports_Block</class>
+      </customerreports>
+    </blocks>
+    
+  </global>
+
+    <modules>
+        <mbemro_customerreports>
+            <version>1.0.0</version>
+        </mbemro_customerreports>
+    </modules>
+
+    <frontend>
+        <routers>
+            <customerreports>
+                <use>standard</use>
+                <args>
+                    <module>Mbemro_CustomerReports</module>
+                    <frontName>customerreports</frontName>
+                </args>
+            </customerreports>
+        </routers>
+        <layout>
+          <updates>
+              <customerreports>
+                  <file>customerreports.xml</file>
+              </customerreports>
+          </updates>
+        </layout>
+        <resources>
+          <customerreports_read>
+            <connection>
+                <use>core_read</use>
+            </connection>
+          </customerreports_read>
+        </resources>
+    </frontend>
+</config>

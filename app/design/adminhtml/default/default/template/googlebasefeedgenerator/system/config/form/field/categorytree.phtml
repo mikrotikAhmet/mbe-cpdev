@@ -1,0 +1,63 @@
+<?php
+
+$_htmlId = $this->getHtmlId() ? $this->getHtmlId() : '_' . uniqid();
+$selected = (string) $this->getElement()->getValue();
+?>
+
+<input id="<?php echo $_htmlId?>" type="hidden" name="<?php echo $this->getElement()->getName() ?>" value="<?php echo $selected ?>" />
+<p>
+    <input type="checkbox" id="category_tree_include_all"
+        <?php if(empty($selected)):?> checked="checked"<?php endif?>
+        <?php if($this->getElement()->getDisabled()):?> disabled="disabled"<?php endif?>
+    />
+    <?php echo $this->__('Include all categories')?>
+</p>
+
+<script type="text/javascript">
+    var elementIsDisabled = <?php echo ($this->getElement()->getDisabled())?'true':'false';?>;
+    var <?php echo $this->getJsFormObject()?> = {};
+    <?php echo $this->getJsFormObject()?>.updateElement = $('<?php echo $_htmlId?>');
+</script>
+
+<div id="gbfg_category_include_tree" style="position: relative">
+    <div id="gbfg_category_include_tree_overlay" style="display:none; width: 100%; height: 100%; position: absolute"></div>
+    <?php echo $this->getChildHtml('feed_categories_include_tree')?>
+</div>
+<div>
+    <p class="note">
+        <?php echo $this->__('To include children categories:')?>
+        <br>&#8226; <?php echo $this->__('either use <a target="_blank" href="http://www.magentocommerce.com/knowledge-base/entry/anchor-categories">Anchor categories</a> to auto-include products from sub-categories')?>
+        <br>&#8226; <?php echo $this->__('or select all sub-categories you wish to include in the feed')?></li>
+    </p>
+    <p class="note"><?php echo $this->__('Please have your <b>Category Product Index</b> in the green for anchors to work as expected')?></p>
+</div>
+<script>
+    function toggleTree(enabled) {
+        if (enabled) {
+            $('gbfg_category_include_tree_overlay').show();
+            $$('#gbfg_category_include_tree input').each(function(el){el.writeAttribute('disabled', true)});
+            $('<?php echo $_htmlId?>').value = '';
+        }
+        else {
+            $('gbfg_category_include_tree_overlay').hide();
+            $$('#gbfg_category_include_tree input').each(function(el){el.writeAttribute('disabled', false)});
+        }
+    }
+
+    // click "All" checkbox, disable tree
+    $('category_tree_include_all').on('click', function(e, el) {
+        toggleTree(el.checked);
+    });
+
+    // click on tree, remove "All" checkbox
+    $('gbfg_category_include_tree').observe('click', function(e, el) {
+        if (el = e.findElement('input') && $('category_tree_include_all').checked) {
+            $('category_tree_include_all').checked = false;
+        }
+        return true;
+    });
+
+    Ext.onReady(function(){
+        toggleTree(elementIsDisabled || $('category_tree_include_all').checked);
+    });
+</script>

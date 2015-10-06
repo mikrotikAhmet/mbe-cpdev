@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config>
+	<menu>
+		<featuredproducts module="featuredproducts">
+			<title>Featured Products</title>
+			<sort_order>71</sort_order>               
+			<children>
+				<items module="featuredproducts">
+					<title>Manage Featured Products</title>
+					<sort_order>0</sort_order>
+					<action>featuredproducts/adminhtml_featuredproducts/manage</action>
+				</items>
+			</children>
+		</featuredproducts>
+	</menu>
+    <acl>
+		<resources>
+			<all>
+				<title>Allow Everything</title>
+			</all>
+			<admin>
+				<children>
+					<system>
+						<children>
+							<config>
+								<children>
+									<featuredproducts translate="title">
+										<title>Featured Products Setting</title>
+										<sort_order>50</sort_order>
+									</featuredproducts>								
+								</children>
+							</config>
+						</children>
+					</system>
+				</children>
+			</admin>
+		</resources>
+    </acl>
+</config>

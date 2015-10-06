@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<tabs>
+		<scommerce translate="label" module="scommerce_catalogurl">
+			<label>Scommerce Configuration</label>
+			<sort_order>100</sort_order>
+		</scommerce>
+	</tabs>
+    <sections>
+        <scommerce_catalogurl translate="label">
+            <label>Catalog URL</label>
+            <tab>scommerce</tab>
+            <sort_order>100</sort_order>
+            <frontend_type>text</frontend_type>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translation="label">
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable translate="label">
+                            <label>Enabled</label>
+                            <sort_order>10</sort_order>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable>
+						<remove_category_path translate="label">
+                            <label>Remove Category Path</label>
+                            <sort_order>15</sort_order>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </remove_category_path>
+						<license_key translate="label">
+                            <label>License Key</label>
+                            <sort_order>15</sort_order>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </license_key>
+						<exclude_categories translate="label">
+                            <label>Exclude Root Categories</label>
+							<sort_order>20</sort_order>
+                            <comment><![CDATA[Exclude some root categories to appear in parent category dropdown against products]]></comment>
+                            <frontend_type>multiselect</frontend_type>
+			    			<source_model>scommerce_catalogurl/excludeCategories</source_model>                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><enable>1</enable></depends>
+                        </exclude_categories>
+                    </fields>
+                </general>
+            </groups>
+        </scommerce_catalogurl>
+    </sections>
+</config>

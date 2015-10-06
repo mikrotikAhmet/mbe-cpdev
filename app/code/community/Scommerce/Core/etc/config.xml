@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Scommerce_Core>
+            <version>0.0.1</version>
+        </Scommerce_Core>
+    </modules>
+    <global>
+        <helpers>
+        	<scommerce_core>
+        		<class>Scommerce_Core_Helper</class>
+        	</scommerce_core>
+        </helpers>
+    </global>
+</config>

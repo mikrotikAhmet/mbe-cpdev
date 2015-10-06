@@ -1,0 +1,157 @@
+<!-- periodic-agreement-holder -->
+<div class="periodic-agreement-holder">
+	<div class="page-title">
+		<h1>Customer Agreement Form for periodic Billing</h1>
+	</div>
+	<div class="clear"></div>
+	<div class="top_text_holder">
+		<h3>PERIODIC BILLING</h3>
+		<p>Our Periodic Billing Option will allow your company the flexibility to choose the billing period that best satisfies your needs. This will eliminate your receipt of an invoice for each shipment sent to you by us. PLEASE NOTE, by choosing to participate in Periodic Billing, you WILL NOT receive individual invoices after your requested start date.</p>
+		<div class="clear"></div>
+	</div>
+		<form action="<?php echo Mage::helper('cms/page')->getPageUrl(11) ?>" method="post" id="pba_form">
+			<!-- billing_period_terms_holder -->
+			<div class="billing_period_terms_holder">
+				<p><strong>Check one of the following billing periods below:</strong></p>
+				<!-- billing_period_holder -->
+				<div class="billing_period_holder">
+					<h3>BILLING PERIOD</h3>
+					<div class="inp_holder">
+						<input type="radio" name="pba_period" value="Daily" id="daily" /><label for="daily">Daily</label>
+					</div>
+					<div class="inp_holder">
+						<input type="radio" name="pba_period" value="Weekly" id="weekly" /><label for="weekly">Weekly</label>
+					</div>
+					<div class="inp_holder">
+						<input type="radio" name="pba_period" value="Semi Monthly" id="semi-monthly" /><label for="semi-monthly">Semi-Monthly</label>
+					</div>
+					<div class="inp_holder">
+						<input type="radio" name="pba_period" value="Monthly" id="monthly" /><label for="monthly">Monthly (1st day to last day of month)</label>
+					</div>
+					<div class="inp_holder">
+						<input type="radio" name="pba_period" value="Custom Monthly" id="custom_monthly" /><label for="monthly">Custom Monthly</label>
+					</div>
+					
+					<div class="inp_holder">
+						<input type="radio" name="pba_period" value="Monthly no print" id="monthly-no-print" /><label for="monthly-no-print">Monthly-No Print</label>
+					</div>
+				</div><!-- END//billing_period_holder -->
+				<!-- billing_terms_holder -->
+				<div class="billing_terms_holder">
+					<h3>TERMS</h3>
+					<div class="inp_holder">
+					<input type="radio" name="pba_terms" value="net30" id="net30" /><label for="net30">Net 30 Days</label>
+					</div>
+					<div class="inp_holder">
+					<input type="radio" name="pba_terms" value="net21" id="net21" /><label for="net21">Net 21 Days</label>
+					</div>
+					<div class="inp_holder">
+					<input type="radio" name="pba_terms" value="net15" id="net15" /><label for="net15">Net 15 Days</label>
+					</div>
+					<div class="inp_holder">
+					<input type="radio" name="pba_terms" value="Due Upon Receipt" id="upon_receipt" /><label for="upon_receipt">Due Upon Receipt</label>
+					</div>
+					<div class="inp_holder">
+						<input type="radio" name="pba_terms" value="Due Upon Receipt - Fiscal" id="upon_receipt_fiscal" /><label for="upon_receipt_fiscal">Due Upon Receipt - Fiscal M/E Date:</label>
+						<input type="text" name="pba_no_inv_print" id="no_inv_print" value="" style="width: 100px;" />
+						<label for="no_inv_print">No Invoice Will Print</label>
+					</div>
+				</div><!-- END//billing_terms_holder -->
+			</div><!-- END//billing_period_terms_holder -->
+			<div class="clear"></div>
+			<!-- tofb_holder -->
+			<div class="tofb_holder">
+				<div class="tofb_top">
+						<h3>TYPE OF BILLING</h3><p>(check one of the following billing types below)</p>
+					<div class="inp_holder">
+						<input type="radio" name="pba_type" value="Summarized" id="summarized" /><label for="summarized">Summarized (does not include item descriptions)</label>
+					</div>
+					<div class="inp_holder">
+						<input type="radio" name="pba_type" value="Detail" id="detail" /><label for="detail">Detail (includes item descriptions)</label>
+					</div>
+					<div class="inp_holder">
+						<input type="radio" name="pba_type" value="Both" id="both" /><label for="weekly">Both</label>
+					</div>
+				</div>
+			<div class="clear"></div>
+				<div class="tofb_bottom">
+					<div class="inp_holder_text">
+						<label for="company_name">Company Name:</label><input type="text" name="pba_company_name" id="company_name" />
+					</div>
+					<div class="inp_holder_text">
+						<label for="company_addresse">Company Address:</label><input type="text" name="pba_company_address" id="company_addresse" />
+					</div>
+			<div class="clear"></div>
+					<div class="inp_holder_text">
+						<label for="purchasing_contact:">Purchasing Contact:</label><input type="text" name="pba_purchasing_contact" id="purchasing_contact" />
+					</div>
+					<div class="inp_holder_text">
+						<label for="pc_email">Email:</label><input type="text" name="pba_pc_email" id="pc_email" />
+					</div>
+					<div class="inp_holder_text">
+						<label for="pc_phone">Phone:</label><input type="text" name="pba_pc_phone" id="pc_phone" />
+					</div>
+					<div class="inp_holder_text">
+						<label for="pc_fax">Fax:</label><input type="text" name="pba_pc_fax" id="pc_fax" />
+					</div>
+			<div class="clear"></div>
+					<div class="inp_holder_text">
+						<label for="apc_contact:">A/P Contact:</label><input type="text" name="pba_apc_contact" id="apc_contact" />
+					</div>
+					<div class="inp_holder_text">
+						<label for="apc_email">Email:</label><input type="text" name="pba_apc_email" id="apc_email" />
+					</div>
+					<div class="inp_holder_text">
+						<label for="apc_phone">Phone:</label><input type="text" name="pba_apc_phone" id="apc_phone" />
+					</div>
+					<div class="inp_holder_text">
+						<label for="apc_fax">Fax:</label><input type="text" name="pba_apc_fax" id="apc_fax" />
+					</div>
+			<div class="clear"></div>
+					<div class="inp_holder_text">
+						<label for="fe_shipacc">Fed Ex / UPS Shipping Account #:</label><input type="text" name="pba_fe_shipacc" id="fe_shipacc" />
+					</div>
+			<div class="clear"></div>
+					<div class="inp_holder_text">
+						<label for="start_date"><strong>Start Date:</strong>Yes, please start Periodic Billing for my company on :</label><input type="text" name="pba_start_date" id="start_date" />
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="bottom_text_holder">
+					<p>E-mail Option: (Must have PDF capability – paper invoice will not be mailed.) Our e-mailed invoice will include an embedded Excel spreadsheet for additional sorting capability.</p>
+					<div class="inp_holder_text">
+						<label for="ap_email">A/P E-mail Address:</label><input type="text" name="pba_ap_email" id="ap_email" />
+					</div>
+					<div class="inp_holder_text">
+						<label for="sec_email">Secondary E-mail Address: </label><input type="text" name="pba_sec_email" id="sec_email" />
+					</div>
+					<div class="include_holder">
+						<p>Include Credit/Return memos:</p>
+						<div class="inp_holder_text">
+							<span>Credit Memo</span><label for="c_memo_yes">Yes</label><input type="radio" name="pba_c_memo" id="c_memo_yes" value="Yes" />
+							<label for="c_memo_no">No</label><input type="radio" name="pba_c_memo" id="c_memo_no" value="No" />
+						</div>
+						<p>Include Credit Card Transactions:</p>
+						<div class="inp_holder_text">
+							<span>Credit Card</span><label for="c_card_yes">Yes</label><input type="radio" name="pba_c_card" id="c_card_yes" value="Yes" />
+							<label for="c_card_no">No</label><input type="radio" name="pba_c_card" id="c_card_no" value="No" />
+						</div>
+					</div>
+				</div>
+			</div><!-- END//tofb_holder -->
+			<div class="clear"></div>
+			<div class="pba_form_submit"><button type="submit" value="submit">Submit</button></div>
+		</form>
+</div><!-- END//periodic-agreement-holder -->
+
+
+
+
+
+
+
+
+ 
+
+
+

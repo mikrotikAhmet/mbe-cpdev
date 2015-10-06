@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <global>
+        <cache>
+            <request_processors>
+                <searchautocomplete>Mirasvit_SearchAutocomplete_Model_Processor</searchautocomplete>
+            </request_processors>
+        </cache>
+    </global>
+</config>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Scommerce_Core>
+      <active>true</active>
+      <codePool>community</codePool>
+    </Scommerce_Core>
+  </modules>
+</config>

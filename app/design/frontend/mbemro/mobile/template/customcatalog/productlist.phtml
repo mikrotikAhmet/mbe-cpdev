@@ -1,0 +1,296 @@
+<?php
+
+/**
+ * Mbemro_CustomCatalog product list.
+ *
+ * @var $this Mbemro_CustomCatalog_Block_Productlist
+ * @var $_helper Mbemro_CustomCatalog_Helper_Catalog
+ * @var $catalogCollection Mage_Catalog_Model_Resource_Product_Collection
+ *
+ */
+
+$catalogCollection = $this->getCollection();
+$_helper = $this->helper('customcatalog/catalog');
+$keyword = $this->getKeyword();
+
+// $catalogCollection->printLogQuery(true);
+// echo '<pre>';
+// print_r($catalogCollection);
+// echo '</pre>';
+?>
+<div class="page-title title-buttons">
+    <h1><?php echo $this->__('My Products') ?></h1>
+</div>
+
+<form name="search" action="<?php print $_helper->getSearchUrl();?>" method="get">
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input type="text" class="form-control" name="keyword" value="<?php print $keyword; ?>">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">Search</button>
+            </span>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+<?php $collectionCount = count($catalogCollection);?>
+<?php if ($collectionCount === 0) : ?>
+
+<div class="row">
+    <div class="text-center">You have no products added to your catalog.</div>
+</div>
+
+<?php else:?>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-8">
+        <div class="panel panel-default">
+
+            <div class="panel-heading"><?php ($keyword) ? print "My products matching: $keyword" : print "All products in My Catalog"?></div>
+
+            <table class="table table-hover table-responsive table-striped">
+                <thead>
+                <tr>
+                    <th>Part Number</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th class="hidden-sm">Notes</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php $first = true; $firstItem = null; ?>
+                <?php $details = array(); ?>
+                <?php foreach ($catalogCollection as $catalog): ?>
+                    <?php $catalog = $catalog->setStoreId(Mage::app()->getStore()->getId())->load($catalog->getId());?>
+                    <?php $image = $this->helper('catalog/image')->init($catalog, 'image'); ?>
+                    <?php $addToCartUrl = (string)Mage::helper('checkout/cart')->getAddUrl($catalog);?>
+                    <?php $productUrl = $catalog->getProductUrl();?>
+
+                    <?php $price = is_null($catalog->getCustomPrice()) || ($catalog->getCustomPrice() == 0.00) ? $catalog->getFinalPrice() : $catalog->getCustomPrice(); ?>
+                    <?php $_imageHelper = $this->helper('catalog/image')->init($catalog, 'small_image');?>
+                    <?php $details['id' . $catalog->getId()] = array(
+                        'id'=> $catalog->getId(),
+                        'part_number' => is_null($catalog->getPartNumber()) ? '' : $catalog->getPartNumber(),
+                        'name'      => mb_substr($catalog->getName(), 0, 49),
+                        'regular_price' => number_format($catalog->getFinalPrice(), 2), 
+                        'price'     => number_format($price, 2),
+                        'image'     => (string)$image ,
+                        'notes'     => is_null($catalog->getNotes()) ? '' : $catalog->getNotes(),
+                        'desc'      => is_null($catalog->getShortDescription()) ? '' : $catalog->getShortDescription(),
+                        'addcart' => $addToCartUrl,
+                        'viewurl'    => $productUrl,
+                        'categories' => $_helper->getTopCategory($catalog)
+                    );
+                    if ($first) {
+                        $firstItem = $details['id' . $catalog->getId()];
+                        $firstItem['product'] = $catalog;
+                    }
+                    ?>
+                    <tr data-id="<?php print $catalog->getId();?>" <?php if($first === true) print 'class="info"';?>>
+                        <td><?php print $catalog->getPartNumber();?></td>
+                        <td><?php print mb_substr($catalog->getName(), 0, 49);?></td>
+                        <td style="text-align:right"><?php print number_format($price, 2);?></td>
+                        <td class="hidden-sm"><?php print mb_substr($catalog->getNotes(), 0, 49);?></td>
+                    </tr>
+
+                    <?php $first = false; ?>
+
+                <?php endforeach;?>
+                </tbody>
+            </table>
+
+            <?php print $this->getPagerHtml(); ?>
+<?php /*
+            <div id="helper" style="display: block; margin: 0 auto;">
+                <a href="#" class="btn btn-default btn-sm edit" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+                <a href="#" class="btn btn-default btn-sm remove" title="Remove"><span class="glyphicon glyphicon-remove"></span></a>
+            </div>
+       */
+?>
+        </div>
+
+    </div>
+    <div class="col-sm-4 hidden-xs">
+        <div class="row" id="product_info" >
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+
+                    <div class="panel-heading">My Product Details</div>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2><?php echo $firstItem['name']?></h2>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6">Category</div>
+                        <div class="col-xs-6 category">
+                            <?php if(!empty($firstItem['categories'])):?>
+                                <?php print $firstItem['categories']['name'];?>
+                            <?php endif;?>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6">My Part Number</div>
+                        <div class="col-xs-6 part_number"><?php echo $firstItem['part_number']?></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">My notes</div>
+                        <div class="col-xs-6 notes"><?php echo $firstItem['notes']?></div>
+                    </div>                    
+                    <div class="row">
+                        <div class="col-xs-6">My price</div>
+                        <div class="col-xs-6 price"><?php echo $firstItem['price']?></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4"><img src="<?php echo $firstItem['image']?>" class="img-responsive"></div>
+                        <div class="col-xs-8 desc"><?php echo $firstItem['desc']?></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <a href="<?php echo $firstItem['viewurl']?>" class="view">View Product</a> |
+                            <a href="<?php echo $firstItem['addcart']?>" class="add">Add to cart</a>
+                            <?php /*|
+                            <a href="<?php echo $_helper->getEditUrl($firstItem['product']);?>" class="edit">Edit in my catalog</a> |
+                            <a href="<?php echo $_helper->getRemoveUrl($firstItem['product']);?>" class="remove" data-name="<?php echo $firstItem['name']?>">Remove from my catalog</a>
+                                */ ?>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php endif;?>
+
+<div class="row">
+    <div class="col-xs-12">
+        <a href="<?php echo Mage::getUrl('customer/account');?>">Back</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var jsonProductCache = <?php echo json_encode(($collectionCount !== 0 ? $details : array())); ?>;
+
+    function displayProduct(id)
+    {
+        var obj = eval("jsonProductCache.id" + id);
+        var product_info = jQuery('#product_info');
+        product_info.find('h2').text(obj.name);
+
+        product_info.find('.part_number').text(obj.part_number);
+        product_info.find('.notes').text(obj.notes);
+        product_info.find('.regular-price').text(obj.regular_price);
+        product_info.find('.price').text(obj.price);
+        product_info.find('.desc').text(obj.desc);
+
+        product_info.find('.add').attr("href", obj.addcart);
+        product_info.find('.view').attr("href", obj.viewurl);
+        <?php /* product_info.find('.edit').attr("href", "<?php echo $_helper->getProductListUrl()?>" + "edit/product/" + obj.id);
+        product_info.find('.remove').attr("href", "<?php echo $_helper->getProductListUrl()?>" + "remove/product/" + obj.id);
+        product_info.find('.remove').data('name', obj.name);
+        */?>
+        product_info.find('.img-responsive').attr("src", obj.image);
+        product_info.find('.category').text(obj.categories.name);
+    }
+
+    // function hideOptions()
+    // {
+    //     window.clearInterval(itemInterval);
+    //     jQuery('#helper').hide();
+    // }
+
+    // function showOptions(e, item)
+    // {
+    //     jQuery('table tr').removeClass('info');
+    //     jQuery(item).addClass('info');
+
+    //     hideOptions();
+
+    //     var parentOffset = jQuery(item).parent().offset();
+    //     //or jQuery(item).offset(); if you really just want the current element's offset
+    //     var relX = e.pageX - parentOffset.left;
+    //     var relY = e.pageY - parentOffset.top;
+
+    //     var id = jQuery(this).data('id');
+
+    //     itemInterval=setInterval(function () {
+
+    //         var helper = jQuery('#helper');
+    //         helper.css('position', 'absolute');
+    //         helper.css('top', relY);
+    //         helper.css('left', relX);
+    //         helper.find('.edit').attr('href', "<?php echo $_helper->getProductListUrl()?>" + "edit/product/" + id);
+    //         helper.find('.remove').attr('href', "<?php echo $_helper->getProductListUrl()?>" + "remove/product/" + id);
+    //         helper.show();
+    //     }, 2000);
+
+    //     e.stopPropagation();
+    // }
+
+    // function itemHover(e)
+    // {
+    //     showOptions(e, this);
+    // }
+
+    // jQuery('#product_info .remove').click(function(){
+    //     return confirm('Are you sure you want to remove ' + jQuery(this).data('name') + '?');
+    // });
+
+    // hideOptions();
+    // jQuery('body').click(hideOptions);
+
+    jQuery('table tbody tr').click(function(event){
+        displayProduct(jQuery(this).data('id'));
+    });
+
+    // var itemInterval;
+    // jQuery('table tbody tr').hover(function(e){
+
+    //     if (!jQuery(this).hasClass('info')) {
+    //         jQuery('table tr').removeClass('info');
+    //         jQuery(this).addClass('info');
+
+    //         hideOptions();
+
+    //         var parentOffset = jQuery(this).parent().offset();
+    //         //or jQuery(this).offset(); if you really just want the current element's offset
+    //         var relX = e.pageX - parentOffset.left;
+    //         var relY = e.pageY - parentOffset.top;
+
+    //         var id = jQuery(this).data('id');
+
+    //         itemInterval=setInterval(function () {
+
+    //             var helper = jQuery('#helper');
+    //             helper.css('position', 'absolute');
+    //             helper.css('top', relY);
+    //             helper.css('left', relX);
+    //             helper.find('.edit').attr('href', "<?php echo $_helper->getProductListUrl()?>" + "edit/product/" + id);
+    //             helper.find('.remove').attr('href', "<?php echo $_helper->getProductListUrl()?>" + "remove/product/" + id);
+    //             helper.show();
+
+    //         }, 2000);
+
+    //     };
+
+    //     e.stopPropagation();
+    // },
+    //     function ()
+    //     {
+    //         if (!jQuery(this).hasClass('info')) {
+    //             hideOptions();
+    //         };
+
+    //     }
+
+    // );
+</script>

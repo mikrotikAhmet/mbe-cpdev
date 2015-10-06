@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+		<magebuzz translate="label" module="testimonial">
+			<label>MAGEBUZZ ADD-ONS</label>
+			<sort_order>1001</sort_order>
+		</magebuzz>
+	</tabs>
+	<sections>
+		<testimonial translate="label" module="testimonial">
+			<label>Testimonial</label>
+			<tab>magebuzz</tab>
+			<sort_order>1000</sort_order>
+			<show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+			<groups>
+				<general_option translate="label">
+					<label>General Options</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<show_link_testimonial translate="label">
+							<label>Show Testimonial link in TopLink</label>
+							<frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</show_link_testimonial>
+                        <enable_sidebar>
+                            <label>Enable Testimonial Sidebar</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_sidebar>
+                        <enable_testimonial_paging>
+                            <label>Enable Show Testimonial Paging</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_testimonial_paging>
+                        <divide_page>
+                            <label>Testimonials Per Page</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Comma-separated.</comment>
+                        </divide_page>
+                        <number_words>
+                            <label> Amount word of testiomonil</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Comma-separated.</comment>
+                        </number_words>
+					</fields>
+				</general_option>
+				<testimonial_options translate="label">
+					<label>Testimonial Configuration</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>2</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+                        <allow_customers_write_testimonial translate="label">
+                            <label>Allow customers to submit testimonial</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </allow_customers_write_testimonial>
+						<testimonial_captcha_enabled translate="label">
+							<label>Enable tesimonial captcha</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_enabledisable</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</testimonial_captcha_enabled>
+						<!--<customer_write_testimonial_enabled translate="label">
+                            <label>Enable customer to write testimonials</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </customer_write_testimonial_enabled>-->
+						<allow_guest_write_testimonial translate="label">
+                            <label>Allow guest to write testimonials</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </allow_guest_write_testimonial>
+						<thank_message translate="label">
+                            <label>Thank you Message </label>
+                            <frontend_type>textarea</frontend_type>							
+                            <comment>Message displayed after testimonial submission</comment>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </thank_message>
+						<approve_testimonial translate="label">
+                            <label>Approve testimonials</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </approve_testimonial>
+					</fields>
+				</testimonial_options>
+				<email_configuration>
+					<label>Email Configuration</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>3</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<send_email_after_post_testimonial translate="label">
+							<label>Enable sending email after posting testimonial</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_email_after_post_testimonial>
+						<send_email_after_approve_testimonial translate="label">
+							<label>Enable sending email after testimonial is approved</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_email_after_approve_testimonial>
+						<select_template_post translate="label">
+							<label>Select email template for posting testimonial </label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_email_template</source_model>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</select_template_post>
+						<select_template_approve translate="label">
+							<label>Select email template for approving testimonial </label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_email_template</source_model>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</select_template_approve>
+					</fields>
+				</email_configuration>
+			</groups>
+		</testimonial>
+	</sections>
+</config>
+

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+      <Data8_DataCaptureValidation>
+            <version>0.0.1</version>
+        </Data8_DataCaptureValidation>
+    </modules>
+    <global>
+        <blocks>
+            <DataCaptureValidation>
+                <class>Data8_DataCaptureValidation_Block</class>
+            </DataCaptureValidation>
+        </blocks>
+        <helpers>
+          <Data8_DataCaptureValidation>
+                <class>Data8_DataCaptureValidation_Helper</class>
+            </Data8_DataCaptureValidation>
+        </helpers>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+              <data8_datacapturevalidation_checkout>
+                <file>Data8_DataCaptureValidation.xml</file>
+              </data8_datacapturevalidation_checkout>
+            </updates>
+        </layout>
+		<translate>
+			<modules>
+				<Data8_DataCaptureValidation>
+					<files>
+						<default>Data8_DataCaptureValidation.csv</default>
+					</files>
+				</Data8_DataCaptureValidation>
+			</modules>
+		</translate>
+    </frontend>
+    <adminhtml>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <Data8>
+                                        <title>Data8 - All</title>
+                                    </Data8>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</adminhtml>
+</config>

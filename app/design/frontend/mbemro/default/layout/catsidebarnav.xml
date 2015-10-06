@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!--
+             <block type="core/template" name="top.search" as="topSearch" template="catalogsearch/form.mini.phtml"/>
+-->
+<layout version="0.1.0">
+    <default>
+		<reference name="left">
+			 
+			 <block type="catsidebarnav/catsidebarnav" name="left.catsidebarnav">
+				<action method="leftSidebarBlock" />
+			 </block>
+			 
+			 <!--<block type="newsletter/subscribe" name="left.newsletter" template="newsletter/subscribe.phtml"/>-->
+			 
+		</reference>
+		<reference name="right">
+			 <block type="catsidebarnav/catsidebarnav" name="right.catsidebarnav" before="-">
+				<action method="rightSidebarBlock" />
+			 </block>
+		</reference>
+        <reference name="head">
+            <action method="addJs"><script>mirasvit/core/underscore.js</script></action>
+            <action method="addJs"><script>mirasvit/core/backbone.js</script></action>
+            <action method="addJs"><script>mirasvit/code/searchautocomplete/form.js</script></action>
+            <action method="addJs"><script>mirasvit/code/searchautocomplete/autocomplete.js</script></action>
+            <action method="addItem" ifconfig="sales/msrp/enabled"><type>skin_js</type><name>js/msrp.js</name></action>
+        </reference>
+
+        <update handle="searchautocomplete_amazon" />
+    </default>
+    <catsidebarnav_index_index>
+        <reference name="content">
+            <block type="catsidebarnav/catsidebarnav" name="catsidebarnav" template="catsidebarnav/catsidebarnav.phtml" />
+        </reference>
+    </catsidebarnav_index_index>
+
+
+
+    <searchautocomplete_default>
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/mirasvit/searchautocomplete/default.css</stylesheet></action>
+        </reference>
+        <reference name="header">
+            <block type="searchautocomplete/form" name="top.search" as="topSearch" template="searchautocomplete/default.phtml"/>
+        </reference>
+        <reference name="top.bar">
+            <block type="searchautocomplete/form" name="top.search" as="topSearch" template="searchautocomplete/default.phtml"/>
+        </reference>
+    </searchautocomplete_default>
+
+    <searchautocomplete_amazon>
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/mirasvit/searchautocomplete/amazon.css</stylesheet></action>
+        </reference>
+
+        <reference name="header">
+            <block type="searchautocomplete/form" name="top.search" as="topSearch" template="searchautocomplete/amazon.phtml"/>
+        </reference>
+
+        <reference name="top.bar">
+            <block type="searchautocomplete/form" name="top.search" as="topSearch" template="searchautocomplete/amazon.phtml"/>
+        </reference>
+    </searchautocomplete_amazon>
+
+</layout> 

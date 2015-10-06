@@ -1,0 +1,16 @@
+<?php $noItems = Mage::helper('checkout/cart')->getSummaryCount();?>
+                <?php if ($noItems > 0): ?>
+                <a href="<?php echo $this->getUrl('checkout/cart')?>">    
+                <?php endif; ?>
+				<div class="row hidden-xs hidden-sm">
+				<span class="head-view-cart text-center"><?php echo ($noItems == 0 ? 0 : $noItems); ?> Item<?php if ($noItems <> 1) echo 's';?></span>
+                <span class="head-view-cart-ico"><img src="<?php print Mage::getDesign()->getSkinUrl()?>images/ico-cart.jpg" class="img-responsive" alt="cart"></span>
+				</div>
+				<div class="row visible-xs visible-sm">
+				<span class="head-view-cart-ico"><img src="<?php print Mage::getDesign()->getSkinUrl()?>images/ico-cart.jpg" class="img-responsive" alt="cart"></span>
+				<span class="head-view-cart-mobile text-center"><?php echo ($noItems == 0 ? 0 : $noItems); ?> Item<?php if ($noItems <> 1) echo 's';?></span>
+				</div>
+                <?php if ($noItems > 0): ?>
+                </a>
+                <?php endif; ?>
+                

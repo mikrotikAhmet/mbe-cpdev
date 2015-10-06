@@ -1,0 +1,932 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <punchout2go translate="label" module="vbw_punchout">
+            <label>PunchOut2Go</label>
+            <sort_order>600</sort_order>
+        </punchout2go>
+    </tabs>
+    <sections>
+        <vbw_punchout translate="label" module="vbw_punchout">
+            <label>Punchout</label>
+            <tab>punchout2go</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <!-- defaults -->
+                <defaults translate="label">
+                    <label>Defaults</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <!-- classification -->
+                        <classification translate="label">
+                            <label>UNSPSC Classification</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[This should represent the broadest classification of your store. It will be used as the default classification if a product classification cannot be determined.
+                                <br/><a href="http://www.unspsc.org/Search.asp" target="_new">Search UNSPSC numbers.</a>]]></comment>
+                        </classification>
+                        <!-- UOM/ Unit of measure default -->
+                        <uom translate="label">
+                            <label>Unit of Measure (UOM)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>This is your default unit of measure for an item sale, such as EA (Each).</comment>
+                        </uom>
+                    </fields>
+                </defaults>
+
+                <site translate="label">
+                    <label>Site and Session Handling</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <punchout_enabled translate="label">
+                            <label>Punchout Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enable/Disable punchout access to website or store.</comment>
+                        </punchout_enabled>
+
+                        <punchout_only translate="label">
+                            <label>Punchout Only</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Require a punchout session to be active to view any site content.</comment>
+                        </punchout_only>
+
+                        <punchout_only_url translate="label">
+                            <label>Punchout Only Error Url</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>CMS path to drop non-punchout session access.</comment>
+                        </punchout_only_url>
+
+                        <punchout_only_allow translate="label">
+                            <label>Punchout Only Pass Through</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[
+                                Allow these modules, controllers, and actions to pass through punchout only.<br>
+                                Comma separate entries.<br>
+                                <i>module</i>,<i>module/controller</i>,<i>module/controller/action</i>]]></comment>
+                        </punchout_only_allow>
+
+                        <allow_demo translate="label">
+                            <label>Allow Demo Session</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Allow to access through a demo session.</comment>
+                        </allow_demo>
+
+                        <demo_session_id translate="label">
+                            <label>Demo Session Id</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Session ID to use with ?POID= to create demo session</comment>
+                        </demo_session_id>
+
+                        <secure_redirect translate="label">
+                            <label>Secure Redirect</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Always redirect punchout session to the secure url.</comment>
+                        </secure_redirect>
+
+                        <disable_modules translate="label">
+                            <label>Disable Modules</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Comma separated. Disable these modules with an active punchout session.</comment>
+                        </disable_modules>
+
+                        <start_redirect_new translate="label">
+                            <label>Start Page New Session</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Default : store view home page.</comment>
+                        </start_redirect_new>
+
+                        <start_redirect_edit translate="label">
+                            <label>Start Page Edit Session</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Default : checkout/cart</comment>
+                        </start_redirect_edit>
+
+
+                        <!--
+                        <order_encoding translate="label">
+                            <label>Order Message Encoding</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>vbw_punchout/punchout_distiller</source_model>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Sets how you would like the order xml encoding returned.]]></comment>
+                        </order_encoding>
+                        -->
+                        <session_type translate="label">
+                            <label>Session Type</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>vbw_punchout/login</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Controls session login behaviors.<br/>
+                                    <b>Auto Customer Login</b> creates or logs a customer in based on configuration defined group.<br/>
+                                    <b>Discover Customer</b> creates or logs a customer in base on parameters, requires additional gateway level configurations.]]></comment>
+                        </session_type>
+                        <!--
+                        <anonymous_login_group translate="label">
+                            <label>Anonymous User Group</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>7</sort_order>
+                            <show_in_default>0</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>The group id to assign to the anonymous session.</comment>
+                        </anonymous_login_group>
+                        -->
+                        <single_login_group translate="label">
+                            <label>Default Login Group</label>
+                            <frontend_type>text</frontend_type>
+                            <!--
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_customer_group</source_model> -->
+                            <sort_order>21</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[The Group Name or ID to apply to new users when accessing this store.<br />
+                                        (required with auto-login)]]></comment>
+                        </single_login_group>
+                        <single_login_user translate="label">
+                            <label>Default Login User</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>22</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>If no unique user identifier is discovered, use this account to login to this account.</comment>
+                        </single_login_user>
+
+                        <!--
+                        <session_handling translate="label">
+                            <label>Session Management</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>vbw_punchout/system_config_source_session</source_model>
+                            <sort_order>23</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[
+                                Adjust how your store will handle different browser restrictions around session cookies.
+                                <br>URL Based session may conflict with full page caching or analytic systems.
+                                <br>URL Based session affect all sessions if enabled.]]></comment>
+                        </session_handling> -->
+                        <!--
+                        <use_persistent_cart translate="label">
+                            <label>Use Persistent Cart</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>23</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Persistent carts should only be enabled when the user punching out is always the same person.
+                                Do not enable where different people may share access through a single magento account.</comment>
+                        </use_persistent_cart>
+                        -->
+                        <strict_inspect_behavior translate="label">
+                            <label>Strict "Inspect" behavior</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>24</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enabling this will prevent changes to the cart on "inspect".
+                                This is currently only enforced to the standard cart.
+                                Custom event observers may be required to prevent edit with custom cart options.
+                            </comment>
+                        </strict_inspect_behavior>
+                        <transfer_delete_cart translate="label">
+                            <label>Delete cart on transfer</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>24</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Deleting the cart will cause edits to operate from the stash. Keeping
+                            the cart will allow edit to "reload" previous cart in their entirety.</comment>
+                        </transfer_delete_cart>
+
+                    </fields>
+                </site>
+
+                <customer translate="label">
+                    <label>Customer Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>4</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <comment>Settings for controlling users setups and behaviors</comment>
+                    <fields>
+                        <!--
+                        <keep_last_cart translate="label">
+                            <label>Keep User's Cart</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Allow the user to keep their last shopping cart.</comment>
+                        </keep_last_cart>
+                        -->
+
+                        <attach_shipping translate="label">
+                            <label>Attach Shipping</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>vbw_punchout/system_config_source_customercart</source_model>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Attach shipping address to the session.</comment>
+                        </attach_shipping>
+
+                        <defaults translate="label">
+                            <label>Default User Info (Pre-Insert)</label>
+                            <frontend_model>vbw_punchout/system_config_form_field_keyvalue</frontend_model>
+                            <backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[
+                                Setup any predefined customer data when an automated user is created.<br>
+                                Use the following syntact to use fixed values, user data and request values.<br>
+                                email : will add the string "val" in to the field<br>
+                                $email$ : will copy the user value for "var" in to the field.<br>
+                                {body/conctact/email} : will copy the value from he original request
+                            ]]></comment>
+                        </defaults>
+                        <defaults_custom translate="label">
+                            <label>Custom User Info (Post-Insert)</label>
+                            <frontend_model>vbw_punchout/system_config_form_field_keyvalue</frontend_model>
+                            <backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[
+                                Some custom user data is not available until after the account is created.<br>
+                                Utilize this group to set any additional customer fields.<br>
+                            ]]></comment>
+                        </defaults_custom>
+
+                        <!--
+                        <custom_root_directories translate="label">
+                            <label>Custom Root Directories</label>
+                            <frontend_model>medialibrary/system_config_form_field_rootdirectories</frontend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>relative paths (ex: media/custom_upload_directory)</comment>
+                        </custom_root_directories>
+                        -->
+
+                        <create_users translate="label">
+                            <label>Create New Users</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>When enabled, if a user punches out and his/her email isn't already associated with a Magento customer account, creates a new customer account.</comment>
+                        </create_users>
+
+                        <alternate_login_id translate="label">
+                            <label>Alternate Login ID</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[
+                                    By default customers are matched by their emails. <br>
+                                    Specify an alternate customer attribute to authenticate people by. When using this featrue,
+                                    the email by itself is nolonger treated as a login identifier.<br>
+                                    The alternate login must be mapped to the "unique" contact attribute in the request.<br>
+
+                                    ]]></comment>
+                        </alternate_login_id>
+
+                        <duplicate_email_temp_pattern translate="label">
+                            <label>Email Pattern on Duplicate</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>21</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[
+                                    When matching on aliases, the email is still required to be unique.<br>
+                                    If a matching email is detected use this pattern to establish a unique
+                                    temporary email. <br>
+                                    Leave blank to throw an error.
+                                    ]]></comment>
+                        </duplicate_email_temp_pattern>
+
+                    </fields>
+                </customer>
+
+                <!-- display -->
+                <display translate="label">
+                    <label>Display Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>5</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <comment>Settings for display customization.</comment>
+                    <fields>
+
+                        <error_mapping translate="label">
+                            <label>Error Mapping</label>
+                            <frontend_model>vbw_punchout/system_config_form_field_error</frontend_model>
+                            <backend_model>vbw_punchout/system_config_backend_serialized_array_priority</backend_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[
+                                Map error codes to custom CMS pages. Leave empty for default error display. Errors can be grep patters such as "4\d\d"<br>
+                                \d\d\d : will match all errors.
+                                ]]></comment>
+                        </error_mapping>
+
+                        <navigation>
+                            <label>&lt;B&gt;Navigation Options&lt;/B&gt;</label>
+                            <frontend_type>hidden</frontend_type>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </navigation>
+
+                       <show_return translate="label">
+                            <label>Show "Return To" Link</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>vbw_punchout/system_config_source_returnlink</source_model>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Display a link that returns the user to the procurement system.</comment>
+                        </show_return>
+
+                        <return_label translate="label">
+                            <label>"Return To" Link Label</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </return_label>
+
+                        <return_url translate="label">
+                            <label>"Return To" Link URL</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Full URL Path, or leave empty to use Return Path from request.</comment>
+                        </return_url>
+
+                        <return_target translate="label">
+                            <label>"Return To" Link Target</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Specify link target or empty empty to ignore</comment>
+                        </return_target>
+
+                        <remove_myaccount translate="label">
+                            <label>Remove "My Account" access</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </remove_myaccount>
+
+                        <remove_logouts translate="label">
+                            <label>Remove "Login/Logout" nav</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </remove_logouts>
+
+                        <checkout_nav translate="label">
+                            <label>Show "Checkout" Top Nav</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Show or hide the "Checkout" nav in top menu.</comment>
+                        </checkout_nav>
+
+                        <checkout_nav_button translate="label">
+                            <label>"Checkout" Label</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>13</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </checkout_nav_button>
+
+                        <punchout_active_layout_update translate="label">
+                            <label>Active Session Layout Update</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>14</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>When a punchout session is active, apply this layout update.</comment>
+                        </punchout_active_layout_update>
+
+                        <cart>
+                            <label>&lt;B&gt;Cart Options&lt;/B&gt;</label>
+                            <frontend_type>hidden</frontend_type>
+                            <sort_order>19</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </cart>
+
+                        <transfer_button_location translate="label">
+                            <label>"Transfer" Button Location</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>vbw_punchout/system_config_source_topbottom</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Personal checkout will also use this location.</comment>
+                        </transfer_button_location>
+
+                        <transfer_button translate="label">
+                            <label>"Transfer" Button Label</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>21</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>The label on the button clicked to return the cart to the procurement system.</comment>
+                        </transfer_button>
+
+                        <transfer_text translate="label">
+                            <label>"Transfer" Help Text</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>22</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Help text provided with transfer button.</comment>
+                        </transfer_text>
+
+                        <personal_checkout translate="label">
+                            <label>Personal Checkout</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>23</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Allow customers to use a personal checkout.</comment>
+                        </personal_checkout>
+
+                        <personal_checkout_button translate="label">
+                            <label>"Personal Checkout" Button</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>24</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </personal_checkout_button>
+
+                        <punchout_cart_layout_update translate="label">
+                            <label>Active Session Cart Layout Update</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[When a punchout session is active, and in the cart view,<br />apply this layout update.]]></comment>
+                        </punchout_cart_layout_update>
+
+                    </fields>
+                </display>
+
+
+                <!-- display -->
+                <order translate="label">
+                    <label>Order Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>6</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <comment>Settings for controlling order options. Some configurations may be required on the gateway.</comment>
+                    <fields>
+
+                        <include_shipping translate="label">
+                            <label>Include Shipping</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </include_shipping>
+
+                        <require_shipping translate="label">
+                            <label>Require Shipping</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </require_shipping>
+
+                        <require_shipping_error translate="label">
+                            <label>Require Shipping Error</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </require_shipping_error>
+
+                        <include_tax translate="label">
+                            <label>Include Tax</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </include_tax>
+
+                        <include_discount translate="label">
+                            <label>Include Discount/Promotion</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </include_discount>
+
+                        <keep_aux translate="label">
+                            <label>Keep Aux ID</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </keep_aux>
+
+                        <lineitem_mapping translate="label">
+                            <label>Line Item Map</label>
+                            <frontend_model>vbw_punchout/system_config_form_field_Mapping</frontend_model>
+                            <backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[
+                               Add custom data mapping to be returned with an order.<br>
+                               item/var = pulls from the line item.<br>
+                               product/var = pulls from original product.<br>
+                               option/var = pulls line item option.<br>
+                            ]]></comment>
+                        </lineitem_mapping>
+
+                        <stash_item_list translate="label">
+                            <label>Item Stash List</label>
+                            <frontend_model>vbw_punchout/system_config_form_field_Stash</frontend_model>
+                            <backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[
+                               Add custom data to the item level stash.<br>
+                               Options can be stashed as "option/code_name"
+                            ]]></comment>
+                        </stash_item_list>
+
+                        <stash_order_list translate="label">
+                            <label>Order Stash List</label>
+                            <frontend_model>vbw_punchout/system_config_form_field_Stash</frontend_model>
+                            <backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+                            <sort_order>13</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[
+                               Add custom data to the order level stash.
+                            ]]></comment>
+                        </stash_order_list>
+
+                    </fields>
+                </order>
+
+                <!-- catalog field maps -->
+                <catalog_fields translate="label">
+                    <label>Catalog Field Mapping</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>7</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <category_unspsc translate="label">
+                            <label>Category UNSPSC Field Name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Category field containing the UNSPSC classification</comment>
+                        </category_unspsc>
+                <!--        <category_export translate="label">
+                            <label>Category Export Field Name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Category field containing the 1/0 flag to include in a Level2 export</comment>
+                        </category_export> Moved to Level2 Module -->
+                        <product_unspsc translate="label">
+                            <label>Product UNSPSC Field Name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Product field containing the UNSPSC classification</comment>
+                        </product_unspsc>
+                        <product_uom translate="label">
+                            <label>Prodcut UOM Field Name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Product field containing the Unit Of Measure</comment>
+                        </product_uom>
+
+                    </fields>
+                </catalog_fields>
+
+
+                <!-- catalog -->
+               <!-- <catalog_export translate="label">
+                    <label>Level2 Export (In Development)</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>7</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <comment>Level2 punchout index file exporting is not yet supported.</comment>
+                    <fields>
+                        <store translate="label">
+                            <label>Export Store</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Store Level</comment>
+                        </store>
+                        <category translate="label">
+                            <label>Export Top Cateogries</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Isle Level</comment>
+                        </category>
+                        <subcategory translate="label">
+                            <label>Export Subcateogries</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Shelf Level</comment>
+                        </subcategory>
+                        <product translate="label">
+                            <label>Export Product</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Product Level</comment>
+                        </product>
+                    </fields>
+                </catalog_export> Moved to Level2 Module-->
+
+
+                <!-- API -->
+                <api translate="label">
+                    <label>Punchout2go Api</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <!-- key -->
+                        <key translate="label">
+                            <label>API Key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>API Key received from Punchout2go</comment>
+                        </key>
+                        <!-- UOM/ Unit of measure default -->
+                        <host translate="label">
+                            <label>Host</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Punchout2go host domain</comment>
+                        </host>
+                        <!-- flag if this is a secure host -->
+                        <secure translate="label">
+                            <label>Secure Host</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Flag to use HTTP vs HTTPS requests when communicating with the host.</comment>
+                        </secure>
+                        <!-- version of the API to use -->
+                        <version translate="label">
+                            <label>Version</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                        <debug_logging translate="label">
+                            <label>Debug Logging</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </debug_logging>
+                        <enable_stash_admin translate="label">
+                            <label>Stash Admin</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </enable_stash_admin>
+
+                        <!-- pull path
+                        <pull_path translate="label">
+                            <label>Session Pull Path</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </pull_path>
+                        -->
+                        <!-- inspect path
+                        <pull_path translate="label">
+                            <label>Session Inspect Path</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </pull_path>
+                        -->
+                        <!-- order path
+                        <order_path translate="label">
+                            <label>Order Message Path</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </order_path>
+                        -->
+                        <!-- tools path
+                        <tools_path translate="label">
+                            <label>JS Tools Path</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </tools_path>
+                        -->
+                    </fields>
+                </api>
+            </groups>
+        </vbw_punchout>
+    </sections>
+</config>

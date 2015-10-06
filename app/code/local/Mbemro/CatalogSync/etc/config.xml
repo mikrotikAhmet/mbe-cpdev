@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mbemro_CatalogSync>
+            <version>0.1.0</version>
+        </Mbemro_CatalogSync>
+    </modules>
+    <global>
+        <helpers>
+            <catalogsync>
+                <class>Mbemro_CatalogSync_Helper</class>
+            </catalogsync>
+        </helpers>
+        <models>
+            <catalogsync>
+                <class>Mbemro_CatalogSync_Model</class>
+            </catalogsync>
+        </models>
+    </global>
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <catalogsync>
+                                            <title>Catalog Synchronization</title>
+                                        </catalogsync>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+</config>

@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <catalogsync translate="label" module="catalogsync">
+            <label>Catalog Synchronization</label>
+            <tab>mbemro</tab>
+            <sort_order>2000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <catalogsync_general_options translate="label">
+                    <label>General Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <is_enabled translate="label">
+                            <label>Enabled:</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </is_enabled>
+                        <debug translate="label">
+                            <label>Enable Debug:</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </debug>
+                        <attribute_set translate="label">
+                            <label>Attribute Set</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>catalogsync/source_attributeset</source_model>
+                        </attribute_set>
+                        <root_category translate="label">
+                            <label>Root Category</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>40</sort_order>
+                            <source_model>catalogsync/source_storecategories</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </root_category>
+                        <reduce_list_price translate="label">
+                            <label>Reduce List Price (%)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-percents</validate>
+                        </reduce_list_price>
+                    </fields>
+                </catalogsync_general_options>
+                <catalogsync_email_options translate="label">
+                    <label>Report Email Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <subject translate="label">
+                            <label>Subject:</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>%s will be replaced with "Success" or "Error"</comment>
+                        </subject>
+                        <sender translate="label">
+                            <label>Sender:</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sender>
+                        <recipients translate="label">
+                            <label>Recipients:</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Comma separated email addresses</comment>
+                        </recipients>
+                    </fields>
+                </catalogsync_email_options>
+            </groups>
+        </catalogsync>
+    </sections>
+</config>

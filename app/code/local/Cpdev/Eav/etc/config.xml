@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Cpdev_Eav>
+            <version>0.1</version>
+        </Cpdev_Eav>
+    </modules>
+    <global>
+       <models>
+          <eav>
+              <rewrite>
+                  <entity_increment_numeric>Cpdev_Eav_Model_Entity_Increment_Numeric</entity_increment_numeric>
+              </rewrite>
+          </eav>
+       </models>
+    </global>
+</config>

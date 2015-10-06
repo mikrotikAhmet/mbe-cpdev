@@ -1,0 +1,77 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<div class="footer-container">
+    <div class="imageShadow"></div>
+    <div class="footer">
+        <?php //echo $this->getChildHtml() ?>
+        <ul class="footerNav">
+            <li>
+                <h3><a href="javascript:;"><?php echo $this->__('MBE'); ?></a></h3>
+                <ul class="footerSubNav">
+                    <li><?php echo $this->__('Call Toll Free 855-815-0222'); ?></li>
+                    <li></li>
+                    <li><?php echo $this->__('8 am - 5 pm EST Monday - Friday'); ?></li>
+                    <li><a href="#"><?php echo $this->__('Locations'); ?></a></li>
+                </ul>
+            </li>
+            <li>
+                <h3><a href="#"><?php echo $this->__('About MBE'); ?></a></h3>
+                <ul class="footerSubNav">
+                    <li><a href="/about-us.html"><?php echo $this->__('About Us'); ?></a></li>
+                    <li><a href="/careers.html"><?php echo $this->__('Careers'); ?></a></li>
+                    <li><a href="/privacy-and-security.html"><?php echo $this->__('Privacy &amp; Security'); ?></a></li>
+                    <li><a href="/view-catalog.html"><?php echo $this->__('View Catalog'); ?></a></li>
+                </ul>
+            </li>
+            <li>
+                <h3><a href="#"><?php echo $this->__('Customer Service'); ?></a></h3>
+                <ul class="footerSubNav">
+                    <li><a href="mailto:Customerservice@mbemrocatalog.com"><?php echo $this->__('Contact Us'); ?></a><li>
+                    <li><a href="mailto:Quotes@mbemrocatalog.com"><?php echo $this->__('Request Quote'); ?></a></li>
+                    <li><a href="mailto:Customerservice@mbemrocatalog.com"><?php echo $this->__('Vending Services'); ?></a></li>
+                    <li><a href="/shipping-and-delivery.html"><?php echo $this->__('Shipping &amp; Delivery'); ?></a></li>
+                    <li><a href="/store-information.html"><?php echo $this->__('Store Information'); ?></a></li>
+                    <li><a href="/return-policy.html"><?php echo $this->__('Return Policy'); ?></a></li>
+                    <li><a href="/site-help-and-faq.html"><?php echo $this->__('Site Help &amp; FAQ'); ?></a></li>
+                </ul>
+            </li>
+            <li>
+                <h3><a href="/customer/account/"><?php echo $this->__('My Account'); ?></a></h3>
+                <ul class="footerSubNav">
+                    <li><a href="/customer/account/login/"><?php echo $this->__('Sign in / Register'); ?></a><li>
+                </ul>
+            </li>
+        </ul>
+        <div class="clear"></div>
+        <div class="copyHolder">
+            <p><?php echo $this->__('&copy; Copyright 2013 MBE MRO CATALOG – All Rights Reserved'); ?></p>
+            <p><?php echo $this->__('Use of this site is subject to certain Terms of Sale which constitue a legal agreement between you and MBE MRO'); ?></p>
+            <div class="clear"></div>
+            <p><a href="#"><?php echo $this->__('Site Map'); ?></a></p><span>|</span><p><a href="#"><?php echo $this->__('Legal'); ?></a></p>
+        </div>
+    </div>
+</div>

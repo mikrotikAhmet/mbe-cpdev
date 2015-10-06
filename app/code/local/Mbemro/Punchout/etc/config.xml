@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+  <global>
+    <events>
+      <controller_front_init_before>
+        <observers>
+          <mbemro_punchout_model_observer>
+            <type>singleton</type>
+            <class>Mbemro_Punchout_Model_Observer</class>
+            <method>autologin</method>
+          </mbemro_punchout_model_observer>
+        </observers>
+      </controller_front_init_before>
+      <punchoutonly_restriction>
+        <observers>
+          <mbemro_punchout_model_observer>
+            <type>singleton</type>
+            <class>Mbemro_Punchout_Model_Observer</class>
+            <method>checkAllowed</method>
+          </mbemro_punchout_model_observer>
+        </observers>
+      </punchoutonly_restriction>
+    </events>
+  </global>
+
+    <modules>
+        <Mbemro_Punchout>
+            <version>1.0.0</version>
+        </Mbemro_Punchout>
+    </modules>
+
+</config>

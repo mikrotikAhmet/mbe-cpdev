@@ -1,0 +1,128 @@
+
+<?php if (!isset($_POST['contact_form'])) : ?>
+<!-- periodic-agreement-holder -->
+<div class="periodic-agreement-holder">
+	<div class="page-title">
+		<h1>Contact Us</h1>
+	</div>
+	<div class="clear"></div>
+	<div class="top_text_holder">
+		<div class="clear"></div>
+	</div>
+	<form action="<?php echo Mage::helper('cms/page')->getPageUrl('contact-us') ?>" method="post" id="contact_us_form" name="contact_us_form">
+			<!-- billing_period_terms_holder -->
+			<div id="contact_us">
+				
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">&nbsp;</div>
+					<div class="inp_holder">
+						<span><span class="required">*</span> = Required Fields</span>
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Name</div>
+					<div class="inp_holder">
+						<input type="text" id="name" name="name" maxlength="40" value="">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">E-mail <span class="required">*</span></div>
+					<div class="inp_holder">
+						<input type="text" id="email" name="email" maxlength="40" value="">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Phone</div>
+					<div class="inp_holder">
+						<input type="text" id="phone" name="phone" maxlength="40" value="">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Message <span class="required">*</span></div>
+					<div class="inp_holder">
+						<textarea name="message" id="message"></textarea>
+					</div>
+				</div><!-- END//row_holder -->
+			</div>
+			<div class="clear"></div>
+			<div class="cms_form_submit"><a href="#" class="submit-button"onclick="beforeSubmit();">Submit</a></div>
+			<input type="hidden" name="contact_form" value="Y">
+	</form>
+</div>
+
+<script type="text/javascript">
+	function beforeSubmit() {
+		allok = true;
+		firstchecked = '';
+
+		checkElementString('email');
+		checkElementString('message');
+		
+		if (allok == false) {
+			document.getElementById(firstchecked).focus();
+			return;
+		};
+
+		if (!document.getElementById('email').contains('@')) {
+			document.getElementById('email').focus();
+		};
+
+		document.forms['contact_us_form'].submit();
+	}
+
+	function checkElementString(elementId) {
+		var element = document.getElementById(elementId);
+		element.style.borderBottom = '1px solid #ccc';
+		if (element.value.trim() == '') {
+			element.style.borderBottom = '1px solid red';
+			allok = false;
+			if (firstchecked == '') {
+				firstchecked = elementId;
+			};
+		};
+	}
+</script>
+<?php else :
+
+	$data = $this->getRequest()->getParams();
+	$body = "Contact Request\n\n";
+	
+	$body .= (isset($data['name'])) 			? "Name: ".$data['name']."\n" : "";
+	$body .= (isset($data['email'])) 			? "E-mail: ".$data['email']."\n" : "";
+	$body .= (isset($data['phone'])) 			? "Phone: ".$data['phone']."\n" : "";
+	$body .= (isset($data['message'])) 			? "Message: ".$data['message']."\n" : "";
+
+	$mail = Mage::getModel('core/email');
+	//$mail->setToName(Mage::getStoreConfig('trans_email/ident_support/name'));
+	//$mail->setToEmail(Mage::getStoreConfig('trans_email/ident_support/email'));
+	$mail->setToEmail("lpuroll@psmicorp.com");
+	//$mail->setToEmail("sosingus@gmail.com");
+
+	$mail->setBody($body);
+	$mail->setSubject('Contact Form Request');
+	$mail->setFromEmail($data['contact@mbemrocatalog.com']);
+	
+	if(isset($data['email'])) $mail->setFromEmail($data['email']);
+	if(isset($data['name'])) $mail->setFromName($data['name']);
+
+	$mail->setType('text');//'html' or 'text'
+
+	?>
+	<?php if(!isset($data['email'])): ?>
+	<ul class="messages"><li class="error-msg"><ul><li><span>Error: No Data.</span></li></ul></li></ul>
+	<?php elseif($mail->send()): ?>
+	<ul class="messages"><li class="success-msg"><ul><li><span>Your request has been sent.</span></li></ul></li></ul>
+	<?php else: ?>
+	<ul class="messages"><li class="error-msg"><ul><li><span>Error: Unable to send. Please try again or contact site administrator.</span></li></ul></li></ul>
+	<?php endif; ?>
+	<div class="buttons-set">
+	    <p class="back-link"><a href="<?php echo Mage::helper('cms/page')->getPageUrl('contact-us') ?>"><small>&laquo; </small>Back</a></p>
+		<p><a href="<?php echo Mage::helper('core/url')->getHomeUrl();?>">Continue</a></p>
+	</div>
+
+<?php endif;?>

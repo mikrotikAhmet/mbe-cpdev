@@ -1,0 +1,29 @@
+<?php $_product = $this->getProduct(); ?>
+<?php $_customCatalogHelper = $this->helper('customcatalog/customcatalog'); ?>
+<?php $_customCatalogCatalogHelper = $this->helper('customcatalog/catalog'); ?>
+
+<?php if ($_customCatalogHelper->isModuleUsageAllowed()): ?>
+<div id="my-catalog-options" class="hidden-xs" style="position: relative; top:-75px; float:right;">
+    <?php if(!$_customCatalogCatalogHelper->isProductInCatalog($_product)): ?>
+        <a href="<?php print $_customCatalogCatalogHelper->getAddUrl($_product);?>" class="btn btn-catalog-add"><span><span>Add to My Catalog</span></span></a>
+    <?php else: ?>
+        <a href="<?php print $_customCatalogCatalogHelper->getEditUrl($_product);?>" class="btn btn-catalog-edit"><span><span>Edit in My Catalog</span></span></a> |
+        <a href="<?php print $_customCatalogCatalogHelper->getRemoveUrl($_product);?>" class="btn btn-catalog-remove"><span><span>Remove from My Catalog</span></span></a>
+    <?php endif; ?>
+</div>
+<div id="my-catalog-options-mobile" class="visible-xs">
+    <?php if(!$_customCatalogCatalogHelper->isProductInCatalog($_product)): ?>
+        <a href="<?php print $_customCatalogCatalogHelper->getAddUrl($_product);?>" class="btn btn-catalog-add"><span><span>Add to My Catalog</span></span></a>
+    <?php else: ?>
+        <a href="<?php print $_customCatalogCatalogHelper->getEditUrl($_product);?>" class="btn btn-catalog-edit"><span><span>Edit in My Catalog</span></span></a> |
+        <a href="<?php print $_customCatalogCatalogHelper->getRemoveUrl($_product);?>" class="btn btn-catalog-remove"><span><span>Remove from My Catalog</span></span></a>
+    <?php endif; ?>
+</div>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('.btn-catalog-remove').click(function(event){
+                return confirm('Are you sure to remove this product from your catalog?');
+            });
+        });
+    </script>
+<?php endif; ?>

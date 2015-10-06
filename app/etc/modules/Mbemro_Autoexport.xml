@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Mbemro_Autoexport>
+      <active>true</active>
+      <codePool>local</codePool>
+      <depends>
+      		<Bluejalappeno_Orderexport/>
+      		<Mage_ImportExport/>
+      </depends>
+    </Mbemro_Autoexport>
+  </modules>
+</config>

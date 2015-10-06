@@ -1,0 +1,462 @@
+<!-- periodic-agreement-holder -->
+<div class="periodic-agreement-holder">
+	<div class="page-title">
+		<h1>Credit Application</h1>
+	</div>
+	<div class="clear"></div>
+	<div class="top_text_holder">
+		<h2>Company Information</h2>
+		<p>Please complete the application below.</p>
+		<div class="clear"></div>
+	</div>
+		<form action="<?php echo Mage::helper('cms/page')->getPageUrl('credit-application-email') ?>" method="post" id="credit_application_form" name="credit_application_form">
+			<!-- billing_period_terms_holder -->
+			<div id="credit_application_company_details">
+				<h3>Company Details</h3>
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">&nbsp;</div>
+					<div class="inp_holder">
+						<span><span class="required">*</span> = Required Fields</span>
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Order Pending</div>
+					<div class="inp_holder">
+						<select id="order_pending" name="order_pending"><option value="Yes ">Yes </option><option value="No ">No </option></select>
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Mbemrocatalog Account Number (if applicable)</div>
+					<div class="inp_holder">
+						<input type="text" id="account_number" name="account_number" maxlength="40" value="">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Business Name <span class="required">*</span></div>
+					<div class="inp_holder">
+						<input type="text" name="business_name" id="business_name" value="" maxlength="100">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Primary Street Address <span class="required">*</span></div>
+					<div class="inp_holder">
+						<input type="text" id="address_primary" name="address_primary" maxlength="100" value="">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Secondary Street Address</div>
+					<div class="inp_holder">
+						<input type="text" id="address_secondary" name="address_secondary" maxlength="100" value="">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">City <span class="required">*</span></div>
+					<div class="inp_holder">
+						<input type="text" id="city" name="city" maxlength="100" value="">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder" id="state_holder">
+					<div class="inp_label">State <span class="required">*</span></div>
+					<div class="inp_holder">
+						<?php printUSStates("state"); ?>
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Zip/Postal Code </div>
+					<div class="inp_holder">
+						<input type="text" id="zip" name="zip" maxlength="25" value="">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Country <span class="required">*</span></div>
+					<div class="inp_holder">
+						<?php printSelectCountries("country", "state_holder");?>
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Company Phone <span class="required">*</span></div>
+					<div class="inp_holder">
+						<input type="text" id="phone" name="phone" maxlength="25" value="">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Federal ID Number</div>
+					<div class="inp_holder">
+						<input type="text" id="federal_id" name="federal_id" maxlength="40" value="">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">D-U-N-S® Number (If Available)</div>
+					<div class="inp_holder">
+						<input type="text" id="duns_num" name="duns_num" maxlength="20" value="">
+					</div>
+				</div><!-- END//row_holder -->
+			</div><!-- END//billing_period_terms_holder -->
+			<div class="clear"></div>
+			<div id="credit_application_shipping_address">
+				<h3>Shipping Address</h3>
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Street Address (if different than above)</div>
+					<div class="inp_holder">
+						<input type="text" name="address_shipping" id="address_shipping">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">City</div>
+					<div class="inp_holder">
+						<input type="text" name="city_shipping" id="city_shipping">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder" id="state_shipping_holder">
+					<div class="inp_label">State</div>
+					<div class="inp_holder">
+						<?php printUSStates("state_shipping"); ?>
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Zip/Postal code</div>
+					<div class="inp_holder">
+						<input type="text" name="zip_shipping" id="zip_shipping">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Country</div>
+					<div class="inp_holder">
+						<?php printSelectCountries("country_shipping", "state_shipping_holder"); ?>
+					</div>
+				</div><!-- END//row_holder -->
+			</div>			
+			<div class="clear"></div>
+			<div id="credit_application_shipping_address">
+				<h3>Contact Information</h3>
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Applicant's E-mail Address <span class="required">*</span></div>
+					<div class="inp_holder">
+						<input type="text" name="applicants_email" id="applicants_email">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">President</div>
+					<div class="inp_holder">
+						<input type="text" name="president" id="president">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">CEO/Controller</div>
+					<div class="inp_holder">
+						<input type="text" name="ceo_controller" id="ceo_controller">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Account Payables Contact Name</div>
+					<div class="inp_holder">
+						<input type="text" name="account_payables_contact_name" id="account_payables_contact_name">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Account Payables Telephone Number</div>
+					<div class="inp_holder">
+						<input type="text" name="account_payables_telephone_number" id="account_payables_telephone_number">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Account Payables Fax Number</div>
+					<div class="inp_holder">
+						<input type="text" name="account_payables_fax_number" id="account_payables_fax_number">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Account Payables Email Address</div>
+					<div class="inp_holder">
+						<input type="text" name="account_payables_email_address" id="account_payables_email_address">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Purchasing Manager Contact Name</div>
+					<div class="inp_holder">
+						<input type="text" name="purchasing_manager_contact_name" id="purchasing_manager_contact_name">
+					</div>
+				</div><!-- END//row_holder -->
+			</div>
+			<div class="clear"></div>
+			<div id="credit_application_shipping_address">
+				<h3>Profile</h3>
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Is this business a public or privately-held business?</div>
+					<div class="inp_holder">
+						<select id="business_type" name="business_type">
+							<option value=""></option>
+							<option value="Public">Public</option>
+							<option value="Private">Private</option>
+							<option value="Foreign">Foreign</option>
+							<option value="Non-Profit">Non-Profit</option>
+							<option value="Unknown">Unknown</option>
+						</select>
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Business Structure</div>
+					<div class="inp_holder">
+						<select id="business_type" name="business_type">
+							<option value=""></option>
+							<option value="C-Corporation">C-Corporation</option>
+							<option value="General Partnership">General Partnership</option>
+							<option value="Foreign">Foreign</option>
+							<option value="LLC">LLC</option>
+							<option value="LLP">LLP</option>
+							<option value="S-Corporation">S-Corporation</option>
+							<option value="Joint Venture">Joint Venture</option>
+							<option value="Sole Proprietorship">Sole Proprietorship</option>
+							<option value="Non-Profit">Non-Profit</option>
+							<option value="Government">Government</option>
+							<option value="Other">Other</option>
+						</select>
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Years Established</div>
+					<div class="inp_holder">
+						<input type="text" name="years_established" id="years_established" maxlength="9" value="">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Number of Employees</div>
+					<div class="inp_holder">
+						<input type="text" name="employee_no" id="employee_no" maxlength="9" value="">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">SIC CODE</div>
+					<div class="inp_holder">
+						<input type="text" name="sic_code" id="sic_code" maxlength="20" value="">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">State of Incorporation</div>
+					<div class="inp_holder">
+						<?php printUSStates("state_of_incorporation");?>
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Authorized Buyers</div>
+					<div class="inp_holder">
+						<input type="text" name="authorized_buyers" id="authorized_buyers" value="">
+					</div>
+				</div><!-- END//row_holder -->
+			</div>
+			<div class="clear"></div>
+			<div id="credit_application_shipping_address">
+				<h3>Request</h3>
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Billing Options</div>
+					<div class="inp_holder">
+						<select id="billing_options" name="billing_options">
+							<option value=""></option>
+							<option value="Net 30">Net 30</option>
+							<option value="Credit Card only">Credit Card only</option>
+							<option value="Consolidated">Consolidated</option>
+							<option value="Periodic">Periodic</option>
+						</select>
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Requested Credit Line</div>
+					<div class="inp_holder">
+						<input type="text" name="requested_credit_line" id="employee_no" maxlength="16" value="">
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Purchase Order Numbers Required?</div>
+					<div class="inp_holder">
+						<select id="order_numbers_required" name="order_numbers_required"><option value=""></option><option value="Yes ">Yes </option><option value="No ">No </option></select>
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Hard Copy Purchase Required?</div>
+					<div class="inp_holder">
+						<select id="hard_copy_purchase_required" name="hard_copy_purchase_required"><option value=""></option><option value="Yes ">Yes </option><option value="No ">No </option></select>
+					</div>
+				</div><!-- END//row_holder -->
+				<!-- row_holder -->
+				<div class="row_holder">
+					<div class="inp_label">Taxable?</div>
+					<div class="inp_holder">
+						<select id="taxable" name="taxable"></option><option value="Yes ">Yes </option><option value="No " selected="">No </option></select>
+					</div>
+				</div><!-- END//row_holder -->
+			</div>
+			<div class="clear"></div>
+			<div class="cms_form_submit"><a href="#" class="submit-button"onclick="beforeSubmit();">Submit</a></div>
+		</form>
+</div><!-- END//periodic-agreement-holder -->
+
+
+
+<script type="text/javascript">
+	function switchState(selectedElement, stateElementName ) {
+		
+		var stateElement = document.getElementById(stateElementName);
+		if (selectedElement.value == 'US') {
+			
+			stateElement.style.display = '';
+			//$(stateElementName).show();
+		} else {
+			//$(stateElementName).hide();
+			stateElement.style.display = 'none';
+		};
+	}
+
+	var allok = false;
+	var firstchecked = '';
+
+	function beforeSubmit() {
+		allok = true;
+		firstchecked = '';
+
+		checkElementString('business_name');
+		checkElementString('address_primary');
+		checkElementString('city');
+		checkElementString('country');
+		if (document.getElementById('country').value == 'United States Of America') {
+			checkElementString('state');
+		};
+		checkElementString('phone');
+		checkElementString('applicants_email');
+
+		if (allok == false) {
+			document.getElementById(firstchecked).focus();
+			return;
+		};
+
+		document.forms['credit_application_form'].submit();
+	}
+
+	function checkElementString(elementId) {
+		var element = document.getElementById(elementId);
+		element.style.borderBottom = '1px solid #ccc';
+		if (element.value.trim() == '') {
+			element.style.borderBottom = '1px solid red';
+			allok = false;
+			if (firstchecked == '') {
+				firstchecked = elementId;
+			};
+		};
+	}
+
+</script>
+
+
+
+
+ <?php
+
+
+function printSelectCountries($select_name, $us_selector) {
+	$_countries = Mage::getResourceModel('directory/country_collection')
+                                    ->loadData()
+                                    ->toOptionArray(false) ;
+ if (count($_countries) > 0): ?>
+    <select name="<?php print $select_name?>" id="<?php print $select_name?>" onchange="switchState(this, '<?php print $us_selector;?>');">
+        <option value="">-- Please Select --</option>
+        <?php foreach($_countries as $_country): ?>
+        	<?php $country = $_country['label'] == 'United States' ? 'United States Of America' : $_country['label'];?>
+            <option value="<?php echo $country; ?>" <?php print $_country['value'] == 'US' ? 'selected=""' : '' ?>>
+                <?php echo $country;?>
+            </option>
+        <?php endforeach; ?>
+    </select>
+<?php endif; ?>
+
+<script type="text/javascript">
+
+	$(function() {
+		alert($('#<?php print $select_name;?>'));
+		$('#<?php print $select_name;?>').change(function(){
+			alert($(this).text());
+			if ($(this).text() != 'US') {
+				$('#<?php print $us_selector?>').hide();
+			} else {
+				$('#<?php print $us_selector?>').show();
+			}
+		});	
+	});
+
+	
+</script>
+
+<?php return;
+
+	?>
+<select id="<?php print $select_name;?>" name="<?php print $select_name;?>" ><option value="US">United States Of America</option><option value="XB">Abu Dhabi</option><option value="AY">Admiralty Islands</option><option value="AF">Afghanistan</option><option value="XA">Ajman</option><option value="XL">Al Ain</option><option value="AL">Albania</option><option value="DZ">Algeria</option><option value="AS">American Samoa</option><option value="AD">Andorra</option><option value="AO">Angola</option><option value="AI">Anguilla</option><option value="AG">Antigua &amp; Barbuda</option><option value="AR">Argentina</option><option value="AM">Armenia</option><option value="AW">Aruba</option><option value="AC">Ascension Island</option><option value="AU">Australia</option><option value="AT">Austria</option><option value="AZ">Azerbaijan</option><option value="BS">Bahamas</option><option value="BH">Bahrain</option><option value="BD">Bangladesh</option><option value="BB">Barbados</option><option value="BE">Belgium</option><option value="BZ">Belize</option><option value="BJ">Benin(Peoples Republic Of)</option><option value="BM">Bermuda</option><option value="BT">Bhutan</option><option value="BO">Bolivia</option><option value="BA">Bosnia And Herzegovina</option><option value="BW">Botswana</option><option value="BR">Brazil</option><option value="VG">British Virgin Islands</option><option value="BN">Brunei</option><option value="BG">Bulgaria</option><option value="BF">Burkina Faso</option><option value="MM">Burma (Myanmar)</option><option value="BI">Burundi</option><option value="BY">Byelorussia</option><option value="KH">Cambodia</option><option value="CM">Cameroon</option><option value="CA">Canada</option><option value="CV">Cape Verde(Republic Of)</option><option value="CB">Caroline Islands</option><option value="KY">Cayman Islands</option><option value="CF">Central Africa Republic</option><option value="TD">Chad(Republic Of)</option><option value="CL">Chile</option><option value="CN">China(Peoples Republic Of)</option><option value="CX">Christmas Island</option><option value="CO">Colombia</option><option value="KM">Comoros Republic</option><option value="CG">Congo Democratic Republic</option><option value="CK">Cook Islands</option><option value="CR">Costa Rica</option><option value="HR">Croatia</option><option value="CY">Cyprus</option><option value="CZ">Czech Republic</option><option value="DK">Denmark</option><option value="DJ">Djibouti</option><option value="DM">Dominica</option><option value="DO">Dominican Republic</option><option value="XD">Dubai</option><option value="EC">Ecuador</option><option value="EG">Egypt</option><option value="SV">El Salvador</option><option value="GQ">Equatorial Guinea</option><option value="ER">Eritrea</option><option value="EE">Estonia</option><option value="ET">Ethiopia</option><option value="FO">Faero Islands</option><option value="FK">Falkland Islands</option><option value="FJ">Fiji</option><option value="FI">Finland</option><option value="FR">France</option><option value="GF">French Guiana</option><option value="PF">French Polynesia/Tahiti</option><option value="XF">Fujairah</option><option value="GA">Gabon Republic</option><option value="GM">Gambia</option><option value="GE">Georgia</option><option value="DE">Germany</option><option value="GH">Ghana</option><option value="GI">Gibraltar</option><option value="GR">Greece</option><option value="GL">Greenland</option><option value="GD">Grenada</option><option value="GP">Guadeloupe</option><option value="GU">Guam</option><option value="GT">Guatemala</option><option value="GW">Guinea Bissau</option><option value="GN">Guinea(Republic Of)</option><option value="GY">Guyana</option><option value="HT">Haiti</option><option value="HN">Honduras</option><option value="HK">Hong Kong</option><option value="HU">Hungary</option><option value="IS">Iceland</option><option value="IN">India</option><option value="ID">Indonesia</option><option value="IR">Iran</option><option value="IQ">Iraq</option><option value="IE">Ireland</option><option value="IL">Israel</option><option value="IT">Italy</option><option value="CI">Ivory Coast/Cote D'ivoire</option><option value="JM">Jamaica</option><option value="JP">Japan</option><option value="JO">Jordan</option><option value="KZ">Kazakhstan</option><option value="KE">Kenya</option><option value="KI">Kiribati</option><option value="KR">Korea(Republic Of)</option><option value="KW">Kuwait</option><option value="KG">Kyrgyzstan</option><option value="LA">Laos</option><option value="LV">Latvia</option><option value="LB">Lebanon</option><option value="LS">Lesotho</option><option value="LR">Liberia</option><option value="LY">Libyan Arab Jamahiriya</option><option value="LI">Liechtenstein</option><option value="LT">Lithuania</option><option value="LU">Luxembourg</option><option value="MO">Macau</option><option value="MK">Macedonia</option><option value="MG">Madagasgar</option><option value="MW">Malawi</option><option value="MY">Malaysia</option><option value="MV">Maldives</option><option value="ML">Mali</option><option value="MT">Malta</option><option value="MP">Marianas Islands</option><option value="MH">Marshall Islands</option><option value="MQ">Martinique</option><option value="MR">Mauritania</option><option value="MU">Mauritius</option><option value="YT">Mayotte</option><option value="MX">Mexico</option><option value="IM">Midway Islands</option><option value="MD">Moldova</option><option value="MC">Monaco</option><option value="MS">Montserrat</option><option value="MA">Morocco</option><option value="MZ">Mozambique</option><option value="NA">Namibia</option><option value="NR">Nauru</option><option value="NP">Nepal</option><option value="NL">Netherlands</option><option value="AN">Netherlands Antilles</option><option value="NC">New Caledonia</option><option value="NZ">New Zealand</option><option value="NI">Nicaragua</option><option value="NE">Niger</option><option value="NG">Nigeria</option><option value="NF">Norfolk Island</option><option value="NO">Norway</option><option value="OM">Oman</option><option value="PK">Pakistan</option><option value="PA">Panama</option><option value="PG">Papua New Guinea</option><option value="PY">Paraguay</option><option value="PE">Peru</option><option value="PH">Philippines</option><option value="PL">Poland</option><option value="PT">Portugal</option><option value="QA">Qatar</option><option value="XR">Ras Al Khaimah</option><option value="RE">Reunion Island</option><option value="RO">Romania</option><option value="RU">Russian Federation</option><option value="RW">Rwanda</option><option value="SH">Saint Helena</option><option value="KN">Saint Kitts &amp; Nevis</option><option value="LC">Saint Lucia</option><option value="PM">Saint Pierre ET Miquelon</option><option value="VC">Saint Vincent</option><option value="SM">San Marino</option><option value="ST">Sao Tome &amp; Principe</option><option value="SA">Saudi Arabia</option><option value="SN">Senegal</option><option value="YU">Serbia and Montenegro</option><option value="SC">Seychelles</option><option value="XS">Sharjah</option><option value="SL">Sierra Leone</option><option value="SG">Singapore</option><option value="SK">Slovakia</option><option value="SI">Slovenia</option><option value="SB">Solomon Islands</option><option value="SO">Somalia</option><option value="ZA">South Africa</option><option value="GS">South Georgia and the South Sandwich Islands</option><option value="ES">Spain</option><option value="LK">Sri Lanka</option><option value="SD">Sudan</option><option value="SR">Suriname</option><option value="SZ">Swaziland</option><option value="SE">Sweden</option><option value="CH">Switzerland</option><option value="SY">Syria</option><option value="TW">Taiwan (Republic Of China)</option><option value="TJ">Tajhikstan</option><option value="TZ">Tanzania</option><option value="TH">Thailand</option><option value="TG">Togo</option><option value="TK">Tokelau Islands</option><option value="TO">Tonga</option><option value="TT">Trinidad And Tobago</option><option value="TN">Tunisia</option><option value="TR">Turkey</option><option value="TS">Turkish Cyprus</option><option value="TM">Turkmenistan</option><option value="TC">Turks And Caicos</option><option value="TV">Tuvalu</option><option value="UG">Uganda</option><option value="UA">Ukraine</option><option value="XU">Umm-Al-Quwain</option><option value="AE">United Arab Emirates</option><option value="GB">United Kingdom</option><option value="UY">Uruguay</option><option value="UZ">Uzbekistan</option><option value="VU">Vanuatu</option><option value="VE">Venezuela</option><option value="VN">Vietnam</option><option value="VI">Virgin Islands (U.S.)</option><option value="WK">Wake Island</option><option value="WF">Wallis &amp; Futuna Islands</option><option value="WS">Western Samoa</option><option value="YE">Yemen</option><option value="ZR">Zaire</option><option value="ZM">Zambia</option><option value="ZW">Zimbabwe</option></select>
+	
+<script type="text/javascript">
+
+	$(function() {
+		alert($('#<?php print $select_name;?>'));
+		$('#<?php print $select_name;?>').change(function(){
+			alert($(this).text());
+			if ($(this).text() != 'US') {
+				$('#<?php print $us_selector?>').hide();
+			} else {
+				$('#<?php print $us_selector?>').show();
+			}
+		});	
+	});
+
+	
+</script>
+
+	<?php
+
+
+}
+
+function printUSStates($select_name) {
+
+	?>
+<select id="<?php print $select_name;?>" name="<?php print $select_name;?>"><option value="" selected="">Select State</option><option value="NW">Nationwide</option><option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="DC">District of Columbia</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="PR">Puerto Rico</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="VI">US Virgin Islands</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option><option value="AB">Alberta</option><option value="BC">British Columbia</option><option value="MB">Manitoba</option><option value="NU">Nunavut</option><option value="NB">New Brunswick</option><option value="NF">Newfoundland</option><option value="NT">Northwest Territories</option><option value="NS">Nova Scotia</option><option value="ON">Ontario</option><option value="PE">Prince Edward Island</option><option value="QC">Quebec</option><option value="SK">Saskatchewan</option><option value="YT">Yukon Territory</option></select>	
+
+	
+
+	<?php
+
+}
+
+ ?>

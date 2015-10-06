@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+<!--
+Load this update on every page when customer is logged out
+-->
+    <!--
+       If the design does not use the layout XML to remove these elements, then
+       you may need to find the main nav and manually add in a test for the punchout session.
+       most procurement systems don't want additional login capabilities.
+    -->
+
+    <!-- during an anonymous session -->
+    <customer_punchout_in_anonymous>
+        <!-- user is not allowed to login -->
+        <reference name="top.links">
+            <action ifconfig="vbw_punchout/display/remove_myaccount"
+                    method="removeLinkByUrl" module="vbw_punchout"><url helper="customer/getAccountUrl"/></action>
+            <action ifconfig="vbw_punchout/display/remove_logouts"
+                    method="removeLinkByUrl" module="vbw_punchout"><url helper="customer/getLoginUrl"/></action>
+            <action ifconfig="vbw_punchout/display/remove_logouts"
+                    method="removeLinkByUrl" module="vbw_punchout"><url helper="customer/getLogoutUrl"/></action>
+            <remove name='checkout_cart_link' />
+            <block type="checkout/links" name="punchout_cart_link">
+                <action method="addCartLink"></action>
+            </block>
+            <block type="vbw_punchout/checkout_links" name="punchout_checkout_link">
+                <action ifconfig="vbw_punchout/display/checkout_nav"
+                        method='addCheckoutLink'></action>
+            </block>
+        </reference>
+        <!-- remove the store switching feature -->
+        <remove name="store_switcher"/>
+        <remove name="store_language"/>
+    </customer_punchout_in_anonymous>
+    <customer_punchout_in_single>
+        <!-- user is logged in but not allowed to make changes to the account -->
+        <reference name="top.links">
+            <action ifconfig="vbw_punchout/display/remove_myaccount"
+                    method="removeLinkByUrl" module="vbw_punchout"><url helper="customer/getAccountUrl"/></action>
+            <action ifconfig="vbw_punchout/display/remove_logouts"
+                    method="removeLinkByUrl" module="vbw_punchout"><url helper="customer/getLoginUrl"/></action>
+            <action ifconfig="vbw_punchout/display/remove_logouts"
+                    method="removeLinkByUrl" module="vbw_punchout"><url helper="customer/getLogoutUrl"/></action>
+            <remove name='checkout_cart_link' />
+            <block type="checkout/links" name="punchout_cart_link">
+                <action method="addCartLink"></action>
+            </block>
+            <block type="vbw_punchout/checkout_links" name="punchout_checkout_link">
+                <action ifconfig="vbw_punchout/display/checkout_nav"
+                        method='addCheckoutLink'></action>
+            </block>
+        </reference>
+        <!-- remove the store switching feature -->
+        <remove name="store_language"/>
+        <remove name="store_switcher"/>
+    </customer_punchout_in_single>
+    <customer_punchout_in_discover>
+        <reference name="top.links">
+            <action ifconfig="vbw_punchout/display/remove_myaccount"
+                    method="removeLinkByUrl" module="vbw_punchout"><url helper="customer/getAccountUrl"/></action>
+            <action ifconfig="vbw_punchout/display/remove_logouts"
+                    method="removeLinkByUrl" module="vbw_punchout"><url helper="customer/getLoginUrl"/></action>
+            <action ifconfig="vbw_punchout/display/remove_logouts"
+                    method="removeLinkByUrl" module="vbw_punchout"><url helper="customer/getLogoutUrl"/></action>
+            <remove name='checkout_cart_link' />
+            <block type="checkout/links" name="punchout_cart_link">
+                <action method="addCartLink"></action>
+            </block>
+            <block type="vbw_punchout/checkout_links" name="punchout_checkout_link">
+                <action ifconfig="vbw_punchout/display/checkout_nav"
+                        method='addCheckoutLink'></action>
+            </block>
+        </reference>
+        <!-- remove the store switching feature -->
+        <remove name="store_language"/>
+        <remove name="store_switcher"/>
+    </customer_punchout_in_discover>
+
+    <!-- use this node to include other layout controls to be applied only
+      when in a punchout session -->
+    <in_punchout_session>
+       <reference name="root">
+       <block type="vbw_punchout/body" name="punchout_body">
+           <action method="addBodyClass"><p>is-punchout-session</p></action>
+       </block>
+        </reference>
+        <reference name="top.links">
+            <block type='vbw_punchout/returnlink' name="punchout_return_link">
+                <action method='addReturnLink'/>
+            </block>
+        </reference>
+    </in_punchout_session>
+
+
+<!--
+punchout the order, copy and modify the existing checkout.
+because this is a new node, it will inherit from the base, so any special layout you need to
+get from your existing cart page.
+
+This is the old format with punchout controller
+-->
+    <checkout_cart_punchout translate="label">
+        <label>Shopping Cart</label>
+        <remove name="right"/>
+        <remove name="left"/>
+        <!-- Mage_Checkout -->
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="checkout/cart" name="checkout.cart">
+                <action method="setCartTemplate"><value>checkout/cart.phtml</value></action>
+                <action method="setEmptyTemplate"><value>checkout/cart/noItems.phtml</value></action>
+                <action method="chooseTemplate"/>
+                <action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>checkout/cart/item/default.phtml</template></action>
+                <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>checkout/cart/item/default.phtml</template></action>
+                <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>checkout/cart/item/default.phtml</template></action>
+
+                <block type="core/text_list" name="checkout.cart.top_methods" as="top_methods" translate="label">
+                    <label>Payment Methods Before Checkout Button</label>
+                    <block type="vbw_punchout/checkout_punchout" name="checkout.cart.methods.punchout" template="punchout/checkout_punchout.phtml"/>
+                </block>
+
+                <block type="page/html_wrapper" name="checkout.cart.form.before" as="form_before" translate="label">
+                    <label>Shopping Cart Form Before</label>
+                </block>
+
+                <!--
+                    We do not include additional check out methods in a punchout cart.
+                <block type="core/text_list" name="checkout.cart.methods" as="methods" translate="label">
+                    <label>Payment Methods After Checkout Button</label>
+                    <block type="checkout/onepage_link" name="checkout.cart.methods.onepage" template="checkout/onepage/link.phtml"/>
+                    <block type="checkout/multishipping_link" name="checkout.cart.methods.multishipping" template="checkout/multishipping/link.phtml"/>
+                </block>
+                -->
+
+                <!-- <block type="checkout/cart_coupon" name="checkout.cart.coupon" as="coupon" template="checkout/cart/coupon.phtml"/> -->
+                <!--
+                    Many procurement systems don't want shipping included.
+                    Shipping and taxes are taken care of in the actual purchase order
+                <block type="checkout/cart_shipping" name="checkout.cart.shipping" as="shipping" template="checkout/cart/shipping.phtml"/> -->
+                <block type="checkout/cart_crosssell" name="checkout.cart.crosssell" as="crosssell" template="checkout/cart/crosssell.phtml"/>
+
+                <!-- custom use of the totals to only show the "Subtotal" and exclude any possible taxes -->
+                <block type="checkout/cart_totals" name="checkout.cart.totals" as="totals" template="checkout/cart/totals.phtml"/>
+                <!-- <block type="vbw_punchout/checkout_cart_totals" name="checkout.cart.totals" as="totals" template="punchout/cart_totals.phtml"/>-->
+
+
+            </block>
+        </reference>
+        <block type="core/text_list" name="additional.product.info" translate="label">
+            <label>Additional Product Info</label>
+        </block>
+
+        <!--<block type="page/html_wrapper" name="grand_total_total_renderer" as="grand_total_total_renderer" template="punchout/cart_totals_grand.phtml" />-->
+        <!--<block type="page/html_wrapper" name="tax_total_renderer" as="tax_total_renderer" template="punchout/cart_totals_grand.phtml" />-->
+        <!--<block type="page/html_wrapper" name="sub_total_total_renderer" as="sub_total_total_renderer" template="punchout/cart_totals_grand.phtml" />-->
+        <!--<block type="page/html_wrapper" name="shipping_total_renderer" as="shipping_total_renderer" template="punchout/cart_totals_grand.phtml" />-->
+        <!--
+            total renderer map
+                grand_total_total_renderer:Mage_Tax_Block_Checkout_Grandtotal
+                subtotal_total_renderer:Mage_Tax_Block_Checkout_Subtotal
+                shipping_total_renderer:Mage_Tax_Block_Checkout_Shipping
+                tax_total_renderer:Mage_Tax_Block_Checkout_Tax
+            -->
+
+    </checkout_cart_punchout>
+
+
+    <punchout_checkout_cart_index>
+        <!-- nodes are added here, some removals controlled by the config are added in the
+                vbw_punchout/observer:punchoutCheckoutCartLayout event observer -->
+
+        <!-- button is attached to both the "method" areas, they are removed based on configuration -->
+        <reference name="checkout.cart.top_methods">
+            <block type="vbw_punchout/checkout_punchout" name="checkout.cart.methods.punchout.top" template="punchout/checkout_punchout.phtml" before='-'/>
+            <block type="checkout/onepage_link" name="checkout.cart.methods.onepage.personal.top" template="punchout/onepage/link.phtml"/>
+        </reference>
+        <reference name="checkout.cart.methods">
+            <block type="vbw_punchout/checkout_punchout" name="checkout.cart.methods.punchout.bottom" template="punchout/checkout_punchout.phtml"  before='-'/>
+            <block type="checkout/onepage_link" name="checkout.cart.methods.onepage.personal.bottom" template="punchout/onepage/link.phtml"/>
+        </reference>
+
+        <reference name="checkout.cart" >
+            <!--
+                <block type="vbw_punchout/checkout_cart_totals" name="checkout.cart.totals2" as="totals" template="punchout/cart_totals.phtml"/>
+                <block type="checkout/cart_totals" name="checkout.cart.totals" as="totals" template="checkout/cart/totals.phtml"/>
+            -->
+        </reference>
+
+        <!-- see personal checkout config option for controls,
+             personal checkout is kept in the same locations as
+             the transfer we remove these version, our entries uses a different template and
+             and has a consistent name for the theme.
+             -->
+        <remove name="checkout.cart.methods.onepage.bottom" />
+        <remove name="checkout.cart.methods.onepage.top" />
+        <remove name="checkout.cart.methods.onepage" />
+
+        <!--<remove name="checkout.cart.totals" />-->
+        <!-- for now always remove multishipping -->
+        <remove name="checkout.cart.methods.multishipping" />
+        <!-- see shipping config controls
+            <remove name="checkout.cart.shipping" /> -->
+        <!-- <remove name="checkout.cart.coupon" /> -->
+        <!-- <remove name="checkout.cart.giftcardaccount" /> -->
+
+        <!--
+        <reference name="checkout.cart.totals" >
+            <action method="setTemplate"><param>punchout/cart_totals.phtml</param></action>
+            <action method="setBlockType"><param>vbw_punchout/checkout_cart_totals</param></action>
+        </reference>
+        -->
+    </punchout_checkout_cart_index>
+
+</layout>

@@ -1,0 +1,222 @@
+<?php
+class Mbemro_Autoexport_Helper_Data extends Mage_Core_Helper_Abstract
+{
+	const FROM_LAST_HOURS = 24;
+	const logFile = 'autoexport.log';
+
+	public function getFromLastHours(){
+		return 3600 * self::FROM_LAST_HOURS;
+	}
+
+	public function getCustumerExportFile(){
+		return 'customer_export_' . date("Ymd_His") . '.csv';
+	}
+
+	public function getTime(){
+		return new DateTime();
+	}
+	
+	public function getLastExportedId(){
+		
+		$lastOrderId = null;
+		$lastCustomerId = null;
+		
+		$collection = Mage::getModel('autoexport/autoexportrecords')->getCollection()
+		->addFieldToFilter('passed', '1');
+		
+		if($collection->count()){
+			$read = Mage::getSingleton('core/resource')->getConnection('core_read');
+			
+			$select = $collection->getSelect()->reset(Zend_Db_Select::COLUMNS)
+			->columns(array('MAX(last_exported_order_id) as lastexporderid','MAX(last_exported_customer_id) as lastexpcustomerid'));
+			
+			$data = $read->fetchAll($select);
+			
+			$lastOrderId = isset($data[0]['lastexporderid']) ? $data[0]['lastexporderid'] : null;
+			$lastCustomerId = isset($data[0]['lastexpcustomerid']) ? $data[0]['lastexpcustomerid'] : null;
+
+		}
+		
+		return array($lastOrderId, $lastCustomerId);
+	}
+
+	public function getExportedOrders($mode){
+		
+		$orders = array();
+		$status = false;
+		$filepath = '';
+
+		$time = $this->getTime()->getTimestamp();
+		
+		list($lastOrderId, $lastCustomerId) = $this->getLastExportedId();
+		
+		$collectionOrders = Mage::getModel('sales/order')->getCollection();
+
+		if($mode == 'auto'){
+			$collectionOrders->addFieldToFilter('created_at', array(
+					'from'     => $time - $this->getFromLastHours(),
+					'to'       => $time,
+					'datetime' => true
+			));
+		}
+
+		if($lastOrderId){
+			$collectionOrders->addFieldToFilter('entity_id', array('gt' => $lastOrderId));
+		}
+		
+		foreach ($collectionOrders as $order){
+			$orders[] = $order->getId();
+		}
+
+		try{
+			//$file = Mage::getModel('bluejalappeno_orderexport/export_csv')->exportOrders($orders);
+			$file = Mage::getModel('bluejalappeno_orderexport/export_edi850')->exportOrders($orders);
+			$filepath = Mage::getBaseDir('export') . DS . $file;
+			$status = true;
+		}catch (Mage_Core_Exception $e) {
+			Mage::log($e->getMessage(), null, self::logFile);
+		}
+		catch(Exception $e){
+			Mage::log($e->getMessage(), null, self::logFile);
+		}
+		
+		return array($status, $orders, $filepath);
+	}
+
+	public function getExportedCustomers($mode){
+
+		$status = false;
+		$filepath = '';
+		$customers = array();
+		
+		try {
+
+			$model = Mage::getModel('importexport/export_entity_customer');
+			$model->setWriter(Mage::getModel('importexport/export_adapter_csv'));
+			list($customers, $content) = $model->exportCustomers($mode);
+			$filepath = Mage::getBaseDir('export') . DS . $this->getCustumerExportFile();
+			$file = new Varien_Io_File();
+			$file->write($filepath, $content);
+			$status = true;
+
+		} catch (Mage_Core_Exception $e) {
+			Mage::log($e->getMessage(), null, self::logFile);
+		} catch (Exception $e) {
+			Mage::log($e->getMessage(), null, self::logFile);
+		}
+			
+		return array($status, $customers, $filepath);
+	}
+
+	public function doAutoExport(){
+
+		if(!$this->getEnabled()) return;
+		
+		$modelAutoExportRecords = Mage::getModel('autoexport/autoexportrecords');
+
+		list($statusOrder, $ordersIds, $filepathOrder) = $this->getExportedOrders('auto');
+		list($statusCustomer, $customersIds, $filepathCustomer) = $this->getExportedCustomers('auto');
+
+		$datetime = $this->getTime()->format('Y-m-d H:i:s');
+
+		$modelAutoExportRecords->setExportedOrders(implode(',', $ordersIds));
+		$modelAutoExportRecords->setExportedCustomers(implode(',', $customersIds));
+		$modelAutoExportRecords->setLastExportedOrderId(empty($ordersIds) ? NULL : max($ordersIds));
+		$modelAutoExportRecords->setLastExportedCustomerId(empty($customersIds) ? NULL : max($customersIds));
+		$modelAutoExportRecords->setExportedAt($datetime);
+		$modelAutoExportRecords->setPassed(0);
+
+		if($statusOrder && $statusCustomer){
+			if($this->sendEmailContent($filepathOrder, $filepathCustomer)){
+				$modelAutoExportRecords->setPassed(1);
+			}
+		}
+
+		$modelAutoExportRecords->save();
+
+	}
+	
+	public function doManualExport(){
+	
+		if(!$this->getEnabled()) return;
+	
+		$modelAutoExportRecords = Mage::getModel('autoexport/autoexportrecords');
+		$session = Mage::getSingleton('adminhtml/session');
+	
+		list($statusOrder, $ordersIds, $filepathOrder) = $this->getExportedOrders('manual');
+		//list($statusCustomer, $customersIds, $filepathCustomer) = $this->getExportedCustomers('manual');
+	
+		//if($statusOrder && $statusCustomer){
+		/*
+		if($statusOrder){		
+			//if($this->sendEmailContent($filepathOrder, $filepathCustomer)){
+			if($this->sendEmailContent($filepathOrder)){
+				$session->addSuccess($this->__('Records exported sucessfuly. Email has been sent.'));
+			}
+			else{
+				$session->addError($this->__('Email has not been sent.'));
+			}
+		}else{
+			$session->addError($this->__('There was an error during records export.'));
+		}*/
+
+	}
+
+
+	//public function sendEmailContent($filepathOrder, $filepathCustomer){
+	public function sendEmailContent($filepathOrder){
+
+		try{
+				
+			$mail = new Zend_Mail();
+
+			$mail->setFrom($this->getFrom())
+			->addTo($this->getTo())
+			->setSubject($this->getEmailSubject())
+			->setBodyText($this->__('This email contains exported records.'));
+
+			if(file_exists($filepathOrder)){
+				$at1 = new Zend_Mime_Part(file_get_contents($filepathOrder));
+				$at1->filename = basename($filepathOrder);
+				$at1->disposition = Zend_Mime::DISPOSITION_ATTACHMENT;
+				$at1->encoding = Zend_Mime::ENCODING_8BIT;
+				$mail->addAttachment($at1);
+			}
+			/*
+			if(file_exists($filepathCustomer)){
+				$at2 = new Zend_Mime_Part(file_get_contents($filepathCustomer));
+				$at2->filename = basename($filepathCustomer);
+				$at2->disposition = Zend_Mime::DISPOSITION_ATTACHMENT;
+				$at2->encoding = Zend_Mime::ENCODING_8BIT;
+				$mail->addAttachment($at2);
+			}
+			*/
+			$mail->send();
+				
+			return true;
+				
+		}catch(Exception $e){
+			Mage::log($e->getMessage(), null, self::logFile);
+			return false;
+		}
+
+		return false;
+	}
+	
+	public function getEnabled() {
+		return Mage::getStoreConfig('autoexportsection/autoexportgroup/active');
+	}
+	
+	public function getFrom() {
+		return Mage::getStoreConfig('autoexportsection/autoexportgroup/fromemail');
+	}
+	
+	public function getTo() {
+		return Mage::getStoreConfig('autoexportsection/autoexportgroup/toemail');
+	}
+	
+	public function getEmailSubject() {
+		return Mage::getStoreConfig('autoexportsection/autoexportgroup/emailsub');
+	}
+
+}

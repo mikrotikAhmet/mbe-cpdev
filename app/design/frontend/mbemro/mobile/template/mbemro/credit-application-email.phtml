@@ -1,0 +1,78 @@
+<?php
+
+$data = $this->getRequest()->getParams();
+
+$body = "Credit Application Form\n\n\n";
+$body .= "Company Information\n\n";
+$body .= (isset($data['order_pending'])) 			? "Order Pending: ".$data['order_pending']."\n" : "";
+$body .= (isset($data['account_number'])) 			? "Mbemrocatalog Account Number: ".$data['account_number']."\n" : "";
+$body .= (isset($data['business_name'])) 			? "Business Name: ".$data['business_name']."\n" : "";
+$body .= (isset($data['address_primary'])) 			? "Primary Street Address: ".$data['address_primary']."\n" : "";
+$body .= (isset($data['address_secondary'])) 		? "Secondary Street Address: ".$data['address_secondary']."\n" : "";
+$body .= (isset($data['city'])) 					? "City: ".$data['city']."\n" : "";
+if (isset($data['country']) && ($data['country'] == 'United States Of America')) {
+	$body .= (isset($data['state'])) 					? "State: ".$data['state']."\n" : "";	
+}
+$body .= (isset($data['zip'])) 						? "Zip/Postal Code: ".$data['zip']."\n" : "";
+$body .= (isset($data['country'])) 					? "Country: ".$data['country']."\n" : "";
+$body .= (isset($data['federal_id'])) 				? "Federal ID Number: ".$data['federal_id']."\n" : "";
+$body .= (isset($data['duns_num'])) 				? "D-U-N-S® Number: ".$data['duns_num']."\n" : "";
+$body .= "Shipping Address\n\n";
+$body .= (isset($data['address_shipping'])) 		? "Street Address: ".$data['address_shipping']."\n" : "";
+$body .= (isset($data['city_shipping'])) 			? "City: ".$data['city_shipping']."\n" : "";
+if (isset($data['country_shipping']) && ($data['country_shipping'] == 'United States Of America')) {
+	$body .= (isset($data['state_shipping'])) 					? "State: ".$data['state_shipping']."\n" : "";	
+}
+$body .= (isset($data['zip_shipping'])) 			? "Zip/Postal Code: ".$data['zip_shipping']."\n" : "";
+$body .= (isset($data['country_shipping'])) 		? "Country: ".$data['country_shipping']."\n" : "";
+$body .= "Contact Information\n\n";
+$body .= (isset($data['applicants_email'])) 				? "Applicant's E-mail Address: ".$data['applicants_email']."\n" : "";
+$body .= (isset($data['president'])) 				? "President: ".$data['president']."\n" : "";
+$body .= (isset($data['ceo_controller'])) 			? "CEO/Controller: ".$data['ceo_controller']."\n" : "";
+$body .= (isset($data['account_payables_contact_name'])) 	 ? "Account Payables Contact Name: ".$data['account_payables_contact_name']."\n" : "";
+$body .= (isset($data['account_payables_telephone_number'])) ? "Account Payables Telephone Number: ".$data['account_payables_telephone_number']."\n" : "";
+$body .= (isset($data['account_payables_fax_number'])) 		 ? "Account Payables Fax Number: ".$data['account_payables_fax_number']."\n" : "";
+$body .= (isset($data['account_payables_email_address'])) 	 ? "Account Payables Email Address: ".$data['account_payables_email_address']."\n" : "";
+$body .= (isset($data['purchasing_manager_contact_name'])) 	 ? "Purchasing Manager Contact Name: ".$data['purchasing_manager_contact_name']."\n" : "";
+$body .= "Profile\n\n";
+$body .= (isset($data['business_type'])) 			? "Business Type: ".$data['business_type']."\n" : "";
+$body .= (isset($data['years_established'])) 		? "Years Established: ".$data['years_established']."\n" : "";
+$body .= (isset($data['employee_no'])) 				? "Number of Employees: ".$data['employee_no']."\n" : "";
+$body .= (isset($data['sic_code'])) 				? "SIC CODE: ".$data['sic_code']."\n" : "";
+$body .= (isset($data['state_of_incorporation'])) 	? "State of Incorporation: ".$data['state_of_incorporation']."\n" : "";
+$body .= (isset($data['authorized_buyers'])) 		? "Authorized Buyers: ".$data['authorized_buyers']."\n" : "";
+$body .= "Request\n\n";
+$body .= (isset($data['billing_options'])) 			? "Billing Options: ".$data['billing_options']."\n" : "";
+$body .= (isset($data['requested_credit_line'])) 	? "Requested Credit Line: ".$data['requested_credit_line']."\n" : "";
+$body .= (isset($data['order_numbers_required'])) 	? "Purchase Order Numbers Required?: ".$data['order_numbers_required']."\n" : "";
+$body .= (isset($data['hard_copy_purchase_required']))	? "Hard Copy Purchase Required?: ".$data['hard_copy_purchase_required']."\n" : "";
+$body .= (isset($data['taxable'])) 					? "Taxable?: ".$data['taxable']."\n" : "";
+
+
+$mail = Mage::getModel('core/email');
+//$mail->setToName(Mage::getStoreConfig('trans_email/ident_support/name'));
+//$mail->setToEmail(Mage::getStoreConfig('trans_email/ident_support/email'));
+$mail->setToEmail("lpuroll@psmicorp.com");
+//$mail->setToEmail("sosingus@yahoo.com");
+
+$mail->setBody($body);
+$mail->setSubject('Credit Application');
+$mail->setFromEmail($data['applications@mbemrocatalog.com']);
+$mail->setFromName("New Credit Application");
+if(isset($data['applicants_email'])) $mail->setFromEmail($data['applicants_email']);
+if(isset($data['business_name'])) $mail->setFromName($data['business_name']);
+
+$mail->setType('text');//'html' or 'text'
+
+?>
+<?php if(!isset($data['business_name'])): ?>
+<ul class="messages"><li class="error-msg"><ul><li><span>Error: No Data.</span></li></ul></li></ul>
+<?php elseif($mail->send()): ?>
+<ul class="messages"><li class="success-msg"><ul><li><span>Your request has been sent.</span></li></ul></li></ul>
+<?php else: ?>
+<ul class="messages"><li class="error-msg"><ul><li><span>Error: Unable to send. Please try again or contact site administrator.</span></li></ul></li></ul>
+<?php endif; ?>
+<div class="buttons-set">
+    <p class="back-link"><a href="<?php echo Mage::helper('cms/page')->getPageUrl(13) ?>"><small>&laquo; </small>Back</a></p>
+	<p><a href="<?php echo Mage::helper('core/url')->getHomeUrl();?>">Continue</a></p>
+</div>

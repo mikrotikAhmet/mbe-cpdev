@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Netzkollektiv_CustomerDiscountRules>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Netzkollektiv_CustomerDiscountRules>
+    </modules>
+</config>

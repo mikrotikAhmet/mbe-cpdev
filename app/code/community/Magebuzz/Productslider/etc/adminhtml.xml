@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config>
+	<acl>
+		<resources>
+			<all>
+				<title>Allow Everything</title>
+			</all>
+			<admin>
+				<children>
+					<system>
+						<children>
+							<config>
+								<children>
+									<productslider translate="title">
+										<title>Productslider Permission Setting</title>
+										<sort_order>50</sort_order>
+									</productslider>								
+								</children>
+							</config>
+						</children>
+					</system>
+				</children>
+			</admin>
+		</resources>
+	</acl>	
+</config>

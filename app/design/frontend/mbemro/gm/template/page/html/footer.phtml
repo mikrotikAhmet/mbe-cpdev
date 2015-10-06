@@ -1,0 +1,80 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<div class="row">
+    <div class="col-xs-12" id="footer">
+        <?php //echo $this->getChildHtml() ?>
+
+        <div class="row visible-xs visible-sm">
+            <?php echo $this->getChildHtml('topLinks') ?>
+        </div>
+
+        <div class="row hidden-xs hidden-sm text-center">
+            <div class="footerNav">
+                <a href="<?php echo $this->getUrl('') ?>"><?php echo $this->__('Home'); ?></a><span class="separator"> | </span>
+                <a href="<?php echo $this->getUrl('about-us') ?>"><?php echo $this->__('About Us'); ?></a>
+            </div>
+        </div>
+
+        <div class="visible-xs">
+            <a href="tel:+18003302434">
+                <div class="row call text-center visible-xs visible-sm">
+                    <span class="call-title text-center">Call</span>
+                    <span class="call-text">800-330-2434</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="visible-sm">
+            <div class="row call text-center visible-xs visible-sm">
+                <span class="call-title text-center">Call</span>
+                <span class="call-text">800-330-2434</span>
+            </div>
+        </div>
+        <div class="clear"></div>
+
+        <p class="footer-signature">A venture of Production Services Management Inc. (PSMI)</p>
+        <div class="clear"></div>
+
+        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('copyright')->toHtml(); ?>
+        <div class="clear"></div>
+
+        <ul class="external">
+            <li>
+                <!-- DigiCert site seal -->
+                <div id="DigiCertClickID_7v-lKzq0" data-language="en_US"></div>
+                <!-- <img src="//seal.digicert.com/seals/cascade/?s=7v-lKzq0,3,m,gm.mbemrocatalog.com&amp;allow-test-seal" /> -->
+            </li>
+            <li>
+                <div id="mmbdc">
+                    <a href="<?php print Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);?>PSMI_2015-2016_MBECertificate.pdf">
+                        <img class="img-responsive" src="<?php echo $this->getSkinUrl('images/mmsdc.png') ?>" alt="MBE Certificate">
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

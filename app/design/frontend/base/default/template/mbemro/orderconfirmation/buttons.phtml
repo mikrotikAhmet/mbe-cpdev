@@ -1,0 +1,2 @@
+<?php $orderId = (int) $this->getRequest()->getParam('order_id');?>
+<a href="<?php echo Mage::getBaseUrl().'orderconfirmation/index/confirm/order_id/'.$orderId ?>" class="link-reorder"><?php echo $this->__('Confirm') ?></a>

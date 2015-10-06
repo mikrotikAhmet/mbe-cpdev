@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Cpdev_Eav>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Cpdev_Eav>
+    </modules>
+</config>

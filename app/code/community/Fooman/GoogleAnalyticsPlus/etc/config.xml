@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Fooman_GoogleAnalyticsPlus>
+            <version>0.11.5</version>
+            <depends>
+                <Mage_GoogleAnalytics />
+            </depends>
+        </Fooman_GoogleAnalyticsPlus>
+    </modules>
+
+    <global>
+        <models>
+            <googleanalyticsplus>
+                <class>Fooman_GoogleAnalyticsPlus_Model</class>
+            </googleanalyticsplus>
+        </models>
+        <helpers>
+            <googleanalyticsplus>
+                <class>Fooman_GoogleAnalyticsPlus_Helper</class>
+            </googleanalyticsplus>
+        </helpers>
+        <blocks>
+            <googleanalyticsplus>
+                <class>Fooman_GoogleAnalyticsPlus_Block</class>
+            </googleanalyticsplus>
+            <googleanalytics>
+                <rewrite>
+                     <ga>Fooman_GoogleAnalyticsPlus_Block_Ga</ga>
+                </rewrite>                     
+            </googleanalytics>
+        </blocks>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <googleanalyticsplus>
+                    <file>googleanalyticsplus.xml</file>
+                </googleanalyticsplus>
+            </updates>
+        </layout>
+    </frontend>
+    <default>
+        <google>
+            <analyticsplus>                
+                <keywordtracker>0</keywordtracker><!--keywordtracker = deprecated -->
+                <accountnumber2/>
+                <domainname2/>
+                <firstouch>0</firstouch>
+                <anonymise>0</anonymise>
+                <trackpageloadtime>0</trackpageloadtime>
+                <amounttotrack/>
+                <domainname/>
+                <conversionenabled>0</conversionenabled>
+                <conversionid/>
+                <conversionlanguage>en</conversionlanguage>
+                <conversionlabel>Purchase</conversionlabel>
+            </analyticsplus>
+        </google>
+    </default>
+    <phpunit>
+        <suite>
+            <modules>
+                <Fooman_GoogleAnalyticsPlus />
+            </modules>
+        </suite>
+    </phpunit>
+</config>
+

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<adminhtml_sales_order_create_index>
+		<reference name="head">
+			<action method="addItem"><type>skin_css</type><file>css/addrexx/addrexx.css</file></action>
+		</reference>
+		<reference name="js">
+			<block type="adminhtml/template" name="addrexx_config" template="addrexx/common_config.phtml" />
+		</reference>
+	</adminhtml_sales_order_create_index>
+	<adminhtml_sales_order_index>
+        <reference name="head">
+			<action method="addItem"><type>skin_css</type><file>css/addrexx/addrexx.css</file></action>
+        </reference>
+		<reference name="js">
+			<block type="adminhtml/template" name="addrexx_config" template="addrexx/common_config.phtml" />
+		</reference>
+    </adminhtml_sales_order_index>
+	<adminhtml_customer_new_key>
+        <reference name="head">
+			<action method="addItem"><type>skin_css</type><file>css/addrexx/addrexx.css</file></action>
+        </reference>
+		<reference name="js">
+			<block type="adminhtml/template" name="addrexx_config" template="addrexx/common_config.phtml" />
+		</reference>
+    </adminhtml_customer_new_key>
+	<adminhtml_customer_new>
+        <reference name="head">
+			<action method="addItem"><type>skin_css</type><file>css/addrexx/addrexx.css</file></action>
+        </reference>
+		<reference name="js">
+			<block type="adminhtml/template" name="addrexx_config" template="addrexx/common_config.phtml" />
+		</reference>
+    </adminhtml_customer_new>
+	<adminhtml_customer_edit>
+        <reference name="head">
+			<action method="addItem"><type>skin_css</type><file>css/addrexx/addrexx.css</file></action>
+        </reference>
+		<reference name="js">
+			<block type="adminhtml/template" name="addrexx_config" template="addrexx/common_config.phtml" />
+		</reference>
+    </adminhtml_customer_edit> 
+</layout>

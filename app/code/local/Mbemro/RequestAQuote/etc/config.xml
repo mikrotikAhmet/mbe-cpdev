@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mbemro_RequestAQuote>
+            <version>0.1.0</version>
+        </Mbemro_RequestAQuote>
+    </modules>
+</config>

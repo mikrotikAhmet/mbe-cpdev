@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_customer_edit>
+         <reference name="customer_edit_tabs">
+         	<action method="addTab">
+                <name>customer_edit_tab_container</name>
+                <block>customcatalog/adminhtml_customer_edit_tab_container</block>
+                <!--
+                <name>customer_edit_tab_action</name>
+                <block>customcatalog/adminhtml_customer_edit_tab_action</block>
+                -->
+            </action>
+            <!--
+            <action method="addTab">
+                <name>customer_edit_tab_product</name>
+                <block>customcatalog/adminhtml_customer_edit_tab_product</block>
+            </action>
+        -->
+        </reference>
+   </adminhtml_customer_edit>
+
+</layout>

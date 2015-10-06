@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <vbw_punchout translate="title" module="vbw_punchout">
+                                        <title>Punchout</title>
+                                        <sort_order>0</sort_order>
+                                    </vbw_punchout>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <!--
+    <menu>
+        <sales>
+            <children>
+                <Punchout translate="title">
+                    <title>Punchout Stash</title>
+                    <sort_order>30</sort_order>
+                    <action>punchout/adminhtml_stash</action>
+                </Punchout>
+            </children>
+        </sales>
+    </menu>
+    -->
+</config>

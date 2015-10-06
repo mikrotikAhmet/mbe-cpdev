@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Mbemro_Orderconfirmation>
+
+            <active>true</active>
+
+            <codePool>local</codePool>
+
+        </Mbemro_Orderconfirmation>
+    </modules>
+</config>

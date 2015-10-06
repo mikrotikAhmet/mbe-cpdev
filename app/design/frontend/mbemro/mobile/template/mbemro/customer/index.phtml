@@ -1,0 +1,336 @@
+<?php
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     mbemro_default
+ * @copyright   Copyright (c) 2014 MBE MRO
+ * @license
+ */
+/* @var $this Mage_Core_Block_Template */
+?>
+<?php
+$_helper = $this->helper('customerreports/customerreports');
+$_items = $_helper->getItemCount() > 0 ? $_helper->getMyPurchasesCollection() : null;
+$json = $_helper->prepareResults($_items);
+?>
+<script type="text/javascript">
+
+	jQuery( document ).ready(function($) {
+		/*var jsonData = <?php print str_replace("},", "},\n", $json); ?>;*/
+		//console.log(jsonData);
+
+		jQuery('#customer_reports_order_start').datepicker({"dateFormat" : "d M, yy", changeMonth: true, changeYear: true});
+		jQuery('#customer_reports_order_end').datepicker({"dateFormat" : "d M, yy", changeMonth: true, changeYear: true});
+
+		var jsonData = '<?php print $json;?>';
+        if (jsonData.length > 58) {
+            loadPivot(mbemroParseJSON(jsonData));
+        } else {
+            jQuery('#report').hide();
+            jQuery('#report-empty').show();
+        }
+
+
+		jQuery('#customer_reports_custom_time').click(function(){
+			if (jQuery('#customer_reports_order_start').val() == "") {
+				jQuery('#customer_reports_order_start').datepicker("show");
+			};
+
+		});
+
+		jQuery('#excel').click(function(){
+			var last_call = jQuery('#last_call').val();
+			if (last_call == "") {
+				//use defaults
+				last_call = "<?php print Mage::getBaseUrl()?>customerreports/index/getexcel/" +
+    				"?time_limit=1&time_limit_start=&time_limit_end=&orders_all=1&order_choices[]="
+					;
+			};
+
+			last_call = last_call.replace("mypurchases", "getexcel");
+
+			spinner.spin(spin_target);
+
+			window.location.href = last_call
+
+			spinner.stop();
+			return;
+
+		});
+
+        $.propHooks.checked = {
+            set: function(elem, value, name) {
+                var ret = (elem[ name ] = value);
+                $(elem).trigger("change");
+                return ret;
+            }
+        };
+
+		function formatDate(dateString)
+		{
+			var date = new Date(dateString);
+			return date.getFullYear() + "-" + (date.getMonth() +1 ) + "-" + date.getDate();
+		}
+
+        $('#selectAll').click(function(e) {
+            e.preventDefault();
+            $('#chk_complete').prop('checked', true);
+            $('#chk_pending').prop('checked', true);
+            $('#chk_processing').prop('checked', true);
+            $('#chk_waiting').prop('checked', true);
+            $('#chk_canceled').prop('checked', true);
+        });
+
+        $('#selectNone').click(function(e) {
+            e.preventDefault();
+            $('#chk_complete').prop('checked', false);
+            $('#chk_pending').prop('checked', false);
+            $('#chk_processing').prop('checked', false);
+            $('#chk_waiting').prop('checked', false);
+            $('#chk_canceled').prop('checked', false);
+        });
+
+        function selectCustomTime()
+        {
+            $('#customer_reports_custom_time').prop('checked', true);
+        }
+
+        $('#customer_reports_order_start').change(selectCustomTime);
+        $('#customer_reports_order_end').change(selectCustomTime);
+
+        function selectCustomStatus()
+        {
+            $('#customer_reports_custom_orders').prop('checked', true);
+        }
+
+        $('#chk_complete').change(selectCustomStatus);
+        $('#chk_pending').change(selectCustomStatus);
+        $('#chk_canceled').change(selectCustomStatus);
+        $('#chk_waiting').change(selectCustomStatus);
+        $('#chk_processing').change(selectCustomStatus);
+
+		var selectedOptions = "";
+
+    	jQuery('#apply').click(function(){
+
+    		var customer_reports_time = jQuery('#customer_reports_all_time').is( ":checked" ) ? 1 : 2;
+    		var customer_reports_order_start = "";
+    		var customer_reports_order_end = "";
+    		if (customer_reports_time === 2) {
+    			if ((jQuery('#customer_reports_order_start').val() == "") || (jQuery('#customer_reports_order_end').val() == "")) {
+    				alert('Please provide time interval for the report');
+    				return;
+    			};
+    			customer_reports_order_start = formatDate(jQuery('#customer_reports_order_start').val());
+    			customer_reports_order_end = formatDate(jQuery('#customer_reports_order_end').val());
+
+    		};
+    		selectedOptions = "Report for " + (customer_reports_time == 1 ? " all time" : jQuery('#customer_reports_order_start').val() + "-" + jQuery('#customer_reports_order_end').val()) ;
+
+    		var orders_all = jQuery('#customer_reports_all_orders').is(':checked') ? 1 : 2;
+    		var order_choices = "";
+
+    		var ch = ""
+			if (jQuery('#chk_complete').is(':checked')) {
+				order_choices +="&order_choices[]=complete";
+				ch += ",Complete";
+			};
+
+			if (jQuery('#chk_pending').is(':checked')) {
+				order_choices += "&order_choices[]=pending";
+				ch += ",Pending";
+			};
+
+			if (jQuery('#chk_canceled').is(':checked')) {
+				order_choices += "&order_choices[]=canceled";
+				ch += ",Canceled";
+			};
+			if (jQuery('#chk_waiting').is(':checked')) {
+				order_choices += "&order_choices[]=waiting_confirmation";
+				ch += ",Waiting";
+			};
+			if (jQuery('#chk_processing').is(':checked')) {
+				order_choices += "&order_choices[]=processing";
+				ch += ",Processing";
+			};
+
+			if ((orders_all == 2) && (order_choices == "")) {
+				alert("Plase chose at least one order status to dispay.");
+				return;
+			};
+
+			if (orders_all == 1) {
+				selectedOptions += " and every status.";
+			} else {
+				selectedOptions += " and status : " + ch.substring(1);
+			}
+
+
+			var url = "<?php print Mage::getBaseUrl()?>customerreports/index/mypurchases/" +
+    				"?time_limit="        + customer_reports_time +
+					"&time_limit_start=" + encodeURIComponent(customer_reports_order_start) +
+					"&time_limit_end="   + encodeURIComponent(customer_reports_order_end) +
+					"&orders_all="   + orders_all + order_choices
+					;
+			jQuery('#last_call').val(url);
+
+
+			spinner.spin(spin_target);
+			xmlhttp.onreadystatechange=filterApplied;
+
+    		xmlhttp.open("GET", url,true);
+			xmlhttp.send();
+
+		});
+
+    	function loadPivot(json) {
+	    	jQuery('#report').pivot({
+		        source: json,
+		        formatFunc: function (n) { return jQuery.fn.pivot.formatUK(n, 2); },
+		        //onResultCellClicked: function (data) { alert(dumpObj(data, "data")); },
+		        sortPivotColumnHeaders:false //we want months non sorted to get them in the right order.
+	    	});
+    	}
+
+    	var xmlhttp;
+			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+			   xmlhttp=new XMLHttpRequest();
+			} else { // code for IE6, IE5
+			  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+
+
+    	function filterApplied()
+		  {
+		  	if (xmlhttp.readyState==4) {
+		  		spinner.stop();
+		  	};
+
+		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		    {
+		      var jsonobj = JSON ? JSON.parse(xmlhttp.responseText) : $.parseJSON(xmlhttp.responseText);
+		      loadPivot(jsonobj);
+              if (xmlhttp.responseText.length <= 58) {
+                jQuery('#report').hide();
+                jQuery('#report-empty').show();
+              } else {
+                jQuery('#report').show();
+                jQuery('#report-empty').hide();
+              }
+
+		      jQuery('#customerreports-message').html(selectedOptions);
+		    }
+		  }
+
+		function xlsPrepared()
+		{
+		  	if (xmlhttp.readyState==4) {
+		  		spinner.stop();
+		  	};
+		}
+
+
+		function mbemroParseJSON(jsonString) {
+			return JSON ? JSON.parse(jsonString) : $.parseJSON(jsonString);
+		}
+
+		var spin_opts = {
+		  lines: 13, // The number of lines to draw
+		  length: 20, // The length of each line
+		  width: 10, // The line thickness
+		  radius: 30, // The radius of the inner circle
+		  corners: 1, // Corner roundness (0..1)
+		  rotate: 0, // The rotation offset
+		  direction: 1, // 1: clockwise, -1: counterclockwise
+		  color: '#000', // #rgb or #rrggbb or array of colors
+		  speed: 1, // Rounds per second
+		  trail: 60, // Afterglow percentage
+		  shadow: false, // Whether to render a shadow
+		  hwaccel: false, // Whether to use hardware acceleration
+		  className: 'spinner', // The CSS class to assign to the spinner
+		  zIndex: 2e9, // The z-index (defaults to 2000000000)
+		  top: '70%', // Top position relative to parent
+		  left: '50%' // Left position relative to parent
+		};
+		var spin_target = document.getElementById('spin');
+		var spinner = new Spinner(spin_opts);
+
+	});
+
+
+</script>
+<div class="row block block-list my-purchases">
+    <div class="page-title">
+        <h1><?php echo $this->__('My Purchases') ?></h1>
+    </div>
+
+    <div class="block-content">
+
+        <div class="row">
+            <h2>Filter report</h2>
+            <div class="col-lg-4">
+                <h3>Time</h3>
+                <input type="radio" name="customer_reports_time" id="customer_reports_all_time" checked="checked" value="1"/>
+                <label for="customer_reports_all_time" class="filter-all-time">All purchases so far</label><br>
+                <input type="radio" name="customer_reports_time" id="customer_reports_custom_time" value="2"/>
+                <label for="customer_reports_custom_time"></label>
+                <input type="text" name="customer_reports_order_start" id="customer_reports_order_start" placeholder="Pick start date" class="datepicker" value="" readonly/>
+                -
+                <input type="text" name="customer_reports_order_end" id="customer_reports_order_end" class="datepicker" placeholder="Pick end date" value="" readonly/>
+            </div>
+            <div class="col-lg-5">
+                <h3>Status</h3>
+                <input type="radio" name="customer_reports_orders" id="customer_reports_all_orders" checked="checked" value="1" />
+                <label for="customer_reports_all_orders">All Orders</label>
+                <br>
+                <input type="radio" name="customer_reports_orders" id="customer_reports_custom_orders" value="2" />
+                <label for="customer_reports_custom_orders">Chose status (<a href="#" id="selectAll">Select All</a> | <a href="#" id="selectNone">Select none</a>)</label>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <input type="checkbox" name="chk_complete" id="chk_complete" checked="checked" /> <label for="chk_complete">Complete</label>
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="checkbox" name="chk_pending" id="chk_pending"  checked="checked" /> <label for="chk_pending">Pending</label>
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="checkbox" name="chk_processing" id="chk_processing" checked="checked" /> <label for="chk_processing">Processing</label>
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="checkbox" name="chk_waiting" id="chk_waiting" checked="checked" /> <label for="chk_waiting">Waiting(Holded)</label>
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="checkbox" name="chk_cancelled" id="chk_canceled" checked="checked" /> <label for="chk_canceled">Canceled</label>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="col-lg-3">
+                <div class="row">
+                    <button name="apply" id="apply" class="btn btn-apply"><span><span></span></span></button>
+                </div>
+                <div class="row">
+                    <button name="excel" id="excel" class="btn btn-export-xls"><span><span></span></span></button>
+                </div>
+            </div>
+        </div>
+
+
+        <input type="hidden" name="last_call" id="last_call" value="" />
+
+        <h2 id="customerreports-message">Report for all time and every status.</h2>
+        <div id="report"></div>
+        <div id="report-empty" style="display: none;">No data.</div>
+        <div id="spin"></div>
+    </div>
+</div>

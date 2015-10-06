@@ -1,0 +1,48 @@
+<?php
+
+$errorMessages = array (
+    '000' => "
+        An error has prevented your punchout cart from  being compiled.<br>
+        Please notify our customer service of this problem.",
+    '101' => "
+        Your punchout session has already been closed.<br>
+        Please return to your procurement system and begin a new session.",
+    '100' => "
+        Your punchout session could not be found.<br>
+        Please return to your procurement system and begin a new session.",
+    '300' => "
+        This is a Punchout Demo Session.<br>
+        No procurement connection available."
+
+);
+
+$form = $this->getPunchoutOrderForm();
+if (empty($form)) {
+    $error = $this->getError();
+    $code = '0';
+    if (is_array($error)
+            && isset($error['code'])) {
+        $code = $error['code'];
+    }
+    if (!isset($errorMessages[$code])) {
+        $code = '000';
+    }
+}
+
+$label = $this->getButtonLabel();
+$help = $this->getButtonHelpText();
+
+?>
+<?php // if ($this->isPossibleOnepageCheckout()):?>
+<div style=''>
+    <?php if (!empty($form)) {  ?>
+    <button type="button" title="<?php echo $this->__($label) ?>" class="button btn-proceed-checkout btn-checkout<?php if ($this->isDisabled()):?> no-checkout<?php endif; ?>"<?php if ($this->isDisabled()):?> disabled="disabled"<?php endif; ?> onclick="<?php echo $this->getPunchoutOnclick(); ?>"><span><span><?php echo $this->__($label) ?></span></span></button>
+    <?php echo $help; ?>
+	<?php echo $form; ?>
+    <?php } else { ?>
+    <i style='color:#ff0000;'>
+        <?php echo $errorMessages[$code]; ?>
+    </i>
+    <?php } ?>
+</div>
+<?php // endif?>

@@ -1,0 +1,89 @@
+<div id="products-list">
+    <?php foreach ($_productCollection as $_product): ?>
+        <div class="row">
+            <div class="col-xs-3">
+
+            <?php // Product Image ?>
+            <a href="<?php echo $_helper->getMbemroProductUrl($_product); ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(135); ?>" class="img-responsive" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
+            </div>
+
+            <?php // Product description ?>
+
+            <div class="col-xs-6 hidden-xs">
+					
+                    <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
+                    <h2 class="product-name"><a href="<?php echo $_helper->getMbemroProductUrl($_product); ?>" title="<?php echo $_productNameStripped; ?>"><?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></a></h2>
+                    <?php if($_product->getRatingSummary()): ?>
+                    <?php echo $this->getReviewsSummaryHtml($_product) ?>
+                    <?php endif; ?>
+                    
+                    <div class="desc std">
+                        <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="row">
+                        <div class="col-xs-4"><?php echo $this->getPriceHtml($_product, true) ?></div>
+                        <div class="col-xs-4"><a href="<?php echo $_helper->getMbemroProductUrl($_product); ?>" title="<?php echo $_productNameStripped ?>" class="link-learn"><?php echo $this->__('Learn More') ?></a></div>
+                        <div class="col-xs-4">
+                        <?php if($_product->isSaleable()): ?>
+                            <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                        <?php endif; ?>
+                        </div>
+                    </div>
+                    
+                    </ul>
+                </div>
+                <div class="col-xs-9 visible-xs">
+                    
+                    <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
+                    <h2 class="product-name"><a href="<?php echo $_helper->getMbemroProductUrl($_product); ?>" title="<?php echo $_productNameStripped; ?>"><?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></a></h2>
+                    <?php if($_product->getRatingSummary()): ?>
+                    <?php echo $this->getReviewsSummaryHtml($_product) ?>
+                    <?php endif; ?>
+                    
+                    <div class="desc std">
+                        <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="row">
+                        <div class="col-xs-4"><?php echo $this->getPriceHtml($_product, true) ?></div>
+                        <div class="col-xs-4"><a href="<?php echo $_helper->getMbemroProductUrl($_product); ?>" title="<?php echo $_productNameStripped ?>" class="link-learn"><?php echo $this->__('Learn More') ?></a></div>
+                        <div class="col-xs-4">
+                        <?php if($_product->isSaleable()): ?>
+                            <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                        <?php endif; ?>
+                        </div>
+                    </div>
+                    
+                    </ul>
+                </div>
+
+                <div class="col-xs-3 hidden-xs">
+
+                        <div>MFG#: <?php print $_product->getMfgPart();?></div>
+                        <?php $brand_name = $_product->getAttributeText('brand_name'); ?>
+                        <?php if($brand_name):?>
+                        <div>Manufacturer: <?php print $brand_name; ?></div>
+                        <?php endif;?>
+                        <?php $coating = $_product->getAttributeText('coating'); ?>
+                        <?php if($coating):?>
+                        <div>Coating: <?php print $coating; ?></div>
+                        <?php endif;?>
+                        <?php $flute_length = $_product->getAttributeText('flute_length'); ?>
+                        <?php if($flute_length):?>
+                        <div>Flute Length: <?php print $flute_length; ?></div>
+                        <?php endif;?>
+                        <?php $material = $_product->getAttributeText('material'); ?>
+                        <?php if($material):?>
+                        <div>Material: <?php print $material; ?></div>
+                        <?php endif;?>
+                        <?php $manufacturer = $_product->getAttributeText('manufacturer'); ?>
+                        <?php if($manufacturer):?>
+                        <div>Manufacturer: <?php print $manufacturer; ?></div>
+                        <?php endif;?>
+                </div>
+            </div>
+        
+    <?php endforeach; ?>
+    </div>
+    <script type="text/javascript">decorateList('products-list', 'none-recursive')</script>

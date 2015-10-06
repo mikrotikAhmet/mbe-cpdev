@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <sales_email>
+            <groups>
+                <request_a_quote translate="label">
+                    <label>Request A Quote</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>9</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <recipient_email translate="label">
+                            <label>Recipient Email</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <!--<comment>Comma-separated.</comment>-->
+                        </recipient_email>
+                    </fields>
+                </request_a_quote>
+            </groups>
+        </sales_email>
+    </sections>
+</config>

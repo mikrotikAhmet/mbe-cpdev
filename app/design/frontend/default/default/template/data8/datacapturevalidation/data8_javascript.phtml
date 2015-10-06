@@ -1,0 +1,142 @@
+<?php if (Mage::getStoreConfig('Data8/Data8_group/Data8_license',Mage::app()->getStore()) != 'None') { ?>
+
+<div id="data8-postcodelookup-dropdown" style="position: absolute; display: none; background-color: white; padding: 1px">
+  <select id="data8-postcodelookup-list" multiple="multiple" size="10"></select>
+  <div style="text-align: right; margin-top: 1em">
+    <button id="data8-postcodelookup-ok" type="button" class="button" style="margin-left: 10px">
+      <span>
+        <span>OK</span>
+      </span>
+    </button>
+    <button id="data8-postcodelookup-cancel" type="button" class="button" style="margin-left: 10px">
+      <span>
+        <span>Cancel</span>
+      </span>
+    </button>
+  </div>
+</div>
+
+<script type="text/javascript">
+  
+  function data8PostcodeLookupListOnBlur() {
+    if (document.activeElement == null || document.activeElement.id != 'data8-postcodelookup-ok')
+      jQuery('#data8-postcodelookup-dropdown').hide('fast');
+  }
+  
+  function data8PostcodeLookupInit () {
+    jQuery('#data8-postcodelookup-list').blur(function(e) {
+      setTimeout('data8PostcodeLookupListOnBlur()', 100);
+    })
+    .dblclick(function(e) {
+      jQuery('#data8-postcodelookup-ok').click()
+    });
+  
+    jQuery('#data8-postcodelookup-ok').click(function(e) {
+      document.getElementById('data8-postcodelookup-list').applySelectedAddress();
+      jQuery('#data8-postcodelookup-dropdown').hide('fast');
+    });
+  }
+  
+  data8PostcodeLookupInit();
+</script>
+
+<?php } ?>
+
+<script type='text/javascript'>
+
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.src = 'https://webservices.data-8.co.uk/javascript/loader.ashx?key=<?php echo Mage::getStoreConfig('Data8/Data8_group/Data8_key',Mage::app()->getStore()); ?>&load=AddressCapture,EmailValidation,TelephoneValidation,USTelephoneValidation';
+  document.getElementsByTagName('head')[0].appendChild(s);
+  
+<?php if (Mage::getStoreConfig('Data8/Data8_group/Data8_license',Mage::app()->getStore()) != 'None') { ?>
+  new data8.magentoPostcodeLookupButton(
+    [
+      { element: 'company', field: 'organisation' },
+      { element: 'street_1', field: 'line1' },
+      { element: 'street_2', field: 'line2' },
+      { element: 'city', field: 'town' },
+      { element: 'region', field: 'county' },
+      { element: 'zip', field: 'postcode' },
+      { element: 'country', field: 'country' }
+    ],
+    {
+      license: '<?php echo Mage::getStoreConfig('Data8/Data8_group/Data8_license',Mage::app()->getStore()); ?>',
+      addressList: 'data8-postcodelookup-list',
+      addressContainer: 'data8-postcodelookup-dropdown'
+    }
+  ).show();
+  
+  new data8.magentoPostcodeLookupButton(
+    [
+      { element: 'billing:company', field: 'organisation' },
+      { element: 'billing:street1', field: 'line1' },
+      { element: 'billing:street2', field: 'line2' },
+      { element: 'billing:city', field: 'town' },
+      { element: 'billing:region', field: 'county' },
+      { element: 'billing:postcode', field: 'postcode' },
+      { element: 'billing:country_id', field: 'country' }
+    ],
+    {
+      license: '<?php echo Mage::getStoreConfig('Data8/Data8_group/Data8_license',Mage::app()->getStore()); ?>',
+      addressList: 'data8-postcodelookup-list',
+      addressContainer: 'data8-postcodelookup-dropdown'
+    }
+  ).show();
+
+  new data8.magentoPostcodeLookupButton(
+    [
+      { element: 'shipping:company', field: 'organisation' },
+      { element: 'shipping:street1', field: 'line1' },
+      { element: 'shipping:street2', field: 'line2' },
+      { element: 'shipping:city', field: 'town' },
+      { element: 'shipping:region', field: 'county' },
+      { element: 'shipping:postcode', field: 'postcode' },
+      { element: 'shipping:country_id', field: 'country' }
+    ],
+    {
+      license: '<?php echo Mage::getStoreConfig('Data8/Data8_group/Data8_license',Mage::app()->getStore()); ?>',
+      addressList: 'data8-postcodelookup-list',
+      addressContainer: 'data8-postcodelookup-dropdown'
+    }
+  ).show();
+
+  <?php } ?>
+
+  <?php if (Mage::getStoreConfig('Data8/Data8_group/Data8_emailValidationLevel',Mage::app()->getStore()) != 'None') { ?>
+
+  Validation.add('data8-email-validation', '<?php echo $this->__('Please check your email address') ?>', function(value, element) {
+    if (!value)
+      return true;
+    var result = element.data8_email_validation_result;
+    if (result == null)
+      result = true;
+    return result;
+  });
+  
+  var emailFields = jQuery('.validate-email');
+  data8.emailValidator.add(
+    emailFields,
+    {
+      level: '<?php echo Mage::getStoreConfig('Data8/Data8_group/Data8_emailValidationLevel',Mage::app()->getStore()); ?>'
+    });
+
+  <?php } ?>
+
+  <?php if (Mage::getStoreConfig('Data8/Data8_group/Data8_telephoneValidation',Mage::app()->getStore())) { ?>
+
+  Validation.add('data8-telephone-validation', '<?php echo $this->__('Please check your telephone number') ?>', function(value, element) {
+    if (!value)
+      return true;
+    var result = element.data8_telephone_validation_result;
+    if (result == null)
+      result = true;
+    return result;
+  });
+
+  data8.telephoneValidator.add('telephone', 'country');
+  data8.telephoneValidator.add('billing:telephone', 'billing:country_id');
+  data8.telephoneValidator.add('billing:fax', 'billing:country_id');
+
+  <?php } ?>
+</script>

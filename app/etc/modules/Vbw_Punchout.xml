@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Vbw_Punchout>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Mage_Core />
+                <Mage_Catalog />
+                <Mage_Customer />
+                <Mage_Wishlist />
+                <Mage_Checkout />
+            </depends>
+        </Vbw_Punchout>
+    </modules>
+</config>

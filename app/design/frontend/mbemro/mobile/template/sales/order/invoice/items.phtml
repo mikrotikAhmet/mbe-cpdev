@@ -1,0 +1,71 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php  $_order = $this->getOrder() ?>
+<div class="row hidden-xs hidden-sm">
+<p class="order-links"><a href="<?php echo $this->getPrintAllInvoicesUrl($_order) ?>" onclick="this.target='_blank'" class="link-print"><?php echo $this->__('Print All Invoices') ?></a></p>
+</div>
+<div class="row visible-xs visible-sm text-center no-border">
+    <a href="<?php echo $this->getPrintAllInvoicesUrl($_order) ?>" onclick="this.target='_blank'" class="btn btn-default link-print"><?php echo $this->__('Print All Invoices') ?></a>
+</div>
+
+<?php foreach ($_order->getInvoiceCollection() as $_invoice): ?>
+<div class="row hidden-xs hidden-sm">
+    <h2 class="sub-title"><?php echo $this->__('Invoice #') ?><?php echo $_invoice->getIncrementId(); ?> <span class="separator">|</span> <a href="<?php echo $this->getPrintInvoiceUrl($_invoice) ?>" onclick="this.target='_blank'" class="link-print"><?php echo $this->__('Print Invoice') ?></a></h2>
+</div>
+<div class="row visible-xs visible-sm btn-group btn-group-justified">
+
+    <a href="#" class="btn btn-default disabled sub-title"><?php echo $this->__('Invoice #') ?><?php echo $_invoice->getIncrementId(); ?></a> <a href="<?php echo $this->getPrintInvoiceUrl($_invoice) ?>" onclick="this.target='_blank'" class="btn btn-default link-print"><?php echo $this->__('Print Invoice') ?></a>
+</div>
+<h3 class="table-caption"><?php echo $this->__('Items Invoiced') ?></h3>
+<div class="row data-table" id="my-invoice-table-<?php echo $_invoice->getId(); ?>">
+
+    <div class="col-xs-6 col-sm-4"><?php echo $this->__('Product Name') ?></div>
+    <div class="col-sm-2 hidden-xs"><?php echo $this->__('SKU') ?></div>
+    <div class="hidden-xs col-sm-2 text-right"><?php echo $this->__('Price') ?></div>
+    <div class="col-xs-3 col-sm-2 text-center"><?php echo $this->__('Qty') ?></div>
+    <div class="col-xs-3 col-sm-2 text-right"><?php echo $this->__('Subtotal') ?></div>
+    
+</div>
+
+<?php $_items = $_invoice->getAllItems(); ?>
+    <?php $_count = count($_items) ?>
+    <?php foreach ($_items as $_item): ?>
+    <?php if ($_item->getOrderItem()->getParentItem()) continue; ?>
+    
+        <?php echo $this->getItemHtml($_item) ?>
+    
+    <?php endforeach; ?>
+    
+<script type="text/javascript">decorateTable('my-invoice-table-<?php echo $_invoice->getId(); ?>', {'tbody' : ['odd', 'even'], 'tbody tr' : ['first', 'last']})</script>
+<div class="totals">
+<?php echo $this->getInvoiceTotalsHtml($_invoice)?>
+</div>
+<?php echo $this->getInvoiceCommentsHtml($_invoice)?>
+
+<?php endforeach; ?>
+
+

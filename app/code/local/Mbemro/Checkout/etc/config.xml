@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Mbemro_Checkout>
+      <version>0.1.0</version>
+    </Mbemro_Checkout>
+  </modules>
+  <frontend>
+		<routers>
+			<checkout>
+                <args>
+                	<frontName>onepage</frontName>
+                    <modules>
+                        <Mbemro_Checkout before="Mage_Checkout">Mbemro_Checkout</Mbemro_Checkout>
+                    </modules>
+                </args>
+            </checkout>
+		</routers>
+  </frontend>
+</config> 

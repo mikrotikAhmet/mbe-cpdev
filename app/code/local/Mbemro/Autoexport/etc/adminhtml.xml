@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+	<config>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<autoexportsection translate="title" module="autoexport">
+											<title>AutoExport Section Section</title>
+											<sort_order>0</sort_order>
+										</autoexportsection>
+										<manualexportsection translate="title" module="autoexport">
+											<title>ManualExport Section Section</title>
+											<sort_order>10</sort_order>
+										</manualexportsection>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</config>

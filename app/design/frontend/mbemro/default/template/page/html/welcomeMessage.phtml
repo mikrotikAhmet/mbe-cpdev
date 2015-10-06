@@ -1,0 +1,15 @@
+<?php
+$session = Mage::getSingleton('customer/session');
+					if($session->isLoggedIn()) {
+					?>
+					<p class="welcome-msg">
+					<?php
+					   $customer = $session->getCustomer();
+					   //echo $customer->getName();
+					   echo "Welcome, " . $customer->getFirstname() . ".&nbsp;";
+					   ?>
+					   <a href="<?php echo Mage::helper('customer')->getLogoutUrl();?>">Not <?php echo $customer->getFirstname();?>?</a>
+					</p>
+					   <?php
+					}
+					?>

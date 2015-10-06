@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Addrexx
+ *
+ * NOTICE OF LICENSE
+ *
+ * @category	    design
+ * @package     default_default
+ * @author     Addrexx <info@addrexx.com>
+ */
+-->
+<layout version="0.1.0">
+		<checkout_onepage_index>
+			<reference name="head">
+				<block type="page/html" name="addrexx_config" template="addrexx/common_config.phtml"/>
+				<action method="addItem"><type>skin_css</type><file>css/addrexx/addrexx.css</file></action>
+			</reference>
+		</checkout_onepage_index>
+		<onestepcheckout_index_index>
+			<reference name="head">
+				<block type="page/html" name="addrexx_config" template="addrexx/common_config.phtml"/>
+				<action method="addItem"><type>skin_css</type><file>css/addrexx/addrexx.css</file></action>
+			</reference>
+		</onestepcheckout_index_index>
+		<onepagecheckout_index_index>
+			<reference name="head">
+				<block type="page/html" name="addrexx_config" template="addrexx/common_config.phtml"/>
+				<action method="addItem"><type>skin_css</type><file>css/addrexx/addrexx.css</file></action>
+			</reference>
+		</onepagecheckout_index_index>
+		<customer_address_new>  
+			<reference name="head">
+				<block type="page/html" name="addrexx_config" template="addrexx/common_config.phtml"/>
+				<action method="addItem"><type>skin_css</type><file>css/addrexx/addrexx.css</file></action>
+			</reference>
+	   </customer_address_new>
+	   <customer_account_edit>  
+			<reference name="head">
+				<block type="page/html" name="addrexx_config" template="addrexx/common_config.phtml"/>
+				<action method="addItem"><type>skin_css</type><file>css/addrexx/addrexx.css</file></action>
+			</reference>
+	   </customer_account_edit>
+	   <checkout_multishipping>  
+			<reference name="head">
+				<block type="page/html" name="addrexx_config" template="addrexx/common_config.phtml"/>
+				<action method="addItem"><type>skin_css</type><file>css/addrexx/addrexx.css</file></action>
+			</reference>
+	   </checkout_multishipping>
+	   <customer_account_create>  
+			<reference name="head">
+				<block type="page/html" name="addrexx_config" template="addrexx/common_config.phtml"/>
+				<action method="addItem"><type>skin_css</type><file>css/addrexx/addrexx.css</file></action>
+			</reference>
+	   </customer_account_create>
+		<customer_address_form>  
+			<reference name="head">
+				<block type="page/html" name="addrexx_config" template="addrexx/common_config.phtml"/>
+				<action method="addItem"><type>skin_css</type><file>css/addrexx/addrexx.css</file></action>
+			</reference>
+	   </customer_address_form>
+		
+</layout>

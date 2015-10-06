@@ -1,0 +1,68 @@
+<?php
+// var $this Mirasvit_SearchAutocomplete_Block_Form
+$_helper          =  Mage::helper('catalogsearch');
+$_value           = $_helper->getEscapedQueryText();
+$_currentCategory = Mage::getSingleton('core/app')->getRequest()->getParam('cat');
+$_currentIndex    = Mage::getSingleton('core/app')->getRequest()->getParam('index');
+$_filterType      = $this->getFilterType();
+$_url             = $this->getAjaxUrl();
+?>
+
+<form action="<?php echo $this->helper('catalogsearch')->getResultUrl() ?>" method="get"
+    data-tip="<?php echo $this->__(Mage::getStoreConfig('searchautocomplete/general/tip')) ?>"
+    data-url="<?php echo $_url ?>"
+    data-minchars="<?php echo Mage::getStoreConfig('searchautocomplete/general/min_chars') ?>"
+    data-delay="<?php echo Mage::getStoreConfig('searchautocomplete/general/delay') ?>">
+
+<div class="row visible-sm visible-xs" id="search-under-menu">
+    <div class="col-xs-2">
+        <div class="btn-group" id="btn-seearch-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="search-group" data-value="-1">
+              <?php echo $this->__('All') ?> <span class="caret"></span>             
+            </button>
+            <ul class="dropdown-menu" id="search-mobile">
+                <li><a href="#" data-value=""><?php echo $this->__('All') ?></a></li>
+                <?php if ($_filterType == 'category'): ?>
+                <?php foreach ($this->getCategories() as $_category): ?>
+                <li <?php if ($_currentCategory == $_category->getId()): ?>class="active"<?php endif ?>>
+                    <a class="search-menu" href="#" data-value="<?php echo $_category->getId() ?>"><?php echo $_category->getName() ?></a>
+                </li>
+                <?php endforeach ?>
+                <?php elseif ($_filterType == 'index'): ?>
+                <?php foreach ($this->getIndexes() as $_code => $_name): ?>
+                    <li <?php if ($_currentIndex == $_code): ?>class="active"<?php endif ?>>
+                        <a href="#" data-value="<?php echo $_code ?>"><?php echo $_name ?></a>
+                    </li>
+                    <?php endforeach ?>
+                <?php endif; ?>
+            </ul>
+        </div>
+    </div>
+    <div class="col-xs-10">
+        <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search entire store here..." autocomplete="off" name="<?php echo $_helper->getQueryParamName() ?>" value="<?php echo $_helper->getEscapedQueryText() ?>" maxlength="<?php echo $_helper->getMaxQueryLength() ?>">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="submit"><?php echo $this->__('Go') ?></button>
+      </span>
+      <div class="searchautocomplete-loader UI-LOADER" style="display:none;"></div>
+    </div><!-- /input-group -->
+    </div>
+</div>
+<input type="hidden" name="cat" value="" id="search_responsive_cat">
+</form>
+
+<script type="text/javascript">
+    (function() {
+        
+        jQuery('a.search-menu').click(function(){
+            console.log('doing something');
+            var value = jQuery(this).data('value');
+            jQuery('#btn-seearch-group ul li a').removeClass('active');
+            jQuery(this).addClass('active');
+            jQuery('#search_responsive_cat').val(value);
+            jQuery('#search-group').html(jQuery(this).html() + '&nbsp;<span class="caret"></span>');
+        });
+
+    })();
+    
+</script>

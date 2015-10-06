@@ -1,0 +1,90 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Mbemro
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Category view template
+ *
+ * @see Mage_Catalog_Block_Category_View
+ */
+?>
+
+<?php 
+$_helper    = $this->helper('catalog/output'); 
+$_category = Mage::getSingleton('catalog/layer')->getCurrentCategory();
+//perhaps alernative way $_category  = $this->getCurrentCategory();
+
+$_imgHtml   = '';
+if ($_imgUrl = $_category->getImageUrl()) {
+	$_imgHtml = '<p class="category-image"><img src="'.$_imgUrl.'" alt="'.$this->htmlEscape($_category->getName()).'" title="'.$this->htmlEscape($_category->getName()).'" /></p>';
+	$_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
+}
+$_subcats = $_category->getChildrenCategories();
+
+/*
+$_subcats = $_category->getCollection()
+        ->addAttributeToSelect(array('name', 'thumbnail'))
+        ->addAttributeToFilter('is_active', 1)
+        ->addIdFilter($_category->getChildren())
+*/		
+?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+
+<?php if($_imgUrl): ?>
+    <?php echo $_imgHtml ?>
+<?php endif; ?>
+
+<?php if($_description=$_category->getDescription()): ?>
+    <div class="category-description std">
+        <?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
+    </div>
+    <?php endif; ?>
+
+
+	<?php $categorycount = 0; ?>
+    <?php foreach ($_subcats as $category): ?>
+	<?php
+		$class = "item"; 
+		if ($categorycount == 0){
+		    echo "<ul class=\"category-grid\">\n";
+			$class .= " first";
+		}
+		elseif ($categorycount == 2){
+			$class .= " last";
+		}
+	?>
+        <li class="<?php print $class;?>">
+            <a href="<?php echo $category->getUrl() ?>"><img src="<?php echo Mage::getBaseUrl('media') . 'catalog' . DS . 'category' . DS . $category->getThumbnail() ?>" alt="<?php echo $this->htmlEscape($category->getName()) ?>" />
+                <span class="category-name"><?php echo $category->getName() ?></span></a>
+        </li>
+	<?php $categorycount++; ?>
+	<?php 
+	if($categorycount == 3){
+		$categorycount = 0;
+		echo "</ul>\n\n";
+	}
+	?>
+    <?php endforeach; ?>

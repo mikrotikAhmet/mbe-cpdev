@@ -1,0 +1,9 @@
+<?php $noItems = Mage::helper('checkout/cart')->getSummaryCount();?>
+                <?php if ($noItems > 0): ?>
+                <a href="<?php echo $this->getUrl('checkout/cart')?>">    
+                <?php endif; ?>
+                <span class="head-view-cart"><?php echo ($noItems == 0 ? 0 : $noItems); ?> Item<?php if ($noItems <> 1) echo 's';?></span>
+                <?php if ($noItems > 0): ?>
+                </a>
+                <?php endif; ?>
+                

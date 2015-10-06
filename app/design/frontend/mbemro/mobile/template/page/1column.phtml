@@ -1,0 +1,67 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * @category    design
+ * @package     mbemro_mobile
+ * @copyright   Copyright (c) 2014 MBE MRO Catalog. (http://www.mbemrocatalog.com)
+ * @license     Commercial
+ */
+?>
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+?>
+<!DOCTYPE html>
+<html lang="<?php echo $this->getLang() ?>">
+  <head>
+    <?php echo $this->getChildHtml('head') ?>
+  </head>
+  <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+    <?php echo $this->getChildHtml('after_body_start') ?>    
+    <div class="wrapper">
+        <?php echo $this->getChildHtml('global_notices') ?>
+        <div class="page">
+            <?php echo $this->getChildHtml('header') ?>
+            <div class="main-container col1-layout">
+                <div class="main">
+					<?php echo $this->getChildHtml('breadcrumbs') ?>
+                    <div class="col-main">
+                        <?php echo $this->getChildHtml('global_messages') ?>
+                        <?php $routeName = Mage::app()->getRequest()->getRouteName();  ?>
+                        <?php $identifier = Mage::getSingleton('cms/page')->getIdentifier();  ?>
+                        <?php if($routeName == 'cms' && $identifier == 'home') :?>
+                        <?php echo $this->getChildHtml('mobile_home') ?>
+                        <?php else :?>
+                        <?php echo $this->getChildHtml('content') ?>
+                        <?php endif;?>
+                    </div>
+                </div>
+            </div>
+            <?php echo $this->getChildHtml('footer') ?>
+            <?php echo $this->getChildHtml('before_body_end') ?>
+        </div>
+    </div>
+	<script type="text/javascript">
+    //<![CDATA[
+        
+        jQuery(function(){
+			
+            jQuery(window).resize(function(){
+
+                 if(jQuery(this).width() <= 768){
+                    jQuery('.page').addClass('page-mobile');
+                 } else {
+                    jQuery('.page').removeClass('page-mobile');
+                 }
+              })
+              .resize();//trigger resize on page load
+        });
+    //]]>
+    </script>
+    <?php echo $this->getAbsoluteFooter() ?>    
+  </body>
+</html>

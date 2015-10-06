@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mbemro_PurchaseOrder>
+            <version>0.1.0</version>
+        </Mbemro_PurchaseOrder>
+    </modules>
+
+    <global>
+        <resources>
+            <purchaseorder_setup>
+                <setup>
+                    <module>Mbemro_PurchaseOrder</module>
+                    <class>Mbemro_PurchaseOrder_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </purchaseorder_setup>
+            <purchaseorder_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </purchaseorder_read>
+            <purchaseorder_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </purchaseorder_write>
+        </resources>
+        <helpers>
+            <purchaseorder>
+                <class>Mbemro_PurchaseOrder_Helper</class>
+            </purchaseorder>
+        </helpers>
+    </global>
+
+    <frontend>
+        <events>
+            <checkout_type_onepage_save_order_after>
+                <observers>
+                    <purchaseorder_save_order_observer>
+                        <class>Mbemro_PurchaseOrder_Model_Observer</class>
+                        <method>onSaveOrderAfter</method>
+                    </purchaseorder_save_order_observer>
+                </observers>
+            </checkout_type_onepage_save_order_after>
+        </events>
+    </frontend>
+
+</config>

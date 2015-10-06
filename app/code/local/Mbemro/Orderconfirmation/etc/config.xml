@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config> 
+    <modules>
+        <Mbemro_Orderconfirmation>
+            <version>0.1.0</version>
+        </Mbemro_Orderconfirmation>
+    </modules>
+
+    <frontend>
+        <routers>
+            <orderconfirmation>
+                <use>standard</use>
+                <args>
+                    <module>Mbemro_Orderconfirmation</module>
+                    <frontName>orderconfirmation</frontName>
+                </args>
+            </orderconfirmation>
+        </routers>
+        <layout>
+            <updates>
+                <orderconfirmation>
+                    <file>orderconfirmation.xml</file>
+                </orderconfirmation>
+            </updates>
+        </layout>		
+    </frontend>
+	<global>
+        <blocks>
+            <orderconfirmation>
+                <class>Mbemro_Orderconfirmation_Block</class>
+            </orderconfirmation>
+        </blocks>	
+	</global>
+</config>

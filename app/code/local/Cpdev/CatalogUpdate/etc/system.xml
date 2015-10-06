@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <catalogupdate translate="label" module="catalogupdate">
+            <label>Catalog Update</label>
+            <tab>mbemro</tab>
+            <sort_order>2000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <catalogupdate_settings translate="label">
+                    <label>General Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <is_enabled translate="label">
+                            <label>Enabled:</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </is_enabled>
+                        <attribute_set translate="label">
+                            <label>Attribute Set</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>catalogupdate/source_attributeset</source_model>
+                        </attribute_set>
+                        <root_category translate="label">
+                            <label>Root Category</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>30</sort_order>
+                            <source_model>catalogupdate/source_storecategories</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </root_category>
+                    </fields>
+                </catalogupdate_settings>
+            </groups>
+        </catalogupdate>
+    </sections>
+</config>

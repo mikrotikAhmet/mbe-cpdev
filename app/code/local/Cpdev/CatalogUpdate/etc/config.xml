@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Cpdev_CatalogUpdate>
+            <version>1.0.0</version>
+        </Cpdev_CatalogUpdate>
+    </modules>
+    <global>
+        <helpers>
+            <catalogupdate>
+                <class>Cpdev_CatalogUpdate_Helper</class>
+            </catalogupdate>
+        </helpers>
+        <models>
+            <catalogupdate>
+                <class>Cpdev_CatalogUpdate_Model</class>
+            </catalogupdate>
+        </models>
+    </global>
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <catalogupdate>
+                                            <title>Catalog Update</title>
+                                        </catalogupdate>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+</config>

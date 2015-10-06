@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+
+    <searchindex_adminhtml_index_edit>
+        <reference name="head">
+            <action method="addItem">
+                <type>js</type>
+                <name>mirasvit/code/searchindex/adminhtml/attributes.js</name>
+            </action>
+        </reference>
+    </searchindex_adminhtml_index_edit>
+</layout>

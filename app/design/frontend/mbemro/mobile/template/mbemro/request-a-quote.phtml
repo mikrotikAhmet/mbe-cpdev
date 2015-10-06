@@ -1,0 +1,256 @@
+<?php
+$is_post = $this->getRequest()->isPost();
+$params  = $this->getRequest()->getParams();
+
+if ($is_post) :
+    // echo '<pre>';
+    // print_r($params);
+    // echo '</pre>';
+
+    $body = "Quote Request\n\n";
+    $body.= "Name: " . (isset($params['first_name']) ? $params['first_name'] : '') . " " . (isset($params['last_name']) ? $params['last_name'] : '') . "\n";
+    $body.= "Email: " . (isset($params['email']) ? $params['email'] : '') . "\n";
+    $body.= "Phone: " . (isset($params['phone']) ? $params['phone'] : '') . "\n";
+    $body.= "Company: " . (isset($params['company']) ? $params['company'] : '') . "\n";
+    $body.= "Manufacturer Name: " . (isset($params['manufacturer_name']) ? $params['manufacturer_name'] : '') . "\n";
+    $body.= "Manufacturer Part Name: " . (isset($params['manufacturer_part_name']) ? $params['manufacturer_part_name'] : '') . "\n";
+    $body.= "Quantity Needed: " . (isset($params['quantity']) ? $params['quantity'] : '') . "\n";
+    $body.= "Lead Time: " . (isset($params['lead_time']) ? $params['lead_time'] : '') . "\n";
+    $body.= "Description: " . (isset($params['description']) ? $params['description'] : '') . "\n";
+
+    $filename   = '';
+    $filetype   = '';
+    $filetarget = null;
+    $path       = Mage::getBaseDir() . DS . 'var' . DS . 'tmp' . DS;
+    $error      = null;
+
+    //check captcha first
+	$_captcha = Mage::getModel('customer/session')->getData('user_create_word');  
+	if ($_captcha['data'] != $params['captcha']['user_create']) {  
+	    $error = 'Please provide correct captcha value.'; 
+	}
+		
+    if (!$error && isset($_FILES['file']) && $_FILES['file']['name'] != '') {
+
+        $filename   = basename($_FILES['file']['name']);
+        $filetarget = $path . $filename;
+        $filetmp    = $_FILES['file']['tmp_name'];
+        $filetype   = $_FILES['file']['type'];
+        $filesize   = $_FILES['file']['size'];
+        $fileext    = pathinfo($filetarget, PATHINFO_EXTENSION);
+
+        if ($filesize > 524288) {
+            $error = "Sorry, your file is too large.";
+        }
+
+        if (!in_array($fileext, array('txt', 'xls', 'xlsx', 'doc', 'docx'))) {
+            $error = "Sorry, this file type is not allowed.";
+        }
+
+        if (!$error) {
+            if (!move_uploaded_file($filetmp, $filetarget)) {
+                $error = "Sorry, there was an error uploading your file.";
+            }
+        }
+    }
+
+    if (!$error) {
+        // Zend Mail
+        $mail = new Zend_Mail();
+        $mail->setType(Zend_Mime::MULTIPART_RELATED);
+        // admin: configuration / sales emails /request a quote / recipient email
+        $mail->addTo(Mage::getStoreConfig('sales_email/request_a_quote/recipient_email'));
+        $mail->setBodyText($body);
+        $mail->setSubject('Quote Request');
+        $mail->setFrom('contact@mbemrocatalog.com');
+
+        // attachment
+        if ($filetarget) {
+            $file = $mail->createAttachment(file_get_contents($filetarget));
+            $file->type        = $filetype;
+            $file->disposition = Zend_Mime::DISPOSITION_INLINE;
+            $file->encoding    = Zend_Mime::ENCODING_BASE64;
+            $file->filename    = $filename;
+        }
+    }
+?> 
+<div class="page-title">
+    <h1>Request A Quote</h1>
+</div>
+
+<?php if (!isset($params['email'])) : ?> 
+<ul class="messages"><li class="error-msg"><ul><li><span>Error: No Data.</span></li></ul></li></ul>
+<?php elseif ($error) : ?> 
+<ul class="messages"><li class="error-msg"><ul><li><span>Error: <?php echo $error ?></span></li></ul></li></ul>
+<?php elseif ($mail->send()) : ?> 
+    <?php if ($filetarget) : unlink($filetarget); endif; ?>
+<ul class="messages"><li class="success-msg"><ul><li><span>Your request has been sent.</span></li></ul></li></ul>
+<?php else : ?> 
+<ul class="messages"><li class="error-msg"><ul><li><span>Error: Unable to send. Please try again or contact site administrator.</span></li></ul></li></ul>
+<?php endif ?> 
+
+<div class="buttons-set">
+    <p class="back-link"><a href="<?php echo Mage::helper('cms/page')->getPageUrl('request-a-quote') ?>"><small>&laquo; </small>Back</a></p>
+    <p><a href="<?php echo Mage::helper('core/url')->getHomeUrl();?>">Continue</a></p>
+</div>
+
+<?php else : ?> 
+
+<div class="page-title">
+    <h1>Request A Quote</h1>
+</div>
+
+<p>
+    To request a quote please fill out the information below, then click the submit button at the bottom. For more than one item please fill in 
+    the sections with an asterisk(*) and upload a spreadsheet with the following info: Mfr Name, Mfr Part#, Qty & Desc.
+</p>
+
+<form id="request-a-quote" action="<?php echo Mage::helper('cms/page')->getPageUrl('request-a-quote') ?>" method="post" name="request_a_quote_form" enctype="multipart/form-data">
+    <div id="request_a_quote_form">
+        <div class="row">
+            <div class="col-xs-12 text-left">
+                <span><span class="required">*</span> = Required Fields</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                First Name  <span class="required">*</span>
+            </div>
+            <div class="col-sm-9">
+                <input type="text" id="first_name" name="first_name" maxlength="40" value="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                Last Name <span class="required">*</span>
+            </div>
+            <div class="col-sm-9">
+                <input type="text" id="last_name" name="last_name" maxlength="40" value="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                E-mail <span class="required">*</span>
+            </div>
+            <div class="col-sm-9">
+                <input type="text" id="email" name="email" maxlength="40" value="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                Phone <span class="required">*</span>
+            </div>
+            <div class="col-sm-9">
+                <input type="text" id="phone" name="phone" maxlength="40" value="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                Company
+            </div>
+            <div class="col-sm-9">
+                <input type="text" id="company" name="company" maxlength="40" value="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                Manufacturer Name
+            </div>
+            <div class="col-sm-9">
+                <input type="text" id="manufacturer_name" name="manufacturer_name" maxlength="40" value="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                Manufacturer Part Name
+            </div>
+            <div class="col-sm-9">
+                <input type="text" id="manufacturer_part_name" name="manufacturer_part_name" maxlength="40" value="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                Quantity Needed
+            </div>
+            <div class="col-sm-9">
+                <input type="text" id="quantity" name="quantity" maxlength="40" value="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                Lead Time
+            </div>
+            <div class="col-sm-9">
+                <input type="text" id="lead_time" name="lead_time" maxlength="40" value="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                Detailed Description
+            </div>
+            <div class="col-sm-9">
+                <textarea name="description" id="description" rows="8"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                Upload Spreadsheet Title
+            </div>
+            <div class="col-sm-9">
+                <input name="file" id="file" type="file"size="20" class="medium" tabindex="11">
+                <div class="help">Allowed extensions: txt, xls, xlsx, doc, docx <br> Maximum Filesize: 524288 bytes</div>
+            </div>
+        </div>
+    </div>
+    
+	<?php 
+		$block = $this->getLayout()->createBlock('captcha/captcha_zend')
+		->setFormId('user_create')
+		->setImgWidth(230)
+		->setImgHeight(50);
+		$block->getCaptchaModel()->generate();
+		echo $block->renderView();
+		
+		?>
+
+    <div class="row">
+        <div class="col-xs-12 cms_form_submit"><a href="#" class="btn submit-button" onclick="beforeSubmit();">Submit</a></div>
+    </div>
+</form>
+
+<script type="text/javascript">
+function beforeSubmit() {
+    allok = true;
+    firstchecked = '';
+
+    checkElementString('first_name');
+    checkElementString('last_name');
+    checkElementString('email');
+    checkElementString('phone');
+    
+    if (allok == false) {
+        document.getElementById(firstchecked).focus();
+        return;
+    };
+
+    if (!document.getElementById('email').value.indexOf('@') == -1) {
+        document.getElementById('email').focus();
+    };
+
+    document.forms['request_a_quote_form'].submit();
+}
+
+function checkElementString(elementId) {
+    var element = document.getElementById(elementId);
+    element.style.border = '1px solid #B6B6B6';
+    if (element.value.trim() == '') {
+        element.style.border = '1px solid red';
+        allok = false;
+        if (firstchecked == '') {
+            firstchecked = elementId;
+        };
+    };
+}
+</script>
+
+<?php endif ?> 

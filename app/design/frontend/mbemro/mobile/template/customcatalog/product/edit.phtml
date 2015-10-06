@@ -1,0 +1,70 @@
+<?php
+
+/**
+ * @var $this Mbemro_CustomCatalog_Block_Product
+ * @var $_helper Mbemro_CustomCatalog_Helper_Catalog
+ */
+
+$_product = $this->getProduct();
+$_helper = $this->helper('customcatalog/catalog');
+
+?>
+
+<div class="row">
+    You are editing:
+</div>
+
+<div class="page-title title-buttons">
+    <h1><?php echo $this->getProductName()?></h1>
+</div>
+
+
+<form action="<?php echo $this->getActionPath()?>" method="post">
+    <div class="row">
+        <div class="col-sm-3 hidden-xs">
+            <img src="<?php echo $this->getImageFile()?>" alt="<?php echo $this->getProductName()?>" class="img-responsive">
+        </div>
+        <div class="xol-xs-12 col-sm-6">
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="part_number">Part Number:</label>
+                    <input type="text" name="part_number" id="part_number" value="<?php echo $this->getPartNumber()?>" class="form-control" maxlength="30">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="notes">Notes:</label>
+                    <textarea name="notes" id="notes" maxlength="250" class="form-control"><?php echo $this->getNotes()?></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="submit" class="btn btn-default"><span><span>Save</span></span></button>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-3">
+            <h2>My Options</h2>
+            <?php if($_product->isSaleable()):?>
+                <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+            <?php endif; ?>
+            <?php if($this->helper('wishlist')->isAllow()):?>
+            <a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a>
+            <?php endif; ?>
+            <a href="<?php echo $_helper->getRemoveUrl($_product);?> class="btn-catalog-remove">I don't want this in My Catalog.</a>
+
+        </div>
+    </div>
+
+    <input type="hidden" name="product" value="<?php echo $_product->getId()?>">
+
+</form>
+
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery('.btn-catalog-remove').click(function(event){
+            return confirm('Are you sure to remove this product from your catalog?');
+        });
+    });
+</script>

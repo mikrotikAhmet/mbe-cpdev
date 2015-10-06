@@ -1,0 +1,122 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Category view template
+ *
+ * @see Mage_Catalog_Block_Category_View
+ */
+?>
+<?php
+/*
+    $_helper    = $this->helper('catalog/output');
+    $_category  = Mage::registry('current_category');
+	$_parent = $_category->getParentCategory();
+	print "Parent: " . $_parent->getName();
+	$_parent = $_parent->getParentCategory();
+	print "Parent: " . $_parent->getId();
+*/
+		
+//print "Top: " . $_parent_id;		
+		function findTopParentId($category){
+			$parent = $category->getParentCategory();
+			$parent_id = $parent->getId() . "/";
+			if ($parent_id <= 2) {
+				return "";
+			}else {
+				return $parent_id . findTopParentId($parent);
+			}
+		}
+?>
+
+<?php $_helper = Mage::helper('catalog/category') ?>
+<?php $_categories = $_helper->getStoreCategories() ?>
+<?php $currentCategory = Mage::registry('current_category') ?>
+
+	<?php $_parent_id = preg_replace("/\/$/", "", findTopParentId($currentCategory)); ?>
+	<?php $_current_id = $currentCategory->getId();?>
+	<?php if (count($_categories) > 0): ?>
+		<ul class="category-sidebar nav-left">
+			<?php foreach($_categories as $_category): ?>
+				<li class="<?php print ($_current_id != $_category->getId() ? '' : 'active')?>">
+					<?php if ($_current_id != $_category->getId()): ?>
+					<a href="<?php echo $_helper->getCategoryUrl($_category) ?>">
+					<?php else: ?>
+					<a>
+					<?php endif; ?>
+						<?php echo $_category->getName() ?>
+					</a>
+					<?php $_category = Mage::getModel('catalog/category')->load($_category->getId()) ?>
+					<?php printChildren($_category, $_helper, $_parent_id, $_current_id); ?>	
+					
+				</li>
+			<?php endforeach; ?>
+		</ul>
+	<?php endif; ?>
+
+
+<?php
+function printChildren($_category, $_helper, $parent_str, $match_id) {
+
+	//print "PARENTS: " . $parent_str;
+	$_parent_id = false;
+	if ((strpos($parent_str, "/" ) !== false)){
+		$_parent_ids = explode("/", $parent_str); 
+		$_parent_id = array_pop($_parent_ids);
+		//$parent_str = str_replace("$parent_id/", "", $parent_str);
+		$parent_str = implode("/", $_parent_ids);
+		//print "ID: $_parent_id";
+	} else if (trim($parent_str) <> "") {
+		$_parent_id = $parent_str;
+		//print "ID: $_parent_id";
+	}
+?>
+<?php 
+// if we would add || ($match_id == $_category->getId()) to next condition we would allow subcategories of current(displaying) category to show.
+?>
+<?php if ((($_parent_id !== false) && ($_parent_id == $_category->getId())) || ($match_id == $_category->getId())): ?>
+<?php $_subcategories = $_category->getChildrenCategories() ?>
+					<?php if (count($_subcategories) > 0): ?>
+						<ul>
+							<?php foreach($_subcategories as $_subcategory): ?>
+								<li class="<?php print ($match_id != $_subcategory->getId() ? '' : 'active')?>">
+									<?php if($match_id != $_subcategory->getId()): ?>
+									<a href="<?php echo $_helper->getCategoryUrl($_subcategory) ?>">
+									<?php else: ?>
+									<a>
+									<?php endif; ?>									
+										<?php echo $_subcategory->getName() ?>
+									</a>
+									<?php printChildren($_subcategory, $_helper, $parent_str, $match_id); ?>
+								</li>
+							<?php endforeach; ?>
+						</ul>
+					<?php endif; ?>
+<?php endif; ?>					
+<?php
+}
+?>

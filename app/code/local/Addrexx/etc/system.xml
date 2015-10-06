@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <myconf translate="label">
+            <label>Addrexx</label>
+            <sort_order>150</sort_order>
+        </myconf>
+    </tabs>
+    <sections>
+        <tab1 translate="label" module="adminhtml">
+            <label>Setup</label>
+            <tab>myconf</tab>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label comment">
+                    <label>General</label>
+                    <sort_order>50</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <comment><![CDATA[<strong>Addrexx Activation</strong></em>.<br /><br />Need help with anything? <a href="http://www.addrexx.com/contact.html" target="_blank">Don't hesitate to contact us if you have any questions.</a><br /><br />Please contact us to activate your subscription and receive your access tokens. <a href="http://www.addrexx.com/contact.html" target="_blank">Click here to turn on your subscription.</a><br />]]></comment>
+					<fields>
+						<heading_example translate="label">
+                            <label>Access Tokens</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </heading_example>
+						<heading_example translate="label">
+                            <label>Addrexx Options</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </heading_example>
+						<access_token_frontend translate="label">
+							<label>Access Token - Frontend</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>6</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<comment>Your access token provided by Addrexx. </comment>
+						</access_token_frontend>
+						<access_token_admin translate="label">
+							<label>Access Token - Admin Panel</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>7</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<comment>Your access token provided by Addrexx. </comment>
+						</access_token_admin>
+						<active_admin translate="label comment">
+                            <label>Backend - Enable/Disable</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>12</sort_order>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Please do not activate until you have received your access token.</comment>
+                        </active_admin>
+						<active_frontend translate="label comment">
+                            <label>Frontend - Enable/Disable</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>13</sort_order>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Please do not activate until you have received your access token.</comment>
+                        </active_frontend>
+						<url translate="label comment">
+                            <label>Website Url</label>
+                            <comment>For example - www.bigfeet.com</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </url>
+						<pobox translate="label comment">
+                            <label>Restrict PO Box</label>
+							<comment>Does your store ship to PO Boxes</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>16</sort_order>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </pobox>
+						<names translate="label comment">
+                            <label>Autocomplete Names</label>
+							<comment>Enable autocomplete on names</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>18</sort_order>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </names>
+						<zip4 translate="label comment">
+                            <label>Append Zip+4</label>
+							<comment>Append Zip+4 to Zip Code</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>19</sort_order>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </zip4>
+                    </fields>
+                </general>
+            </groups>
+        </tab1>
+    </sections>
+</config>

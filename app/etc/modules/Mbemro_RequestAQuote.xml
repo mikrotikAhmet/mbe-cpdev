@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mbemro_RequestAQuote>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Mbemro_RequestAQuote>
+    </modules>
+</config>

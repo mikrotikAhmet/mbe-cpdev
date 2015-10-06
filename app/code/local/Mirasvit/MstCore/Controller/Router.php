@@ -1,0 +1,52 @@
+<?php
+/**
+ * Mirasvit
+ *
+ * This source file is subject to the Mirasvit Software License, which is available at http://mirasvit.com/license/.
+ * Do not edit or add to this file if you wish to upgrade the to newer versions in the future.
+ * If you wish to customize this module for your needs
+ * Please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category  Mirasvit
+ * @package   Sphinx Search Ultimate
+ * @version   2.3.1
+ * @revision  675
+ * @copyright Copyright (C) 2014 Mirasvit (http://mirasvit.com/)
+ */
+
+
+class Mirasvit_MstCore_Controller_Router extends Mage_Core_Controller_Varien_Router_Standard
+{
+    public function addUrlsRouter($observer)
+    {
+        $front = $observer->getEvent()->getFront();
+        $urlsRouter = new Mirasvit_MstCore_Controller_Router();
+        $front->addRouter('mstcore', $urlsRouter);
+    }
+
+    public function match(Zend_Controller_Request_Http $request)
+    {
+        if (!Mage::isInstalled()) {
+            Mage::app()->getFrontController()->getResponse()
+                ->setRedirect(Mage::getUrl('install'))
+                ->sendResponse();
+            exit;
+        }
+        $pathInfo = $request->getPathInfo();
+        $result = Mage::helper('mstcore/urlrewrite')->match($pathInfo);
+        if ($result) {
+            $request
+                ->setRouteName($result->getRouteName())
+                ->setModuleName($result->getModuleName())
+                ->setControllerName($result->getControllerName())
+                ->setActionName($result->getActionName())
+                ->setParam('id', $result->getEntityId())
+                ->setAlias(
+                    Mage_Core_Model_Url_Rewrite::REWRITE_REQUEST_PATH_ALIAS,
+                    $result->getRouteName()
+                );
+            return true;
+        }
+        return false;
+    }
+}

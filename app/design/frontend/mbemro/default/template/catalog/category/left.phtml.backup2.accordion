@@ -1,0 +1,148 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Category view template
+ *
+ * @see Mage_Catalog_Block_Category_View
+ */
+?>
+<?php
+/*
+    $_helper    = $this->helper('catalog/output');
+    $_category  = Mage::registry('current_category');
+	$_parent = $_category->getParentCategory();
+	print "Parent: " . $_parent->getName();
+	$_parent = $_parent->getParentCategory();
+	print "Parent: " . $_parent->getId();
+*/
+		
+//print "Top: " . $_parent_id;		
+		function findTopParentId($category){
+			$parent = $category->getParentCategory();
+			$parent_id = $parent->getId() . "/";
+			if ($parent_id <= 2) {
+				return "";
+			}else {
+				return $parent_id . findTopParentId($parent);
+			}
+		}
+		
+		/*
+		$products = Mage::getModel('catalog/category')->load($category->getId())
+        ->getProductCollection()
+        ->addAttributeToSelect('entity_id')
+        ->addAttributeToFilter('status', 1)
+        ->addAttributeToFilter('visibility', 4);
+
+		echo $products->count();
+		*/
+?>
+
+<?php $i = 0; ?>
+<?php $_helper = Mage::helper('catalog/category') ?>
+<?php $_categories = $_helper->getStoreCategories() ?>
+<?php $currentCategory = Mage::registry('current_category') ?>
+<?php //if ($currentCategory->hasChildren()): ?>
+	<?php $_parent_id = findTopParentId($currentCategory); ?>
+	<?php $_current_id = $currentCategory->getId();?>
+	<?php if (count($_categories) > 0): ?>
+		<div id="accordian">
+		<ul class="category-sidebar top-level nav-left" id="acc" >
+			<?php foreach($_categories as $_category): ?>
+				<?php //if($i==1){ break;} $i++; ?>
+				<li class="<?php print (($_current_id == $_category->getId()) ? 'active ' : '') . ((strpos($_parent_id, $_category->getId() . '/') !==false) ? 'open' : '');?>">
+				    <?php //print "Current: " .$_category->getId();?>
+					<a class="top" href="#">
+						<?php echo $_category->getName() ?>
+					</a>
+					<?php $_category = Mage::getModel('catalog/category')->load($_category->getId()) ?>
+					<?php printChildren($_category, $_helper, preg_replace("/\/$/", "",$_parent_id), $_current_id); ?>	
+					
+				</li>
+			<?php endforeach; ?>
+		</ul>
+		</div>
+	<?php endif; ?>
+<?php //endif; ?>
+
+
+<script type="text/javascript">
+
+
+(function($) {
+
+	$(document).ready(function() {
+		$("#acc").navgoco({accordion: true});
+	});
+	
+	
+ 
+}(jQuery));
+
+</script>
+
+<?php
+function printChildren($_category, $_helper, $parent_str, $match_id, $level=1) {
+
+	//print "PARENTS: " . $parent_str;
+	$_parent_id = false;
+	$compare_str = $parent_str . "/";	
+	if ((strpos($parent_str, "/" ) !== false)){
+		$_parent_ids = explode("/", $parent_str); 
+		$_parent_id = array_pop($_parent_ids);
+		//$parent_str = str_replace("$parent_id/", "", $parent_str);
+		$parent_str = implode("/", $_parent_ids);
+		//print "ID: $_parent_id";
+	} else if (trim($parent_str) <> "") {
+		$_parent_id = $parent_str;
+		//print "ID: $_parent_id";
+	}
+?>
+<?php 
+// if we would add || ($match_id == $_category->getId()) to next condition we would allow subcategories of current(displaying) category to show.
+?>
+<?php //this is to not show all subcats disabled right now. if ((($_parent_id !== false) && ($_parent_id == $_category->getId()))): ?>
+<?php $_subcategories = $_category->getChildrenCategories() ?>
+					<?php if (count($_subcategories) > 0): ?>
+						<ul class="subcats">
+							<?php foreach($_subcategories as $_subcategory): ?>
+								<li class="<?php print (( $match_id == $_subcategory->getId()) ? 'active ' : '') . (( strpos($compare_str, $_subcategory->getId() . "/") !== false) ? 'open' : '');?>">
+									<?php $href = "#"; if( $match_id == $_subcategory->getId()) { $href = (!$_subcategory->hasChildren() ? $_helper->getCategoryUrl($_subcategory) : "");  } ?>
+									<a href="<?php print $_helper->getCategoryUrl($_subcategory);?>" class="sub-<?php print $level;?>">
+										<?php echo $_subcategory->getName() ?>
+									</a>
+									
+									<?php printChildren($_subcategory, $_helper, $parent_str, $match_id, $level+1); ?>
+								</li>
+							<?php endforeach; ?>
+						</ul>
+					<?php endif; ?>
+<?php //endif; ?>					
+<?php
+}
+?>

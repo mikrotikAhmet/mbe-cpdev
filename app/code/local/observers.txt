@@ -1,0 +1,130 @@
+Amasty/Customerattr/etc/config.xml:64:                <observers>
+Amasty/Customerattr/etc/config.xml:67:                        <class>amcustomerattr/observer</class>
+Amasty/Customerattr/etc/config.xml:70:                </observers>
+Amasty/Customerattr/etc/config.xml:73:                <observers>
+Amasty/Customerattr/etc/config.xml:76:                        <class>amcustomerattr/observer</class>
+Amasty/Customerattr/etc/config.xml:79:                </observers>
+Amasty/Customerattr/etc/config.xml:83:                <observers>
+Amasty/Customerattr/etc/config.xml:86:                        <class>amcustomerattr/observer</class>
+Amasty/Customerattr/etc/config.xml:89:                </observers>
+Amasty/Customerattr/etc/config.xml:93:                <observers>
+Amasty/Customerattr/etc/config.xml:96:                        <class>amcustomerattr/observer</class>
+Amasty/Customerattr/etc/config.xml:99:                </observers>
+Amasty/Customerattr/etc/config.xml:103:                <observers>
+Amasty/Customerattr/etc/config.xml:106:                        <class>amcustomerattr/observer</class>
+Amasty/Customerattr/etc/config.xml:109:                </observers>
+Amasty/Customerattr/etc/config.xml:112:                <observers>
+Amasty/Customerattr/etc/config.xml:115:                        <class>amcustomerattr/observer</class>
+Amasty/Customerattr/etc/config.xml:118:                </observers>
+Amasty/Customerattr/etc/config.xml:121:                <observers>
+Amasty/Customerattr/etc/config.xml:124:                        <class>amcustomerattr/observer</class>
+Amasty/Customerattr/etc/config.xml:127:                </observers>
+Amasty/Customerattr/etc/config.xml:321:                <observers>
+Amasty/Customerattr/etc/config.xml:327:                </observers>
+Amasty/Customerattr/etc/config.xml:335:                <observers>
+Amasty/Customerattr/etc/config.xml:338:                        <class>amcustomerattr/observer</class>
+Amasty/Customerattr/etc/config.xml:341:                </observers>
+Amasty/Customerattr/Model/Observer.php:7:class Amasty_Customerattr_Model_Observer
+Amasty/Customerattr/Model/Observer.php:11:     * @param Varien_Event_Observer $observer
+Amasty/Customerattr/Model/Observer.php:13:    public function modifyOrderGrid($observer)
+Amasty/Customerattr/Model/Observer.php:119:     * @param Varien_Event_Observer $observer
+Amasty/Customerattr/Model/Observer.php:121:    public function modifyOrderCollection($observer)
+Amasty/Customerattr/Model/Observer.php:123:        $collection = $observer->getOrderGridCollection();
+Amasty/Customerattr/Model/Observer.php:150:     * @param Varien_Event_Observer $observer
+Amasty/Customerattr/Model/Observer.php:152:    public function forIndexCustomerGrid($observer)
+Amasty/Customerattr/Model/Observer.php:169:     * @param Varien_Event_Observer $observer
+Amasty/Customerattr/Model/Observer.php:171:    public function forSearchCustomerGrid($observer)
+Amasty/Customerattr/Model/Observer.php:176:        $grid = $observer->getBlock();
+Amasty/Customerattr/Model/Observer.php:184:     * @param Varien_Event_Observer $observer
+Amasty/Customerattr/Model/Observer.php:288:     * @param Varien_Event_Observer $observer
+Amasty/Customerattr/Model/Observer.php:290:    public function modifyCustomerCollection($observer)
+Amasty/Customerattr/Model/Observer.php:292:        $collection = $observer->getCollection();
+Amasty/Customerattr/Model/Observer.php:313:    public function handleBlockOutput($observer) 
+Amasty/Customerattr/Model/Observer.php:316:        $block = $observer->getBlock();
+Amasty/Customerattr/Model/Observer.php:318:        $transport = $observer->getTransport();
+Amasty/Customerattr/Model/Observer.php:355:    public function onCoreLayoutBlockCreateAfter($observer)
+Amasty/Customerattr/Model/Observer.php:357:        $block = $observer->getBlock();
+Amasty/Customerattr/Model/Registration.php:9:    public function setAttributeValue($observer)
+Amasty/Customerattr/Model/Registration.php:11:        /*$model = $observer->getModel();
+Amasty/Base/etc/adminhtml.xml:27:            <observers>
+Amasty/Base/etc/adminhtml.xml:33:            </observers>
+Amasty/Base/etc/config.xml:72:            <observers>
+Amasty/Base/etc/config.xml:78:            </observers>
+Mbemro/Customer/etc/config.xml:11:        <observers>
+Mbemro/Customer/etc/config.xml:12:          <mbemro_customer_model_observer>
+Mbemro/Customer/etc/config.xml:14:            <class>Mbemro_Customer_Model_Observer</class>
+Mbemro/Customer/etc/config.xml:16:          </mbemro_customer_model_observer>
+Mbemro/Customer/etc/config.xml:17:        </observers>
+Mbemro/Customer/etc/config.xml:20:        <observers>
+Mbemro/Customer/etc/config.xml:21:          <mbemro_customer_model_observer>
+Mbemro/Customer/etc/config.xml:23:            <class>Mbemro_Customer_Model_Observer</class>
+Mbemro/Customer/etc/config.xml:25:          </mbemro_customer_model_observer>
+Mbemro/Customer/etc/config.xml:26:        </observers>
+Mbemro/Customer/etc/config.xml:29:        <observers>
+Mbemro/Customer/etc/config.xml:30:          <mbemro_customer_model_observer>
+Mbemro/Customer/etc/config.xml:32:            <class>Mbemro_Customer_Model_Observer</class>
+Mbemro/Customer/etc/config.xml:34:          </mbemro_customer_model_observer>
+Mbemro/Customer/etc/config.xml:35:        </observers>
+Mbemro/Customer/etc/config.xml:38:        <observers>
+Mbemro/Customer/etc/config.xml:39:          <mbemro_customer_model_observer>
+Mbemro/Customer/etc/config.xml:41:            <class>Mbemro_Customer_Model_Observer</class>
+Mbemro/Customer/etc/config.xml:43:          </mbemro_customer_model_observer>
+Mbemro/Customer/etc/config.xml:44:        </observers>
+Mbemro/Customer/Model/Observer.php:3:class Mbemro_Customer_Model_Observer {
+Mbemro/Customer/Model/Observer.php:7:    public function customer_register_success($observer)
+Mbemro/Customer/Model/Observer.php:9:        $customer = $observer->getCustomer();
+Mbemro/Customer/Model/Observer.php:48:    public function customer_address_added($observer)
+Mbemro/Customer/Model/Observer.php:50:        $address = $observer->getAddress();
+Mbemro/Customer/Model/Observer.php:51:        $customer = $observer->getCustomer();
+Mbemro/Customer/Model/Observer.php:86:    public function customer_address_saved($observer)
+Mbemro/Customer/Model/Observer.php:88:        $address = $observer->getAddress();
+Mbemro/Customer/Model/Observer.php:89:        $oldAddress = $observer->getOldaddress();
+Mbemro/Customer/Model/Observer.php:90:        $customer = $observer->getCustomer();
+Mbemro/Customer/Model/Observer.php:126:    public function customer_address_removed($observer)
+Mbemro/Customer/Model/Observer.php:128:        $address = $observer->getAddress();
+Mbemro/Customer/Model/Observer.php:129:        $customer = $observer->getCustomer();
+Mirasvit/Misspell/etc/config.xml:50:                <observers>
+Mirasvit/Misspell/etc/config.xml:52:                        <class>misspell/observer</class>
+Mirasvit/Misspell/etc/config.xml:55:                </observers>
+Mirasvit/Misspell/etc/config.xml:58:                <observers>
+Mirasvit/Misspell/etc/config.xml:61:                        <class>misspell/observer</class>
+Mirasvit/Misspell/etc/config.xml:64:                </observers>            
+Mirasvit/Misspell/Model/Observer.php:22:class Mirasvit_Misspell_Model_Observer
+Mirasvit/Misspell/Model/Observer.php:24:    public function onPostdispatchCatalogsearchResultIndex($observer)
+Mirasvit/SearchAutocomplete/etc/config.xml:58:                <observers>
+Mirasvit/SearchAutocomplete/etc/config.xml:63:                </observers>
+Mirasvit/SearchAutocomplete/Model/Processor.php:59:    public function cacheResponse(Varien_Event_Observer $observer)
+Mirasvit/SearchAutocomplete/Model/Processor.php:61:        $frontController = $observer->getEvent()->getFront();
+Mirasvit/SearchIndex/etc/config.xml:57:                <observers>
+Mirasvit/SearchIndex/etc/config.xml:59:                        <class>searchindex/observer</class>
+Mirasvit/SearchIndex/etc/config.xml:62:                </observers>
+Mirasvit/SearchIndex/Model/Observer.php:18:class Mirasvit_SearchIndex_Model_Observer
+Mirasvit/MstCore/Controller/Router.php:20:    public function addUrlsRouter($observer)
+Mirasvit/MstCore/Controller/Router.php:22:        $front = $observer->getEvent()->getFront();
+Mirasvit/MstCore/etc/config.xml:48:                <observers>
+Mirasvit/MstCore/etc/config.xml:54:                </observers>
+Mirasvit/MstCore/etc/config.xml:105:                <observers>
+Mirasvit/MstCore/etc/config.xml:116:                </observers>
+Mirasvit/MstCore/etc/Misspell.crc:14:02a99957af5fb2f29e820e0355d6b939  app/code/local/Mirasvit/Misspell/Model/Observer.php
+Mirasvit/MstCore/etc/SearchSphinx.crc:32:47c2a280c0672a94c850fc20af3e0bc7  app/code/local/Mirasvit/SearchIndex/Model/Observer.php
+Mirasvit/MstCore/etc/SearchSphinx.crc:128:d105ffce3d0f0cadec57c8ca325320bc  app/code/local/Mirasvit/SearchSphinx/Model/Observer.php
+Mirasvit/SearchLandingPage/Controller/Router.php:20:    public function initControllerRouters($observer)
+Mirasvit/SearchLandingPage/Controller/Router.php:22:        $front = $observer->getEvent()->getFront();
+Mirasvit/SearchLandingPage/Controller/Router.php:29:    public function controllerFrontSendResponseBefore($observer)
+Mirasvit/SearchLandingPage/etc/config.xml:43:                <observers>
+Mirasvit/SearchLandingPage/etc/config.xml:48:                </observers>
+Mirasvit/SearchLandingPage/etc/config.xml:51:                <observers>
+Mirasvit/SearchLandingPage/etc/config.xml:56:                </observers>
+Mirasvit/SearchSphinx/etc/config.xml:46:                <observers>
+Mirasvit/SearchSphinx/etc/config.xml:48:                        <class>searchsphinx/observer</class>
+Mirasvit/SearchSphinx/etc/config.xml:51:                </observers>
+Mirasvit/SearchSphinx/etc/config.xml:54:                <observers>
+Mirasvit/SearchSphinx/etc/config.xml:56:                        <class>searchsphinx/observer</class>
+Mirasvit/SearchSphinx/etc/config.xml:59:                </observers>
+Mirasvit/SearchSphinx/etc/config.xml:135:                    <model>searchsphinx/observer::reindex</model>
+Mirasvit/SearchSphinx/etc/config.xml:143:                    <model>searchsphinx/observer::reindexDelta</model>
+Mirasvit/SearchSphinx/etc/config.xml:152:                    <model>searchsphinx/observer::checkDaemon</model>
+Mirasvit/SearchSphinx/Model/Observer.php:22:class Mirasvit_SearchSphinx_Model_Observer
+Mirasvit/SearchSphinx/Model/Observer.php:63:     * @param  object $observer
+Mirasvit/SearchSphinx/Model/Observer.php:65:    public function onMisspellIndexerPrepare($observer)
+Mirasvit/SearchSphinx/Model/Observer.php:67:        // $obj = $observer->getObj();

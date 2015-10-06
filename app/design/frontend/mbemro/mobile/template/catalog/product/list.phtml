@@ -1,0 +1,202 @@
+<?php
+/**
+ *
+ * @category    design
+ * @package     mbemro_mobile
+ * @copyright   Copyright (c) 2014 MBE MRO Catalog (http://www.mbemrocatalog.com)
+ * @license     Commercial
+ */
+?>
+<?php
+/**
+ * Product list template
+ *
+ * @see Mage_Catalog_Block_Product_List
+ */
+?>
+<?php
+    $_productCollection=$this->getLoadedProductCollection();
+    $_helper = $this->helper('catalog/output');
+?>
+<?php if(!$_productCollection->count()): ?>
+<p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
+<?php else: ?>
+    <div id="toolbar-1">
+    <?php echo $this->getToolbarHtml() ?>
+    </div>
+
+    <?php // List mode ?>
+    <?php if($this->getMode()!='grid'): ?>
+<div class="row products-list">
+    
+    <?php $i = 0;?>    
+    <?php foreach ($_productCollection as $_product): ?>
+        <div class="row item <?php print ($i===0) ? 'first' : '';?>">
+            <?php $i++?>
+            <div class="col-xs-3">
+
+            <?php // Product Image ?>
+            <a href="<?php echo $_helper->getMbemroProductUrl($_product); ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(135); ?>" class="img-responsive" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
+            </div>
+
+            <?php // Product description ?>
+
+            <div class="col-xs-9 no-padding">
+                    
+                    <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
+                    <h2 class="product-name"><a href="<?php echo $_helper->getMbemroProductUrl($_product); ?>" title="<?php echo $_productNameStripped; ?>"><?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></a></h2>
+                    <?php if($_product->getRatingSummary()): ?>
+                    <?php echo $this->getReviewsSummaryHtml($_product) ?>
+                    <?php endif; ?>
+                    <div class="row margin-bottom-small">
+                        <div class="col-sm-9">
+                            <div class="desc std">
+                                <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+                            </div>
+                            <div class="clear"></div>        
+                            <div class="row options hidden-xs margin-bottom-small">
+                                <div class="col-xs-4 pricecol"><?php echo $this->getPriceHtml($_product, true) ?></div>
+                                <div class="col-xs-8 addto btn-cart-holder">
+                                <?php if($_product->isSaleable()): ?>
+				  <div class="row margin-bottom-small">
+                                    <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart-list" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                                  </div>
+                                <?php endif; ?>
+                                    <?php if ($this->helper('wishlist')->isAllow()) : ?>
+				  <div class="row margin-bottom-small">
+                        <a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist-list"><?php echo $this->__('Add to Wishlist') ?></a>
+                                  </div>
+                    		    <?php endif; ?>
+				</div>
+                            </div>
+
+                            <div class="row options visible-xs">
+                                <div class="col-sm-8 pricecol">
+                                    <div class="row"><?php echo $this->getPriceHtml($_product, true) ?></div>
+                                    <div class="row text-right">
+										    <a href="<?php echo $_helper->getMbemroProductUrl($_product); ?>" title="<?php echo $_productNameStripped ?>" class="link-learn"><?php echo $this->__('Learn More') ?></a>
+                                        <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                                            <div class="clear"></div>
+                                            <a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist-list"><?php echo $this->__('Add to Wishlist') ?></a>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 btn-cart-holder">
+                                <?php if($_product->isSaleable()): ?>
+                                    <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart-list" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                                <?php endif; ?>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-sm-3 hidden-xs">
+                            <div>MFG#: <?php print $_product->getMfgPart();?></div>
+                            <?php $brand_name = $_product->getAttributeText('brand_name'); ?>
+                            <?php if($brand_name):?>
+                            <div>Manufacturer: <?php print $brand_name; ?></div>
+                            <?php endif;?>
+                            <?php $coating = $_product->getAttributeText('coating'); ?>
+                            <?php if($coating):?>
+                            <div>Coating: <?php print $coating; ?></div>
+                            <?php endif;?>
+                            <?php $flute_length = $_product->getAttributeText('flute_length'); ?>
+                            <?php if($flute_length):?>
+                            <div>Flute Length: <?php print $flute_length; ?></div>
+                            <?php endif;?>
+                            <?php $material = $_product->getAttributeText('material'); ?>
+                            <?php if($material):?>
+                            <div>Material: <?php print $material; ?></div>
+                            <?php endif;?>
+                            <?php $manufacturer = $_product->getAttributeText('manufacturer'); ?>
+                            <?php if($manufacturer):?>
+                            <div>Manufacturer: <?php print $manufacturer; ?></div>
+                            <?php endif;?>
+				  <div class="row">
+                                    <a href="<?php echo $_helper->getMbemroProductUrl($_product); ?>" title="<?php echo $_productNameStripped ?>" class="link-learn"><?php echo $this->__('Learn More') ?></a>
+				  </div>
+                        </div>
+                    </div>                    
+                    
+                </div>
+                
+            </div>
+        
+    <?php endforeach; ?>
+    
+
+        
+</div>    
+    <?php else: ?>
+
+    <?php // Grid Mode ?>
+<div class="row products-grid">
+    <?php $_collectionSize = $_productCollection->count() ?>
+    <?php $_columnCount = $this->getColumnCount(); ?>
+    <?php $i=0; foreach ($_productCollection as $_product): ?>
+        
+        <div class="col-xs-12 col-sm-6 col-md-4 item">
+            
+                <a href="<?php echo $_helper->getMbemroProductUrl($_product); ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
+				<?php $imgobj = $this->helper('catalog/image')->init($_product, 'small_image')?>
+				<?php if (!is_null($imgobj)):?>
+					<img src="<?php echo $imgobj->resize(170);	 ?>" class="img-responsive" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+				<?php else :?>
+				<?php endif;?>
+				
+				</a>
+                <h2 class="product-name"><a href="<?php echo $_helper->getMbemroProductUrl($_product); ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h2>
+                <?php if($_product->getRatingSummary()): ?>
+                <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+                <?php endif; ?>                
+                <?php echo $this->getPriceHtml($_product, true) ?>
+                <div class="actions">
+                    <div class="row add-to-links">
+                    <?php if($_product->isSaleable() && $this->helper('wishlist')->isAllow()): ?>
+
+						<div class="col-xs-12 no-padding">
+						  <a title="<?php echo $this->__('Add to Cart') ?>" class="btn-cart-grid" href="<?php echo $this->getAddToCartUrl($_product) ?>"><span><span><?php echo $this->__('Add to Cart') ?></span></span></a>
+						</div>
+
+						<div class="col-xs-12 no-padding">
+						  <a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist-grid"><?php echo $this->__('Add to Wishlist') ?></a>
+						</div>
+                    <?php endif; ?>
+                    <?php if($_product->isSaleable() && !$this->helper('wishlist')->isAllow()): ?>
+                        <div class="col-xs-12">
+							<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+						</div>
+                    <?php endif; ?>
+					<?php if(!$_product->isSaleable() && $this->helper('wishlist')->isAllow()): ?>
+                        <div class="col-xs-12">
+							<a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a>
+						</div>
+                    <?php endif; ?>                    
+                       <!-- <?php //if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
+                            <li><span class="separator">|</span> <a href="<?php //echo $_compareUrl ?>" class="link-compare"><?php //echo $this->__('Add to Compare') ?></a></li>
+                        <?php //endif; ?>-->
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="additional-fields">
+                <div class="item-sku">MFG#: <?php print $_product->getMfgPart();?></div>
+                <div class="clear"></div>
+                <?php $brand_name = $_product->getAttributeText('brand_name'); ?>
+                <?php $brand_name = $brand_name != "" ? $brand_name : 'N/A'; ?>
+
+                <?php if($brand_name):?>
+                <div class="item-sku">Manuf.: <?php print $brand_name; ?></div>
+                <?php endif;?>
+                </div>
+        
+        </div>
+        
+        <?php endforeach ?>
+        
+</div>        
+    <?php endif; ?>
+
+    <div class="toolbar-bottom">
+        <?php echo $this->getToolbarHtml() ?>
+    </div>
+
+<?php endif; ?>

@@ -1,0 +1,101 @@
+<?php
+/**
+ *
+ * @category    design
+ * @package     mbemro_mobile
+ * @copyright   Copyright (c) 2014 MBE MRO Catalog (http://www.mbemrocatalog.com)
+ * @license     Commercial
+ *
+ */
+?>
+<?php
+$_item = $this->getItem();
+$isVisibleProduct = $_item->getProduct()->isVisibleInSiteVisibility();
+$canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage_Catalog_Model_Product_Attribute_Source_Msrp_Type::TYPE_BEFORE_ORDER_CONFIRM);
+?>
+<div class="row item">
+    <div class="col-sm-1 hidden-xs">
+        <?php if ($this->hasProductUrl()):?>
+        <a href="<?php echo $this->getProductUrl() ?>" title="<?php echo $this->htmlEscape($this->getProductName()) ?>" class="product-image"><?php endif;?><img src="<?php echo $this->getProductThumbnail()->resize(170); ?>" class="img-responsive" alt="<?php echo $this->htmlEscape($this->getProductName()) ?>" /><?php if ($this->hasProductUrl()):?></a>
+        <?php endif;?>
+    </div>
+    <div class="col-xs-9 col-sm-8">
+        <h2 class="product-name">
+                    <?php if ($this->hasProductUrl()):?>
+                    <a href="<?php echo $this->getProductUrl() ?>"><?php echo $this->htmlEscape($this->getProductName()) ?></a>
+                    <?php else: ?>
+                    <?php echo $this->htmlEscape($this->getProductName()) ?>
+                    <?php endif; ?>
+                </h2>
+                <?php if ($_options = $this->getOptionList()):?>
+                <dl class="item-options">
+                    <?php foreach ($_options as $_option) : ?>
+                    <?php $_formatedOptionValue = $this->getFormatedOptionValue($_option) ?>
+                    <dt><?php echo $this->htmlEscape($_option['label']) ?></dt>
+                    <dd<?php if (isset($_formatedOptionValue['full_view'])): ?> class="truncated"<?php endif; ?>><?php echo $_formatedOptionValue['value'] ?>
+                    <?php if (isset($_formatedOptionValue['full_view'])): ?>
+                    <div class="truncated_full_value">
+                        <dl class="item-options">
+                            <dt><?php echo $this->htmlEscape($_option['label']) ?></dt>
+                            <dd><?php echo $_formatedOptionValue['full_view'] ?></dd>
+                        </dl>
+                    </div>
+                    <?php endif; ?>
+                    </dd>
+                    <?php endforeach; ?>
+                </dl>
+                <?php endif;?>
+        <!--
+        <?php if ($isVisibleProduct): ?>
+            <a href="<?php echo $this->getConfigureUrl() ?>" title="<?php echo $this->__('Edit item parameters') ?>"><?php echo $this->__('Edit') ?></a>
+            <?php endif ?>
+
+            <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
+
+            <?php if ($isVisibleProduct): ?>
+            <a href="<?php echo $this->helper('wishlist')->getMoveFromCartUrl($_item->getId()); ?>" class="link-wishlist use-ajax"><?php echo $this->__('Move'); ?></a>
+            <?php endif ?>
+
+        <?php endif ?>
+        -->
+
+        <div class="row">
+            <?php if ($messages = $this->getMessages()): ?>
+            <?php foreach ($messages as $message): ?>
+            <p class="item-msg <?php echo $message['type'] ?>">* <?php echo $this->escapeHtml($message['text']) ?></p>
+            <?php endforeach; ?>
+            <?php endif; ?>
+            <?php $addInfoBlock = $this->getProductAdditionalInformationBlock(); ?>
+            <?php if ($addInfoBlock): ?>
+            <?php echo $addInfoBlock->setItem($_item)->toHtml() ?>
+            <?php endif;?>
+        </div>
+        
+    </div>
+
+    <div class="col-xs-3 col-sm-1">
+        <?php require(Mage::getBaseDir('design') . '/frontend/mbemro/mobile/template/checkout/cart/item/price.phtml'); ?>
+    </div>    
+    <div class="col-xs-12 col-sm-2 price-floating">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6">
+                <div class="xs-qty visible-xs"><?php echo $this->__('Qty') . ':' ?></div>
+                <input name="cart[<?php echo $_item->getId() ?>][qty]" value="<?php echo $this->getQty() ?>" size="4" title="<?php echo $this->__('Qty') ?>" class="input-text qty" maxlength="12" />
+            </div>
+            <div class="col-xs-6 col-sm-6">
+                <div class="xs-subtotal visible-xs"><?php echo $this->__('Subtotal') . ':' ?></div>
+                <div class="xs-subtotal-value">
+                <?php require(Mage::getBaseDir('design') . '/frontend/mbemro/mobile/template/checkout/cart/item/subtotal.phtml'); ?>
+                </div>
+                <!--
+                <div class="subtotal-delete a-center"><a href="<?php echo $this->getDeleteUrl()?>" title="<?php echo $this->__('Remove item')?>" class="btn-remove btn-remove2"><?php echo $this->__('Remove item')?></a></div>
+                -->
+            </div>
+        </div>
+    </div>
+    
+</div>
+    
+    
+    
+

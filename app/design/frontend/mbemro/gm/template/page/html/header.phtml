@@ -1,0 +1,108 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+<div class="row header">
+    <div class="col-sm-4 col-xs-8 logowrap no-padding">
+        <div class="logoHolder">
+            <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" class="img-responsive" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+            <div class="clear"></div>
+            <p>A Minority eBusiness Enterprise servicing all of your MRO needs</p>
+            <div class="hide-p visible-lg visible-md">
+                <?php //echo  str_replace('<p></p>', '', $this->getLayout()->createBlock('cms/block')->setBlockId('head-search')->toHtml());  ?>
+                <?php echo $this->getChildHtml('topSearch');  ?>
+				<?php $session = Mage::getSingleton('customer/session', array('name'=>'frontend'));?>
+            </div>
+			<?php if ($session->isLoggedIn):?>
+			<div class="row visible-xs" id="user-menu">
+				<span class="glyphicon glyphicon-align-justify"></span> Menu
+			</div>
+			<script type="text/javascript">
+				jQuery(function(){
+					jQuery("#user-menu").click(function(){
+
+					});
+				});
+			</script>
+			<?php endif;?>
+        </div>
+    </div>
+    <div class="col-sm-8 col-xs-4 no-padding">
+		<div class="row hidden-xs hidden-sm no-margin" style="margin-top: 105px !important;">
+		  <div class="col-md-12 no-padding"><?php //echo $this->getChildHtml('headLinks'); ?></div>
+		</div>
+        <div class="row no-margin">
+            <div class="col-sm-7">
+                <div class="row call text-center no-border no-margin pull-left" style="margin: 61px 0 0 0px !important; white-space: nowrap;"></div>
+                <div class="row no-margin"><?php echo $this->getChildHtml('welcomeMessage'); ?></div>
+            </div>
+            <div class="col-xs-5 col-sm-5">
+                <div class="row topCartHolder">
+                    <?php echo $this->getChildHtml('topCart'); ?>
+                </div>
+                <?php echo $this->getChildHtml('topContainer'); ?>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="" id="mobile-navbar" style="display: none;">
+	<ul>
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+	</ul>
+</div>
+<?php if(false): ?>
+<div class="row">
+    <div class="col-xs-12">
+        <?php if (false): ?><p class="welcome-msg"><?php echo $this->getWelcome() ; echo $this->getAdditionalHtml() ?></p> <?php endif; ?>
+        <?php echo $this->getChildHtml('welcomeMessage'); ?>
+    </div>
+</div>
+<?php endif;?>
+<?php //echo $this->getChildHtml('topMenu') ?>
+<?php echo $this->getChildHtml('headLinks') ?>
+
+<?php echo $this->getChildHtml('search_under_menu') ?>
+
+<script type="text/javascript">
+    //<![CDATA[
+
+        jQuery(function(){
+            jQuery(window).resize(function(){
+
+                 if(jQuery(this).width() <= 768){
+                    jQuery('.logowrap').addClass('mobile-view');
+                 } else {
+                    jQuery('.logowrap').removeClass('mobile-view');
+                 }
+              })
+              .resize();//trigger resize on page load
+        });
+    //]]>
+    </script>

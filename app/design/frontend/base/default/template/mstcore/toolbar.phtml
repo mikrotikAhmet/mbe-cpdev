@@ -1,0 +1,29 @@
+<link rel="stylesheet" type="text/css" href="/skin/frontend/base/default/css/mirasvit_mstcore.css" media="all" />
+<script src="/js/mirasvit/core/jquery.min.js"></script>
+<?php $_panels = $this->getPanels(); ?>
+<div class="mstcore-toolbar">
+    <div class="mstcore-toolbar-panels-container">
+        <?php foreach ($_panels as $_panel): ?>
+            <div class="panel-label" data-id="<?php echo $_panel->getIdentifier() ?>">
+                <?php echo $this->htmlEscape($_panel->getName()) ?>
+            </div>
+        <?php endforeach ?>
+        <div class="clear"><div>
+
+        <?php foreach ($_panels as $_panel): ?>
+        <div class="panel-container panel-<?php echo $_panel->getIdentifier() ?>">
+            <?php echo $_panel->toHtml() ?>
+        </div>
+        <?php endforeach ?>
+    </div>
+</div>
+<script>
+jQuery.noConflict();
+jQuery(function($) {
+    $('.panel-label').click(function(e) {
+        var id = $(e.currentTarget).attr('data-id');
+        $('.panel-container').hide();
+        $('.panel-' + id).show();
+    });
+});
+</script>

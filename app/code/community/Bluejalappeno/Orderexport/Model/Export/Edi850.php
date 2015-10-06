@@ -1,0 +1,214 @@
+<?php
+class Bluejalappeno_Orderexport_Model_Export_Edi850 extends Bluejalappeno_Orderexport_Model_Export_Abstractcsv
+{
+
+    public function exportOrders($orders)
+    {
+		// $fileName = "edi850_i.dat";
+        // $fp = fopen($_SERVER['DOCUMENT_ROOT'].'/../edi_export/'.$fileName, 'a');
+        $fileName = 'order_export_'.date("Ymd_His").'.dat';
+        $fp = fopen(Mage::getBaseDir().'/var/export/'.$fileName, 'a');
+		
+        if ($fp===false) return false;
+
+        foreach ($orders as $order) {
+        	$order = Mage::getModel('sales/order')->load($order);
+            $this->writeOrder($order, $fp);
+        }
+
+        fclose($fp);
+
+        return $fileName;
+    }
+
+    protected function writeOrder($order, $fp){
+
+		$customer = Mage::getModel('customer/customer')->load($order->getCustomerId());
+
+		//Write Order line
+		$line  = "";
+		$line .= str_pad("Order", 6);			//1, 6		"Order"
+		$dat = $order->getIncrementId();
+		$line .= str_pad($dat, 22);				//7, 22		PO Number
+		$line .= str_pad("", 2);				//29, 2		Suffix
+		$dat = $customer ->getPartnerId();		
+		$line .= str_pad($dat, 15);				//31, 15	Trading Partner ID
+		$line .= str_pad("", 36);				//46, 36	Attention Of
+		$line .= str_pad("", 8);				//82, 8		Buyer
+		$line .= str_pad("", 1);				//90, 1		Confirming Only?
+		$line .= str_pad("", 24);				//91, 24	Ship Via Description
+		$line .= str_pad("", 1);				//115, 1	FOB flag
+		$line .= str_pad("", 30);				//116, 30	FOB Description
+		$dat = date("m/d/y", strtotime($order->getCreatedAtDate()));		
+		$line .= str_pad($dat, 8);				//146, 8	Date PO Issued
+		$line .= str_pad("", 8);				//154, 8	Date Needed
+		$line .= str_pad("", 24);				//162, 24	Contract Number
+		$line .= str_pad("PO", 2);				//186, 2	Type (PO - purchase order)
+		$line .= str_pad("", 15);				//188, 15	Scheddule/shipping
+		$line .= str_pad("Original", 11);		//203, 11	Action Type (Original)
+		$line .= str_pad("", 8);				//214, 8	Shipping Date
+		$line .= str_pad("", 23);				//222, 23	Currency Code
+		$dat = "";		
+		$line .= str_pad($dat, 24);				//245, 24	Reference
+		$line .= str_pad("", 8);				//269, 8	Cancel Date
+		$line .= str_pad("", 30);				//277, 30	Shipping Instructions
+		$line .= str_pad("", 80);				//307, 80	User Field 1
+		$line .= str_pad("", 80);				//387, 80	User Field 2
+		$line .= str_pad("", 8);				//467, 8	User Field 3
+		$line .= str_pad("", 8);				//475, 8	User Field 4
+		$dat = "";			
+		$line .= str_pad($dat, 4);				//483, 4	Warehouse
+		$line .= str_pad("", 1);				//487, 1	Back Order Flag
+		$line .= str_pad("", 1);				//488, 1	Substitute Flag
+		$line .= str_pad("", 1);				//489, 1	Rush Order Flag
+		$line .= str_pad("", 8);				//490, 8	Batch Name
+		$line .= str_pad("", 8);				//498, 8	Expected Ship Date
+		$line .= str_pad("", 4);				//506, 4	Company erpSys Id
+		$line .= str_pad("", 15);				//510, 15	erpSystemName
+		$line .= str_pad("", 1);				//525, 1	PORBX
+		$line .= str_pad("", 15);				//526, 15	Whole Order Disc
+		$line .= str_pad("", 1);				//541, 1	Whole Order Disc Type
+		$line .= "\n";
+		fwrite($fp, $line);
+		
+		//Write Notes lines
+		$notes="";
+		if($notes){
+			$notesLines = explode( "\n", wordwrap($notes, 60));
+			foreach($notesLines as $noteLine){
+				$line  = "";
+				$line .= str_pad("Notes", 6);		//1, 6		"Notes"
+				$line .= str_pad($noteLine, 60);	//7, 60		Comment Text
+				$fileStr .= $line;				
+				fwrite($fp, $line);
+			}
+		}
+		
+		//Write Shipto line
+		$line  = "";
+		$line .= str_pad("Shipto", 6);			//1, 6		"Shipto"
+		$line .= str_pad("", 20);				//7, 20		SX.entreprise Number
+		$dat = $order->getShippingAddress()->getName();
+		$line .= str_pad($dat, 35);				//27, 35	Name
+		$dat = $order->getShippingAddress()->getStreet();		
+		$line .= str_pad($dat[0], 35);				//62, 35	Address 1
+		$line .= isset($dat[1]) ? str_pad($dat[1], 35) : str_pad('', 35); //97, 35	Address 2
+		$dat = $order->getShippingAddress()->getCity();			
+		$line .= str_pad($dat, 20);				//132, 20	City
+		$dat = $order->getShippingAddress()->getRegionCode();			
+		$line .= str_pad($dat, 2);				//152, 2	State
+		$dat = $order->getShippingAddress()->getPostcode();		
+		$line .= str_pad($dat, 10);				//154, 10	Zip
+		$line .= str_pad("", 18);				//164, 18	Phone Number
+		$line .= str_pad("", 8);				//182, 8	User Field 1
+		$line .= str_pad("", 8);				//190, 8	User Field 2
+		$line .= str_pad("", 13);				//198, 13	Date Needed
+		$line .= str_pad("", 4);				//211, 4	Region
+		$line .= str_pad("", 22);				//215, 22	erpSystemId
+		$line .= str_pad("", 15);				//237, 15	TpId
+		$line .= "\n";
+		fwrite($fp, $line);
+		
+		//Write Billto line
+		$line  = "";
+		$line .= str_pad("Billto", 6);			//1, 6		"Billto"
+		$line .= str_pad("", 20);				//7, 20		SX.entreprise Number
+		$dat = $order->getBillingAddress()->getName();
+		$line .= str_pad($dat, 35);				//27, 35	Name
+		$dat = $order->getBillingAddress()->getStreet();
+		$line .= str_pad($dat[0], 35);			//62, 35	Address 1
+		$line .= isset($dat[1]) ? str_pad($dat[1], 35) : str_pad('', 35); //97, 35	Address 2
+		$dat = $order->getBillingAddress()->getCity();
+		$line .= str_pad($dat, 20);				//132, 20	City
+		$dat = $order->getBillingAddress()->getRegionCode();
+		$line .= str_pad($dat, 2);				//152, 2	State		
+		$dat = $order->getBillingAddress()->getPostcode();
+		$line .= str_pad($dat, 10);				//154, 10	Zip
+		$line .= str_pad("", 18);				//164, 18	Phone Number
+		$line .= str_pad("", 8);				//182, 8	User Field 1
+		$line .= str_pad("", 8);				//190, 8	User Field 2
+		$line .= str_pad("", 13);				//198, 13	DUNS NUmber
+		$line .= "\n";
+		fwrite($fp, $line);
+		
+		//Write Items
+		$orderItems = $order->getAllItems();
+		$lineNo = 0;
+			foreach ($orderItems as $item) {		
+			//Write Item line
+				$product = Mage::getModel('catalog/product')->load($item->getProductId());
+				
+				$line  = "";
+				$line .= str_pad("Item", 6);			//1, 6			"Item"
+				$dat = str_pad(++$lineNo, 4, '0', STR_PAD_LEFT);
+				$line .= $dat;							//7, 4			Line Number
+				$dat = str_pad(substr($item->getQtyOrdered(), 0, -2), 13, " ", STR_PAD_LEFT);
+				$line .= $dat;							//11, 13		Qty Ordered
+				$line .= str_pad("EA", 2);				//24, 2			Unit of Measure
+				$dat = str_pad($item->getPrice(), 14, " ",STR_PAD_LEFT);				
+				$line .= $dat;							//26, 14		Unit Cost
+				$line .= str_pad("", 2);				//40, 2			Qty/Price Code/Special Price Costing UOM
+				$line .= str_pad("", 32);				//42, 32		Customer's Part Number
+				$dat = $product->getMfgPart();				
+				$line .= str_pad($dat, 32);				//74, 32		Distributor's Part Number
+				$dat = $product->getMfgPart();
+				$line .= str_pad($dat, 32);				//106, 32		MFG Part Number
+				$line .= str_pad("", 36);				//138, 36		Description
+				$line .= str_pad("", 8);				//174, 8		Date Needed
+				$line .= str_pad("", 8);				//182, 8		User Field 1
+				$line .= str_pad("", 8);				//190, 8		User Field 2
+				$line .= str_pad("", 8);				//198, 8		User Field 3
+				$line .= str_pad("", 8);				//206, 8		User Field 4
+				$line .= str_pad("", 8);				//214, 8		User Field 5
+				$line .= str_pad("", 8);				//222, 8		User Field 6
+				$line .= str_pad("", 8);				//230, 8		User Field 7
+				$line .= str_pad("", 8);				//238, 8		User Field 8
+				$line .= str_pad("", 8);				//246, 8		User Field 9
+				$line .= str_pad("", 8);				//254, 8		User Field 10
+				$line .= str_pad("", 8);				//262, 8		Promise Date
+				$line .= str_pad("", 8);				//270, 8		Due Date
+				$line .= str_pad("", 8);				//278, 8		Excepted Ship Date
+				$line .= str_pad($product->getData('erp_vendor_number'), 11); //286, 11		EDI Line #
+				$line .= str_pad("", 48);				//297, 48		48 charachter description (used for eBuy)
+				$line .= str_pad("", 13);				//345, 13		Net ammount
+				$line .= str_pad("", 13);				//358, 13		Tax ammount
+				$line .= str_pad("", 13);				//371, 13		Discount
+				$line .= str_pad("", 1);				//384, 1		Special Price Cost
+				$line .= str_pad("", 14);				//385, 14		Special Price/Cost
+				$line .= str_pad("", 2);				//299, 2		Special Price/Cost Unit
+				$line .= str_pad("", 1);				//401, 1		PORBX Expedite
+				$line .= str_pad("", 3);				//402, 3		PORBX Expedite days
+				$line .= "\n";				
+				fwrite($fp, $line);
+			//Write lncomm Lines
+				$itemComment="";
+				if($itemComment){
+					$itemCommentLines = explode( "\n", wordwrap($itemComment, 60));
+					foreach($itemCommentLines as $itemCommentLine){
+						$line  = "";
+						$line .= str_pad("lncomm", 6);				//1, 6		"lncomm"
+						$dat = str_pad($lineNo, 4, '0', STR_PAD_LEFT);						
+						$line .= $dat;					//7, 4		Line Item Number			
+						$line .= str_pad($itemCommentLine, 60);		//11, 60	Comment Text
+						$line .= "\n";
+						fwrite($fp, $line);
+					}
+				}
+			}
+			
+		//Write Total line
+		$line  = "";
+		$line .= str_pad("Total", 6);			//1, 6		"Total"
+		$dat = $order->getTotalItemCount();
+		$line .= str_pad($dat , 6);				//7, 6		Total number of lines
+		$dat = $order->getGrandTotal();		
+		$line .= str_pad($dat, 14);				//13, 14	Total Invoice Amount
+		$dat = $order->getTotalQtyOrdered();
+		$line .= str_pad($dat, 11);				//27, 11	Total Quantity Ordered
+		$line .= "\n";
+		fwrite($fp, $line);
+		
+	}
+
+}
+?>

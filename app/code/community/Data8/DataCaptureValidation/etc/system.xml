@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <tabs>
+        <Data8 translate="label" module="Data8_DataCaptureValidation">
+            <label>Data8</label>
+            <sort_order>100</sort_order>
+        </Data8>
+    </tabs>
+    <sections>
+        <Data8 translate="label" module="Data8_DataCaptureValidation">
+            <label>Data Capture &amp; Validation Settings</label>
+            <tab>Data8</tab>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+ 
+            <groups>
+                <Data8_group translate="label" module="Data8_DataCaptureValidation">
+                    <label>Data Capture &amp; Validation Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+ 
+                    <fields>
+                            <Data8_key translate="label">
+                            <label>Ajax Key: </label>
+                            <comment>Enter your Data8 Ajax Key.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </Data8_key>
+                        <Data8_license translate="label">
+                            <label>Postcode Lookup License Type:</label>
+                            <comment>Select the type of Postcode Lookup license you have purchased.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Data8_DataCaptureValidation_LicenseTypeList</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </Data8_license>
+                        <Data8_emailValidationLevel translate="label">
+                            <label>E-mail Validation Level:</label>
+                            <comment>Select the level to validate email addresses to. Higher validation levels give better accuracy but take longer.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Data8_DataCaptureValidation_EmailValidationTypeList</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </Data8_emailValidationLevel>
+                        <Data8_telephoneValidation translate="label">
+                            <label>Use Telephone Validation:</label>
+                            <comment>Validate UK and North American telephone numbers.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </Data8_telephoneValidation>
+                    </fields>
+                </Data8_group>
+            </groups>
+        </Data8>
+    </sections>
+</config>

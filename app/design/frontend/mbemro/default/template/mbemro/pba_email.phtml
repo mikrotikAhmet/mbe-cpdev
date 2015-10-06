@@ -1,0 +1,54 @@
+<?php
+
+$data = $this->getRequest()->getParams();
+
+$body = "Customer Agreement Form for Periodic Billing\n\n";
+$body .= (isset($data['pba_period'])) 				? "BILLING PERIOD: ".$data['pba_period']."\n" : "";
+//$body .= (isset($data['pba_terms'])) 				? "TERMS: ".$data['pba_terms']."\n" : "";
+$body .= (isset($data['pba_no_inv_print'])) 	? "Due Upon Receipt – Fiscal M/E Date: ".$data['pba_no_inv_print']."\n" : "";
+$body .= (isset($data['pba_type'])) 				? "TYPE OF BILLING: ".$data['pba_type']."\n" : "";
+
+$body .= (isset($data['pba_company_name'])) 		? "Company Name: ".$data['pba_company_name']."\n" : "";
+$body .= (isset($data['pba_company_address'])) 		? "Company Address: ".$data['pba_company_address']."\n" : "";
+$body .= (isset($data['pba_purchasing_contact'])) 	? "Purchasing Contact: ".$data['pba_purchasing_contact']."\n" : "";
+$body .= (isset($data['pba_pc_email'])) 			? "Purchasing Contact Email: ".$data['pba_pc_email']."\n" : "";
+$body .= (isset($data['pba_pc_phone'])) 			? "Purchasing Contact Phone: ".$data['pba_pc_phone']."\n" : "";
+$body .= (isset($data['pba_pc_fax'])) 				? "Purchasing Contact Fax: ".$data['pba_pc_fax']."\n" : "";
+$body .= (isset($data['pba_apc_contact'])) 			? "A/P Contact: ".$data['pba_apc_contact']."\n" : "";
+$body .= (isset($data['pba_apc_email'])) 			? "A/P Contact Email: ".$data['pba_apc_email']."\n" : "";
+$body .= (isset($data['pba_apc_phone'])) 			? "A/P Contact Phone: ".$data['pba_apc_phone']."\n" : "";
+$body .= (isset($data['pba_apc_fax'])) 				? "A/P Contact Fax: ".$data['pba_apc_fax']."\n" : "";
+
+$body .= (isset($data['pba_fe_shipacc'])) 			? "Fed Ex / UPS Shipping Account #: ".$data['pba_fe_shipacc']."\n" : "";
+$body .= (isset($data['pba_start_date'])) 			? "Start Date: ".$data['pba_start_date']."\n" : "";
+
+$body .= (isset($data['pba_ap_email'])) 			? "A/P E-mail Address: ".$data['pba_ap_email']."\n" : "";
+$body .= (isset($data['pba_sec_email'])) 			? "Secondary E-mail Address: ".$data['pba_sec_email']."\n" : "";
+
+$body .= (isset($data['pba_c_memo'])) 				? "Include Credit/Return memos: ".$data['pba_c_memo']."\n" : "";
+$body .= (isset($data['pba_c_card'])) 				? "Include Credit Card Transactions: ".$data['pba_c_card']."\n" : "";
+
+
+
+$mail = Mage::getModel('core/email');
+$mail->setToName(Mage::getStoreConfig('trans_email/ident_support/name'));
+$mail->setToEmail(Mage::getStoreConfig('trans_email/ident_support/email'));
+$mail->setBody($body);
+$mail->setSubject('Periodic Billing Agreement');
+if(isset($data['pba_purchasing_contact'])) $mail->setFromEmail($data['pba_purchasing_contact']);
+if(isset($data['pba_pc_email'])) $mail->setFromName($data['pba_pc_email']);
+
+$mail->setType('text');//'html' or 'text'
+
+?>
+<?php if(!isset($data['pba_period'])): ?>
+<ul class="messages"><li class="error-msg"><ul><li><span>Error: No Data.</span></li></ul></li></ul>
+<?php elseif($mail->send()): ?>
+<ul class="messages"><li class="success-msg"><ul><li><span>Your request has been sent.</span></li></ul></li></ul>
+<?php else: ?>
+<ul class="messages"><li class="error-msg"><ul><li><span>Error: Unable to send. Please try again or contact site administrator.</span></li></ul></li></ul>
+<?php endif; ?>
+<div class="buttons-set">
+    <p class="back-link"><a href="<?php echo Mage::helper('cms/page')->getPageUrl(10) ?>"><small>&laquo; </small>Back</a></p>
+	<p><a href="<?php echo Mage::helper('core/url')->getHomeUrl();?>">Continue</a></p>
+</div>

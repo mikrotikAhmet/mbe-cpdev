@@ -1,0 +1,469 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Vbw_Punchout>
+            <version>1.2.10</version>
+        </Vbw_Punchout>
+    </modules>
+    <default> <!-- default configuration values -->
+        <vbw_punchout>
+            <!-- default settings -->
+            <defaults>
+                <!-- default UNSPSC classificaton to use -->
+                <!-- http://www.unspsc.org/Search.asp -->
+                <classification>56101500</classification>
+                <!-- default Unit of Measure to use -->
+                <uom>EA</uom>
+            </defaults>
+            <!-- punchout index catalog configuration -->
+            <!-- Level 2 Catalog to be included in a future release -->
+           <!-- <catalog_export>
+                <store>1</store> <!- export store level -
+                <category>1</category> <!- export category level -
+                <subcategory>1</subcategory> <!- export sub category level -
+                <product>0</product> <!- export product level -
+            </catalog_export> Moved to Level 2 Module-->
+            <!-- site configuration -->
+            <site>
+                <!-- punchout enabled, set to 0 to exclude all punchout on a store. -->
+                <punchout_enabled>1</punchout_enabled>
+                <!-- controls if the site is accessable without punchout -->
+                <punchout_only>0</punchout_only>
+                <!-- cms module element to redirect to in case of punchout only -->
+                <punchout_only_url>access-restricted</punchout_only_url>
+                <!-- default modules to always allow through punchout only -->
+                <punchout_only_allow>mage_api</punchout_only_allow>
+                <!-- redirect punchout session to a secure url -->
+                <secure_redirect>1</secure_redirect>
+                <!-- id to use to start a demo punchout session -->
+                <demo_session_id>demosession</demo_session_id>
+                <!-- allow demo, can use per site to allow a demo session -->
+                <!-- suggested to turn off for punchout only sites to protect pricing -->
+                <allow_demo>0</allow_demo>
+                <!-- disable these modules during active punchout sessions, comma separated -->
+                <disable_modules>Mage_Wishlist</disable_modules>
+                <!-- session login handling -->
+                <session_type>anonymous</session_type> <!-- anonymous, single, dual -->
+                <!-- <user></user> a fixed user that a single will be logged in with -->
+                <!-- <group></group>  the group a new user will be associated with -->
+                <!-- encoding for order message -->
+                <order_encoding>base64</order_encoding>
+            </site>
+            <customer>
+                <!-- apply shipping address to cart only -->
+                <attach_shipping>1</attach_shipping>
+                <create_users>1</create_users>
+            </customer>
+            <display>
+                <show_return>0</show_return>
+                <return_label>Return To Procurement System</return_label>
+                <transfer_button_location>3</transfer_button_location>
+                <transfer_button>Transfer Your Order</transfer_button>
+                <transfer_text>Clicking this button will post your order to your procurement system.</transfer_text>
+                <personal_checkout>0</personal_checkout>
+                <remove_myaccount>1</remove_myaccount>
+                <remove_logouts>1</remove_logouts>
+                <checkout_nav>1</checkout_nav>
+                <checkout_nav_button>Punchout</checkout_nav_button>
+            </display>
+            <!-- catalog field maps -->
+            <catalog_fields>
+                <category_unspsc>unspsc</category_unspsc>
+                <category_export>punchout_export</category_export>
+                <product_unspsc>unspsc</product_unspsc>
+                <product_uom>uom</product_uom>
+            </catalog_fields>
+            <order>
+                <require_shipping_error>Please select a shipping method.</require_shipping_error>
+            </order>
+            <!-- api configuration -->
+            <api>
+                <!-- authentication key to use with calls -->
+                <key>[get from punchout2go]</key>
+                <!-- the following configurations will not likely need to be changed -->
+                <!-- punchout2go host -->
+                <host>connect.punchout2go.com</host>
+                <!-- http = 0, https = 1 -->
+                <secure>1</secure>
+                <!-- api version to use -->
+                <version>1.0</version>
+                <!-- session pull location -->
+                <pull_path>/gateway/link/session</pull_path>
+                <!-- session inspect location -->
+                <inspect_path>/gateway/link/inspect</inspect_path>
+                <!-- cart order location -->
+                <order_path>/gateway/link/order</order_path>
+                <!-- js tools -->
+                <tools_path>/media/assets/gateway/js/1.0/tools.js</tools_path>
+                <!-- disable the following observers with incomming gateway requests -->
+                <disable_on_request>
+                    <check_punchout>session_check_punchout_only</check_punchout>
+                    <validate_user>session_validate_user_access</validate_user>
+                    <env_stack>update_env_stack_with_punchout</env_stack>
+                </disable_on_request>
+            </api>
+        </vbw_punchout>
+    </default>
+    <global> <!-- magento configuration for the module, do not change. -->
+        <!--
+        removing old style rewriting and overloaded controllers.
+        this allows better compatibility with other modules
+        <rewrite>
+            <vbw_punchout_checkout_cart>
+                <from><![CDATA[#^/checkout/cart/#]]></from>
+                <to>/punchout/cart/</to>
+            </vbw_punchout_checkout_cart>
+            <vbw_punchout_checkout_cart_punchout>
+                <from><![CDATA[#^/checkout/cart/punchout/#]]></from>
+                <to>/punchout/cart/punchout/</to>
+            </vbw_punchout_checkout_cart_punchout>
+            <vbw_punchout_checkout_punchout>
+                <from><![CDATA[#^/checkout/punchout/#]]></from>
+                <to>/punchout/cart/confirm/</to>
+            </vbw_punchout_checkout_punchout>
+        </rewrite>
+        -->
+        <models>
+            <vbw_punchout>
+                <class>Vbw_Punchout_Model</class>
+                <resourceModel>vbw_punchout_resource</resourceModel>
+            </vbw_punchout>
+            <vbw_punchout_resource>
+                <class>Vbw_Punchout_Model_Resource</class>
+                <entities>
+                    <sales_quote_stash>
+                        <table>punchout_sales_quote_stash</table>
+                    </sales_quote_stash>
+                </entities>
+            </vbw_punchout_resource>
+        </models>
+        <blocks>
+            <vbw_punchout>
+                <class>Vbw_Punchout_Block</class>
+            </vbw_punchout>
+            <!--
+                removing rewritten checkout links.
+                all managed by config and layouts now.
+            <checkout>
+                <rewrite>
+                    <links>Vbw_Punchout_Block_Checkout_Links</links>
+                </rewrite>
+            </checkout>
+            -->
+        </blocks>
+        <helpers>
+            <vbw_punchout>
+                <class>Vbw_Punchout_Helper</class>
+            </vbw_punchout>
+            <!--
+                removed, uses default controller
+            <checkout>
+                <rewrite>
+                    <url>Vbw_Punchout_Helper_Checkout_Url</url>
+                </rewrite>
+            </checkout>
+            -->
+        </helpers>
+        <resources>
+            <vbw_punchout_setup>
+                 <setup>
+                       <module>Vbw_Punchout</module>
+                       <class>Mage_Core_Model_Resource_Setup</class>
+                 </setup>
+            </vbw_punchout_setup>
+        </resources>
+        <events>
+            <!-- session management handling, called before session_start()
+            <controller_front_init_before>
+                <observers>
+                    <controller_front_init_routers>
+                        <class>vbw_punchout/observer</class>
+                        <method>setSystemSessionManagement</method>
+                    </controller_front_init_routers>
+                </observers>
+            </controller_front_init_before>-->
+        </events>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <punchout>
+                    <file>vbw_punchout.xml</file>
+                </punchout>
+            </updates>
+        </layout>
+        <events>
+            <!-- on all predispatch -->
+            <controller_action_predispatch>
+                <observers>
+                    <!-- p3p always adds -->
+                    <check_statsh_in_menu>
+                        <class>vbw_punchout/adminhtml_observer</class>
+                        <method>checkUseOfStashInMenu</method>
+                    </check_statsh_in_menu>
+                </observers>
+            </controller_action_predispatch>
+        </events>
+    </adminhtml>
+    <frontend>
+        <routers>
+            <punchout>
+                <use>standard</use>
+                <args>
+                    <module>Vbw_Punchout</module>
+                    <frontName>punchout</frontName>
+                </args>
+            </punchout>
+            <punchout_media>
+                <use>standard</use>
+                <args>
+                    <module>Vbw_Punchout</module>
+                    <frontName>ia</frontName>
+                </args>
+            </punchout_media>
+        </routers>
+        <default>
+            <router>punchout</router>
+        </default>
+        <layout>
+            <updates>
+                <punchout>
+                    <file>punchout.xml</file>
+                </punchout>
+            </updates>
+        </layout>
+        <events>
+            <punchout_load_customer>
+                <observers>
+                    <manage_user_by_alternate_id>
+                        <class>vbw_punchout/observer</class>
+                        <method>manageUserByAlternateId</method>
+                    </manage_user_by_alternate_id>
+                </observers>
+            </punchout_load_customer>
+
+            <!-- punchout edit -->
+            <sales_quote_product_add_after>
+                <observers>
+                    <quote_product_add_inspect_prevent>
+                        <class>vbw_punchout/observer</class>
+                        <method>preventQuoteEditOnInspect</method>
+                    </quote_product_add_inspect_prevent>
+                </observers>
+            </sales_quote_product_add_after>
+            <checkout_cart_update_items_before>
+                <observers>
+                    <quote_product_add_inspect_prevent>
+                        <class>vbw_punchout/observer</class>
+                        <method>preventQuoteEditOnInspect</method>
+                    </quote_product_add_inspect_prevent>
+                </observers>
+            </checkout_cart_update_items_before>
+            <sales_quote_remove_item>
+                <observers>
+                    <quote_product_add_inspect_prevent>
+                        <class>vbw_punchout/observer</class>
+                        <method>preventQuoteEditOnInspect</method>
+                    </quote_product_add_inspect_prevent>
+                </observers>
+            </sales_quote_remove_item>
+
+            <!-- on all predispatch -->
+            <controller_action_predispatch>
+                <observers>
+                    <!-- p3p always adds -->
+                    <punchout_p3p>
+                        <class>vbw_punchout/observer</class>
+                        <method>addP3PToResponse</method>
+                    </punchout_p3p>
+                    <!-- check for a POID in the QUERY -->
+                    <session_load_punchout>
+                        <class>vbw_punchout/observer</class>
+                        <method>checkForPunchoutSession</method>
+                    </session_load_punchout>
+                    <!-- check for punchout only store -->
+                    <session_check_punchout_only>
+                        <class>vbw_punchout/observer</class>
+                        <method>checkForPunchoutOnlySite</method>
+                    </session_check_punchout_only>
+                    <!-- validate existing punchout session (adds active session layouts) -->
+                    <session_validate_user_access>
+                        <class>vbw_punchout/observer</class>
+                        <method>validatePunchoutSessionUser</method>
+                    </session_validate_user_access>
+                    <!-- updates environment from disabled modules -->
+                    <update_env_stack_with_punchout>
+                        <class>vbw_punchout/observer</class>
+                        <method>updateEnvironmentStackWithPunchout</method>
+                    </update_env_stack_with_punchout>
+                </observers>
+            </controller_action_predispatch>
+
+            <!-- predispatch on checkout -->
+            <controller_action_predispatch_checkout_cart_index>
+                <observers>
+                    <punchout_checkout_cart_layout>
+                        <class>vbw_punchout/observer</class>
+                        <method>punchoutCheckoutCartLayout</method>
+                    </punchout_checkout_cart_layout>
+                </observers>
+            </controller_action_predispatch_checkout_cart_index>
+
+            <!-- on create quote -->
+            <custom_quote_process>
+                <observers>
+                    <!-- these are doing the same thing, need to clean -->
+                    <patcha01_punchout_unique_order>
+                        <class>vbw_punchout/observer</class>
+                        <method>customQuoteSetup</method>
+                    </patcha01_punchout_unique_order>
+                    <setup_single_login_unique_session_quotes>
+                        <class>vbw_punchout/observer</class>
+                        <method>setupSingleLoginUniqQuotes</method>
+                    </setup_single_login_unique_session_quotes>
+                </observers>
+            </custom_quote_process>
+
+            <!-- before layout -->
+            <controller_action_layout_load_before>
+                <observers>
+                    <!-- add the new layout instructions -->
+                    <punchout_add_layout_updates>
+                        <class>vbw_punchout/observer</class>
+                        <method>addLayoutUpdates</method>
+                    </punchout_add_layout_updates>
+                </observers>
+            </controller_action_layout_load_before>
+
+            <!-- require shipping -->
+            <controller_action_predispatch_punchout_2go_transfer>
+                <observers>
+                    <check_required_shipping>
+                        <class>vbw_punchout/observer</class>
+                        <method>checkPunchoutRequiredShipping</method>
+                    </check_required_shipping>
+                </observers>
+            </controller_action_predispatch_punchout_2go_transfer>
+
+            <!-- predispatch on onecart -->
+            <controller_action_predispatch_checkout_onepage_index>
+                <observers>
+                    <validate_punchout_session_personal_checkout>
+                        <class>vbw_punchout/observer</class>
+                        <method>validatePunchoutSessionPersonalCheckout</method>
+                    </validate_punchout_session_personal_checkout>
+                </observers>
+            </controller_action_predispatch_checkout_onepage_index>
+
+            <!-- predispatch on multishipping -->
+            <controller_action_predispatch_checkout_multishipping_index>
+                <observers>
+                    <validate_punchout_session_personal_checkout>
+                        <class>vbw_punchout/observer</class>
+                        <method>validatePunchoutSessionPersonalCheckout</method>
+                    </validate_punchout_session_personal_checkout>
+                </observers>
+            </controller_action_predispatch_checkout_multishipping_index>
+            <controller_action_predispatch_checkout_multishipping_addresses>
+                <observers>
+                    <validate_punchout_session_personal_checkout>
+                        <class>vbw_punchout/observer</class>
+                        <method>validatePunchoutSessionPersonalCheckout</method>
+                    </validate_punchout_session_personal_checkout>
+                </observers>
+            </controller_action_predispatch_checkout_multishipping_addresses>
+
+            <!-- website restriction protection -->
+            <websiterestriction_frontend>
+                <observers>
+                    <allow_punchout_through>
+                        <class>vbw_punchout/observer</class>
+                        <method>allowPunchoutThroughRestriction</method>
+                    </allow_punchout_through>
+                </observers>
+            </websiterestriction_frontend>
+
+            <!-- punchout only restrictions production -->
+            <punchoutonly_restriction>
+                <observers>
+                    <allow_punchout_through>
+                        <class>vbw_punchout/observer</class>
+                        <method>allowPunchoutThroughRestriction</method>
+                    </allow_punchout_through>
+                    <allow_through_punchoutonly>
+                        <class>vbw_punchout/observer</class>
+                        <method>allowThroughPunchoutOnlyRestriction</method>
+                    </allow_through_punchoutonly>
+                </observers>
+            </punchoutonly_restriction>
+
+            <!-- predispatch on checkout -->
+            <controller_action_postdispatch_punchout_2go_transfer>
+                <observers>
+                    <punchout_transfer_cleanup_cart>
+                        <class>vbw_punchout/observer</class>
+                        <method>punchoutPostTransfer</method>
+                    </punchout_transfer_cleanup_cart>
+                </observers>
+            </controller_action_postdispatch_punchout_2go_transfer>
+
+            <!-- calculate totals -->
+            <sales_quote_collect_totals_before>
+                <observers>
+                    <punchout_tax_control>
+                        <class>vbw_punchout/observer</class>
+                        <method>punchoutWithNoTax</method>
+                    </punchout_tax_control>
+                </observers>
+            </sales_quote_collect_totals_before>
+
+            <!-- store the last added item -->
+            <punchout_session_starting>
+                <observers>
+                    <prepare_last_cart>
+                        <class>vbw_punchout/observer</class>
+                        <method>prepareLastCartEdit</method>
+                    </prepare_last_cart>
+                </observers>
+            </punchout_session_starting>
+
+            <checkout_cart_product_add_after>
+                <observers>
+                    <punchout_session_store_last_added>
+                        <class>vbw_punchout/observer</class>
+                        <method>storeLastItemAddedToCart</method>
+                    </punchout_session_store_last_added>
+                </observers>
+            </checkout_cart_product_add_after>
+
+            <!-- LAST CART EDIT -->
+            <punchout_cart_item_unstash>
+                <observers>
+                    <punchout_add_stash_to_items>
+                        <class>vbw_punchout/observer</class>
+                        <method>addStashToLastCartItems</method>
+                    </punchout_add_stash_to_items>
+                </observers>
+            </punchout_cart_item_unstash>
+            <!-- clean up left over items from edits -->
+            <punchout_order_after_setup>
+                <observers>
+                    <clean_up_stash_from_edit>
+                        <class>vbw_punchout/observer</class>
+                        <method>cleanUpStashFromLastCartEdit</method>
+                    </clean_up_stash_from_edit>
+                </observers>
+            </punchout_order_after_setup>
+            <!--
+            <punchout_order_item_after_setup>
+                <observers>
+                    <punchout_item_update_aux_id>
+                        <class>vbw_punchout/observer</class>
+                        <method>updateItemAuxIdFromLastCartEdit</method>
+                    </punchout_item_update_aux_id>
+                </observers>
+            </punchout_order_item_after_setup>
+            -->
+        </events>
+    </frontend>
+</config>

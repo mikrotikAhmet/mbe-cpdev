@@ -1,0 +1,8 @@
+<config>
+  <modules>
+    <Data8_DataCaptureValidation>
+      <active>true</active>
+      <codePool>community</codePool>
+    </Data8_DataCaptureValidation>
+  </modules>
+</config>

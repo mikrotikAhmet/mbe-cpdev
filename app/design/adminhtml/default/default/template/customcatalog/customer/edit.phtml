@@ -1,0 +1,504 @@
+<?php
+/**
+ * var $this Mbemro_CustomCatalog_Block_Adminhtml_Customer_Edit_Tab_Container
+ */
+?>
+
+<style type="text/css">
+    #customer_info_tabs_customer_edit_tab_container_content .content-header {
+        margin-top: 15px!important;
+    }
+</style>
+
+<div style="display:block;">
+    <input type="checkbox" name="mycatalog_enable" id="mycatalog_enable" <?php print ($this->isCustomCatalogEnabled() ? 'checked' : '');?> onclick="myCatalogEnableDisable(this)" />
+    <label for="mycatalog_enable"> Custom Catalog Enabled.</label></div>
+
+<?php
+print $this->getChildHtml();
+?>
+
+<script type="text/javascript">
+var skuEl = document.getElementById('catalog_sku');
+var partNumberEl = document.getElementById('catalog_part_number');
+var notesEl = document.getElementById('catalog_notes');
+var priceEl = document.getElementById('catalog_price');
+var mbeCustomerId = customCatalog.customerId;
+
+$('mbemro_customcatalog_grid_table').select('.filter')[0].hide();
+
+disableEnableControlsMyCatalog(customCatalog.customCatalogEnabled);
+
+$(skuEl).observe('keypress', function(event) {
+    var key = event.which || event.keyCode;
+    var urlToUse = customCatalog.keypressUrl;
+
+    if ((key == Event.KEY_RETURN) && (priceEl.value == '')) {
+        new Ajax.Request(urlToUse, {
+                method: 'post',
+                parameters: { sku: this.value, form_key: customCatalog.formKey},
+            onComplete: function(transport) {
+            var response = transport.responseText.evalJSON();
+
+            if(response.status){
+                priceEl.value = response.price;
+            }
+
+        }
+    });
+}
+});
+
+if (!customCatalog.customCatalogEnabled) {
+    $('mycatalog_enable').checked = false;
+}
+
+function myCatalogEnableDisable(element)
+{
+    var enableUrl = customCatalog.enableUrl;
+    var disableUrl = customCatalog.disableUrl;
+
+    var urlToUse = disableUrl;
+    if (element.checked) {
+        urlToUse = enableUrl;
+    }
+
+    new Ajax.Request(urlToUse, {
+            method: 'post',
+            parameters: { customer_id: mbeCustomerId, form_key: customCatalog.formKey},
+        onLoading: function (transport) {
+    $('mycatalog-ajax-status').update('Operation in progress...');
+},
+    onComplete: function(transport) {
+        var response = transport.responseText.evalJSON();
+        $('mycatalog-ajax-status').update('');
+        if(response.message) {
+            $('mycatalog-ajax-status').update(response.message);
+        }
+        if(response.status){
+            var enableUI = element.checked !== false;
+
+            disableEnableControlsMyCatalog(enableUI);
+        }
+
+    }
+});
+
+}
+
+function disableEnableControlsMyCatalog(switchEnable) {
+    var container = $('customer_info_tabs_customer_edit_tab_container_content')
+        .select('.entry-edit');
+    var formEdit = container[0];
+
+
+    formEdit.select('input').each(function(element) { disableMyCatalogElement(element, switchEnable); });
+    formEdit.select('button').each(function(element) { disableMyCatalogElement(element, switchEnable); });
+
+    formEdit = $('mbemro_customcatalog_grid');
+
+    formEdit.select('input').each(function(element) { disableMyCatalogElement(element, switchEnable); });
+    formEdit.select('button').each(function(element) { disableMyCatalogElement(element, switchEnable); });
+    formEdit.select('select').each(function(element) { disableMyCatalogElement(element, switchEnable); });
+
+    formEdit =  container[1];
+
+    formEdit.select('input').each(function(element) { disableMyCatalogElement(element, switchEnable); });
+    formEdit.select('button').each(function(element) { disableMyCatalogElement(element, switchEnable); });
+
+    formEdit = $('mbemro_customcatalog_category_grid_table');
+
+
+    formEdit.select('input').each(function(element) { disableMyCatalogElement(element, switchEnable); });
+    formEdit.select('button').each(function(element) { disableMyCatalogElement(element, switchEnable); });
+    formEdit.select('select').each(function(element) { disableMyCatalogElement(element, switchEnable); });
+
+}
+
+function disableMyCatalogElement(element, switchEnable) {
+    element.disabled = !switchEnable;
+    element.removeClassName('disabled');
+    if(!switchEnable)
+        element.addClassName('disabled');
+}
+
+observerMyCatalogClick();
+
+function observerMyCatalogClick() {
+
+    $$('.mycatalog').each(function(element) {
+        element.observe('click', editMyCatalog);
+    });
+
+}
+
+function editMyCatalog(event, element) {
+    // $$('.mycatalog')[0].up().select('.catalog_sku')[0].innerHTML.trim()
+    var row = this.up();
+
+    skuEl.value = clearMyCatalogStringValue(row.select('.product-id')[0].innerHTML);
+    partNumberEl.value = clearMyCatalogStringValue(row.select('.part-number')[0].innerHTML);
+    notesEl.value = clearMyCatalogStringValue(row.select('.notes')[0].innerHTML);
+    priceEl.value = clearMyCatalogStringValue(row.select('.custom-price')[0].innerHTML).replace(',','');
+    if (priceEl.value == 0.00) {
+        priceEl.value = '';
+    }
+    $('mycatalog-ajax-status').update('');
+
+    Event.stop(event);
+}
+
+function clearMyCatalogStringValue(stringValue)
+{
+    return stringValue.replace('&nbsp;', ' ').trim();
+}
+
+function clearMyCatalogForm(){
+    skuEl.value = '';
+    partNumberEl.value = '';
+    notesEl.value = '';
+    priceEl.value = '';
+}
+
+function addMyCatalogRow(element)
+{
+    removeMyCatalogRow(element.sku);
+    var catalogCol = $$('.mycatalog')[0];
+    if (catalogCol == undefined) {
+        $('mbemro_customcatalog_grid_table').select('tr:last-child')[0].insert({
+            after:'<tr class="pointer"><td class="mycatalog product-id">'+ element.sku +'</td><td class="mycatalog part-number">'
+                + element.part_number + '</td><td class="mycatalog name">'
+                + element.name + '</td><td class="mycatalog price">'
+                + formatNumber(element.price) + '</td><td class="mycatalog custom-price">'
+                + formatNumber(element.custom_price) + '</td><td class="mycatalog notes">'
+                + element.notes + '</td></tr>'
+        });
+    } else {
+        catalogCol.up(1).select('tr:last-child')[0].insert({
+            after:'<tr class=\"pointer\"><td class="mycatalog product-id">'+ element.sku +'</td><td class="mycatalog part-number">'
+                + element.part_number + '</td><td class="mycatalog name">'
+                + element.name + '</td><td class="mycatalog price">'
+                + formatNumber(element.price) + '</td><td class="mycatalog custom-price">'
+                + formatNumber(element.custom_price) + '</td><td class="mycatalog notes">'
+                + element.notes + '</td></tr>'
+        });
+    }
+    observerMyCatalogClick();
+    showHideMyCatalogEmptyText();
+
+}
+
+function formatNumber(number)
+{
+    return numberWithCommas( parseFloat(Math.round(number * 100) / 100).toFixed(2) );
+}
+
+function numberWithCommas(x) {
+    var parts = x.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return parts.join(".");
+}
+
+function showHideMyCatalogEmptyText()
+{
+    var catalogCol = $$('.mycatalog')[0];
+    var emptyContainer = $('mbemro_customcatalog_grid_table').select('.empty-text')[0];
+    if (emptyContainer != undefined) {
+        emptyContainer.hide();
+        if (catalogCol == undefined)
+            emptyContainer.show();
+    }
+
+}
+
+function removeMyCatalogRow(sku)
+{
+    var catalogCol = $$('.mycatalog')[0];
+
+    if (catalogCol != undefined) {
+        catalogCol.up(1).select('tr').each(function(element) {
+            var col = element.select('td:first-child')[0];
+            if (col != undefined) {
+                var rowSku = col.innerHTML.trim();
+
+                if (rowSku == sku)
+                {
+                    element.remove();
+                }
+            }
+
+
+        });
+    }
+    showHideMyCatalogEmptyText();
+}
+
+function removeMyCatalog()
+{
+    var sku = skuEl.value;
+    if (sku.trim() == '') {
+        alert('Please chose product to remove.');
+        return;
+    }
+    var deleteUrl = customCatalog.deleteUrl;
+    new Ajax.Request(deleteUrl, {
+        method: 'post',
+        parameters: {sku: sku, customer_id: mbeCustomerId, form_key: customCatalog.formKey},
+        onLoading: function (transport) {
+            $('mycatalog-ajax-status').update('Operation in progress...');
+        },
+        onComplete: function(transport) {
+            var response = transport.responseText.evalJSON();
+            $('mycatalog-ajax-status').update('');
+            if(response.message) {
+                $('mycatalog-ajax-status').update(response.message);
+            }
+            if(response.status){
+                removeMyCatalogRow(response.sku);
+            }
+
+        }
+    });
+}
+
+function saveMyCatalog(){
+    var sku = skuEl.value;
+    if (sku.trim() == '') {
+        alert('Please enter new sku to add product or chose product to update.');
+        return;
+    }
+    var part_number = partNumberEl.value;
+    var notes = notesEl.value;
+    var price = priceEl.value;
+
+    var reloadurl = customCatalog.reloadUrl;
+    var updatePanel = $('mycatalog-ajax-status');
+
+    new Ajax.Request(reloadurl, {
+            method: 'post',
+            parameters: {sku: sku, customer_id: mbeCustomerId, part_number: part_number, notes: notes, price: price, form_key: customCatalog.formKey},
+        onLoading: function (transport) {
+            updatePanel.update('Product operation in progress...');
+    },
+    onComplete: function(transport) {
+        var response = transport.responseText.evalJSON();
+        updatePanel.update('');
+        if(response.message) {
+            updatePanel.update(response.message);
+            clearMyCatalogForm();
+            addMyCatalogRow(response);
+        }
+
+    }
+});
+}
+
+// categories
+
+var catId = document.getElementById('catalog_category_id');
+var catName = document.getElementById('catalog_category_name');
+var catAmount = document.getElementById('catalog_category_discount_amount');
+var catSubCatsApply = document.getElementById('catalog_category_subcategories_apply');
+var catBtnSave = document.getElementById('mycatalog-cat-save');
+var catBtnRemove = document.getElementById('mycatalog-cat-remove');
+var catBtnSaveAll = document.getElementById('mycatalog-cat-all');
+
+$(catId).observe('keypress', function(event) {
+    var key = event.which || event.keyCode;
+    var urlToUse = customCatalogCat.keypressUrl;
+
+    if ((key == Event.KEY_RETURN) && (catAmount.value == '')) {
+        var updatePanel = $('mycatalog-cat-ajax-status');
+        updatePanel.update('');
+        new Ajax.Request(urlToUse, {
+            method: 'post',
+            parameters: { cat_id: this.value, customer_id: mbeCustomerId, form_key: customCatalog.formKey},
+            onComplete: function(transport) {
+                var response = transport.responseText.evalJSON();
+                if(response.status){
+                    catAmount.value = response.amount;
+                    catSubCatsApply.checked = false;
+                    if(response.apply_subcat){
+                        catSubCatsApply.checked = true;
+                    }
+                    catAmount.focus();
+                }
+                if(response.category_name) {
+                    catName.value = response.category_name;
+                }
+                if(response.message) {
+                    updatePanel.update(response.message);
+                }
+            }
+        });
+    }
+});
+
+observerMyCatalogCatClick();
+
+function observerMyCatalogCatClick() {
+
+    $$('.mycatalog-cat').each(function(element) {
+        element.observe('click', editMyCatalogCat);
+    });
+
+}
+
+function editMyCatalogCat(event, element)
+{
+    clearMyCatalogCatForm();
+
+    var row = this.up();
+
+    catId.value = clearMyCatalogStringValue(row.select('.cat-id')[0].innerHTML);
+    catName.value = clearMyCatalogStringValue(row.select('.cat-name')[0].innerHTML);
+    catAmount.value = clearMyCatalogStringValue(row.select('.cat-amount')[0].innerHTML).replace(',','');
+    catSubCatsApply.checked = false;
+    if (row.select('.cat-apply')[0].select('input')[0].checked) {
+        catSubCatsApply.checked = true;
+    }
+    if (catAmount.value == 0.00) {
+        catAmount.value = '';
+    }
+
+    $('customcatalog_edit_category_form').scrollTo();
+
+    Event.stop(event);
+}
+
+function saveMyCatalogCat()
+{
+    var cat = catId.value;
+    if (cat.trim() == '') {
+        alert('Please enter category ID or choose category to update.');
+        return;
+    }
+
+    var amount = catAmount.value;
+    var apply = catSubCatsApply.checked;
+
+    var reloadurl = customCatalogCat.reloadUrl;
+    var updatePanel = $('mycatalog-cat-ajax-status');
+
+    new Ajax.Request(reloadurl, {
+        method: 'post',
+        parameters: {cat_id: cat, customer_id: mbeCustomerId, amount: amount, apply_sub: apply, form_key: customCatalogCat.formKey},
+        onLoading: function (transport) {
+            updatePanel.update('Category operation in progress...');
+        },
+        onComplete: function(transport) {
+            var response = transport.responseText.evalJSON();
+            updatePanel.update('');
+            if(response.message) {
+                updatePanel.update(response.message);
+                clearMyCatalogCatForm();
+                addMyCatalogCatRow(response);
+            }
+
+        }
+    });
+}
+
+function removeMyCatalogCat()
+{
+    var cat_id = catId.value;
+    if (cat_id.trim() == '') {
+        alert('Please chose category to remove.');
+        return;
+    }
+
+    var deleteUrl = customCatalogCat.deleteUrl;
+    var updatePanel = $('mycatalog-cat-ajax-status');
+    new Ajax.Request(deleteUrl, {
+        method: 'post',
+        parameters: {category_id: cat_id, customer_id: mbeCustomerId, form_key: customCatalogCat.formKey},
+        onLoading: function (transport) {
+            updatePanel.update('Operation in progress...');
+        },
+        onComplete: function(transport) {
+            var response = transport.responseText.evalJSON();
+            updatePanel.update('');
+
+            if(response.status){
+                removeMyCatalogCatRow(response.category_id);
+                clearMyCatalogCatForm();
+            }
+
+            if(response.message) {
+                updatePanel.update(response.message);
+            }
+
+        }
+    });
+}
+
+function clearMyCatalogCatForm()
+{
+    catId.value = '';
+    catName.value = '';
+    catAmount.value = '';
+    catSubCatsApply.checked = false;
+    $('mycatalog-cat-ajax-status').update('');
+}
+
+function addMyCatalogCatRow(element)
+{
+    console.log(element);
+    removeMyCatalogCatRow(element.category_id);
+    var catalogCol = $$('.mycatalog-cat')[0];
+    var mainCssClass = 'mycatalog-cat';
+    var addChecked = element.apply_subcat ? 'checked' : '';
+    var appendHtml = '<tr class="pointer"><td class="'+mainCssClass+' cat-id">'+ element.category_id +'</td>'
+        +'<td class="'+mainCssClass+' cat-name">'
+        + element.category_name + '</td><td class="'+mainCssClass+' cat-amount">'
+        + formatNumber(element.amount) + '</td><td class="'+mainCssClass+' cat-apply">'
+        + '<input type="checkbox" disabled ' + addChecked +  '/></td>'
+        + '</tr>';
+    if (catalogCol == undefined) {
+        $('mbemro_customcatalog_category_grid_table').select('tr:last-child')[0].insert({
+            after: appendHtml
+        });
+    } else {
+        catalogCol.up(1).select('tr:last-child')[0].insert({
+            after: appendHtml
+        });
+    }
+    observerMyCatalogCatClick();
+    showHideMyCatalogCatEmptyText();
+
+}
+
+function removeMyCatalogCatRow(categoryId)
+{
+    var catalogCol = $$('.mycatalog-cat')[0];
+
+    if (catalogCol != undefined) {
+        catalogCol.up(1).select('tr').each(function(element) {
+            var col = element.select('td:first-child')[0];
+            if (col != undefined) {
+                var rowCategoryId = col.innerHTML.trim();
+
+                if (rowCategoryId == categoryId)
+                {
+                    element.remove();
+                }
+            }
+
+
+        });
+    }
+    showHideMyCatalogCatEmptyText();
+}
+
+function showHideMyCatalogCatEmptyText()
+{
+    var catalogCol = $$('.mycatalog')[0];
+    var emptyContainer = $('mbemro_customcatalog_category_grid_table').select('.empty-text')[0];
+    if (emptyContainer != undefined) {
+        emptyContainer.hide();
+        if (catalogCol == undefined)
+            emptyContainer.show();
+    }
+}
+
+</script>

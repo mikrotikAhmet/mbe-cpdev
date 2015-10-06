@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config>
+    <global>
+        <models>
+            <sales>
+                <rewrite>
+                    <order>Mbemro_Rewrite_Model_Order</order>
+                </rewrite>
+            </sales>
+        </models>
+        <helpers>
+            <catalog>
+                <rewrite>
+                    <output>Mbemro_Rewrite_Helper_Output</output>
+                </rewrite>
+            </catalog>
+        </helpers>
+    </global>
+
+    <modules>
+        <Mbemro_Rewrite>
+            <version>1.0.0</version>
+        </Mbemro_Rewrite>
+    </modules>
+
+    <frontend>
+        <routers>
+            <reports>
+                <use>standard</use>
+                <args>
+                    <module>CustomerReports</module>
+                    <frontName>customer_reports</frontName>
+                </args>
+            </reports>
+        </routers>
+    </frontend>
+</config>
