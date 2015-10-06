@@ -1,0 +1,114 @@
+<?php
+namespace Vbw\Procurement\Punchout\Request\Body;
+
+use Vbw\Procurement\Punchout;
+
+class Contact
+    extends Punchout\Data\Access
+{
+
+    protected $_email = null;
+
+    protected $_name = null;
+
+    protected $_unique = null;
+
+
+    public function inflate ($data)
+    {
+        if (is_array($data)) {
+            foreach ($data AS $key => $value) {
+                switch (strtolower($key))  {
+                    case "email":
+                    case "name":
+                    case "unique":
+                    case "data":
+                        $this->{"set". $key}($value);
+                        break;
+                }
+            }
+        }
+    }
+
+
+    public function toArray ()
+    {
+        $data = parent::toArray();
+        $data['email'] = $this->getEmail();
+        $data['name'] = $this->getName();
+        $data['unique'] = $this->getUnique();
+
+        return $data;
+    }
+
+    public function setEmail($email)
+    {
+        $this->_email = $email;
+    }
+
+    public function getEmail()
+    {
+        return $this->_email;
+    }
+
+    public function setName($name)
+    {
+        $this->_name = $name;
+    }
+
+    public function getName()
+    {
+        return $this->_name;
+    }
+
+    public function setUnique($unique)
+    {
+        $this->_unique = $unique;
+    }
+
+    public function getUnique()
+    {
+        return $this->_unique;
+    }
+
+}
+    /*
+        <PunchOutSetupRequest
+                operation="create">
+            <BuyerCookie>BunrmXY8HHaUL18j0.508439296124953916</BuyerCookie>
+            <Extrinsic
+                name="CostCenter">670</Extrinsic>
+			<Extrinsic
+                name="UniqueName">catalog_tester</Extrinsic>
+			<Extrinsic
+                    name="UserEmail">catalog_tester@ariba.com</Extrinsic>
+			<BrowserFormPost>
+                <URL>https://service.ariba.com/CatalogTester.aw/651389/ad/handlePunchOutOrder/BunrmXY8HHaUL18j0.508439296124953916?awr=2&amp;aws=BunrmXY8HHaUL18j</URL>
+            </BrowserFormPost>
+            <SupplierSetup>
+                <URL>https://www.harperhardwareandtools.com/punchout/request/</URL>
+            </SupplierSetup>
+            <ShipTo>
+                    <Address
+                        addressID="26">
+	    				<Name
+	                        xml:lang="en-US">Catalog Tester</Name>
+	    				<PostalAddress
+	                            name="_5uicbb">
+						    <DeliverTo>Catalog Tester</DeliverTo>
+						    <Street>1234 Catalog Tester Way</Street>
+						    <City>Sunnyvale</City>
+						    <State>CA</State>
+						    <PostalCode>94089</PostalCode>
+						    <Country isoCountryCode="US">United States</Country>
+						</PostalAddress>
+			  	  </Address>
+            </ShipTo>
+            <SelectedItem>
+                    <ItemID>
+                        <SupplierPartID>AAA</SupplierPartID>
+                        <SupplierPartAuxiliaryID/>
+                    </ItemID>
+                </SelectedItem>
+        </PunchOutSetupRequest>
+    */
