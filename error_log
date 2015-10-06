@@ -1,0 +1,755 @@
+[02-Jul-2015 08:44:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Mo in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[02-Jul-2015 10:14:37 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /backup/www/live/app/code/core/Mage/Core/Helper/String.php on line 103
+[02-Jul-2015 20:10:36 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction' in /backup/www/live/lib/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /backup/www/live/lib/Varien/Db/Statement/Pdo/Mysql.php(110): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /backup/www/live/app/code/core/Zend/Db/Statement.php(291): Varien_Db_Statement_Pdo_Mysql->_execute(Array)
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('INSERT INTO `in...', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('INSERT INTO `in...', Array)
+#6 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(1934): Varien_Db_Adapter_Pdo_Mysql->query('INSERT INTO `in...', Array)
+#7 /backup/www/live/app/code in /backup/www/live/lib/Zend/Db/Statement/Pdo.php on line 235
+[03-Jul-2015 10:14:17 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /backup/www/live/app/code/core/Mage/Core/Helper/String.php on line 103
+[04-Jul-2015 10:14:18 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php on line 449
+[05-Jul-2015 10:14:16 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /backup/www/live/app/code/local/Mirasvit/Misspell/Helper/String.php on line 34
+[06-Jul-2015 10:14:17 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /backup/www/live/app/code/core/Mage/Core/Helper/String.php on line 103
+[14-Jul-2015 05:15:28 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1114 The table 'catalog_product_entity_varchar' is full' in /backup/www/live/lib/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /backup/www/live/lib/Varien/Db/Statement/Pdo/Mysql.php(110): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /backup/www/live/app/code/core/Zend/Db/Statement.php(291): Varien_Db_Statement_Pdo_Mysql->_execute(Array)
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('INSERT INTO `ca...', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('INSERT INTO `ca...', Array)
+#6 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(1934): Varien_Db_Adapter_Pdo_Mysql->query('INSERT INTO `ca...', Array)
+#7 /backup/www/live/app/code/core/Mage/Eav/Model/Ent in /backup/www/live/lib/Zend/Db/Statement/Pdo.php on line 235
+[14-Jul-2015 17:35:38 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1114 The table 'catalog_product_entity_varchar' is full' in /backup/www/live/lib/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /backup/www/live/lib/Varien/Db/Statement/Pdo/Mysql.php(110): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /backup/www/live/app/code/core/Zend/Db/Statement.php(291): Varien_Db_Statement_Pdo_Mysql->_execute(Array)
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('INSERT INTO `ca...', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('INSERT INTO `ca...', Array)
+#6 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(1934): Varien_Db_Adapter_Pdo_Mysql->query('INSERT INTO `ca...', Array)
+#7 /backup/www/live/app/code/core/Mage/Eav/Model/Ent in /backup/www/live/lib/Zend/Db/Statement/Pdo.php on line 235
+[14-Jul-2015 20:18:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Mo in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[14-Jul-2015 20:19:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Mo in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[14-Jul-2015 20:20:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Mo in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[14-Jul-2015 20:21:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Mo in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[14-Jul-2015 20:22:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Mo in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[14-Jul-2015 20:23:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Mo in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[14-Jul-2015 20:24:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Mo in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[14-Jul-2015 20:25:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Mo in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[14-Jul-2015 20:26:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Mo in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[14-Jul-2015 20:27:06 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Mo in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[14-Jul-2015 20:28:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Mo in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[14-Jul-2015 20:29:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Mo in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[14-Jul-2015 20:30:10 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Mo in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[14-Jul-2015 20:31:02 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Mo in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[14-Jul-2015 20:32:02 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2006] MySQL server has gone away' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/M in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[14-Jul-2015 20:33:02 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Mo in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[14-Jul-2015 20:34:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Mo in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[14-Jul-2015 20:35:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Mo in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[14-Jul-2015 20:53:59 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '113933-2-1' for key 'PRIMARY'' in /backup/www/live/lib/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /backup/www/live/lib/Varien/Db/Statement/Pdo/Mysql.php(110): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /backup/www/live/app/code/core/Zend/Db/Statement.php(291): Varien_Db_Statement_Pdo_Mysql->_execute(Array)
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('INSERT INTO `ca...', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('INSERT INTO `ca...', Array)
+#6 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(576): Varien_Db_Adapter_Pdo_Mysql->query('INSERT INTO `ca...', Array)
+#7 /backup/www/live/app/code/core/Mage/Cata in /backup/www/live/lib/Zend/Db/Statement/Pdo.php on line 235
+[14-Jul-2015 20:57:27 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '128630-2-1' for key 'PRIMARY'' in /backup/www/live/lib/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /backup/www/live/lib/Varien/Db/Statement/Pdo/Mysql.php(110): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /backup/www/live/app/code/core/Zend/Db/Statement.php(291): Varien_Db_Statement_Pdo_Mysql->_execute(Array)
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('INSERT INTO `ca...', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('INSERT INTO `ca...', Array)
+#6 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(576): Varien_Db_Adapter_Pdo_Mysql->query('INSERT INTO `ca...', Array)
+#7 /backup/www/live/app/code/core/Mage/Cata in /backup/www/live/lib/Zend/Db/Statement/Pdo.php on line 235
+[20-Jul-2015 08:02:57 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1205 Lock wait timeout exceeded; try restarting transaction' in /backup/www/live/lib/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /backup/www/live/lib/Varien/Db/Statement/Pdo/Mysql.php(110): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /backup/www/live/app/code/core/Zend/Db/Statement.php(291): Varien_Db_Statement_Pdo_Mysql->_execute(Array)
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('UPDATE `catalog...', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('UPDATE `catalog...', Array)
+#6 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(635): Varien_Db_Adapter_Pdo_Mysql->query('UPDATE `catalog...', Array)
+#7 /backup/www/live/app/code/core/Mage/Eav/Model/Ent in /backup/www/live/lib/Zend/Db/Statement/Pdo.php on line 235
+[22-Jul-2015 18:53:22 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1205 Lock wait timeout exceeded; try restarting transaction' in /backup/www/live/lib/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /backup/www/live/lib/Varien/Db/Statement/Pdo/Mysql.php(110): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /backup/www/live/app/code/core/Zend/Db/Statement.php(291): Varien_Db_Statement_Pdo_Mysql->_execute(Array)
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('INSERT INTO `in...', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('INSERT INTO `in...', Array)
+#6 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(1934): Varien_Db_Adapter_Pdo_Mysql->query('INSERT INTO `in...', Array)
+#7 /backup/www/live/app/code/core/Mage/Index/Mod in /backup/www/live/lib/Zend/Db/Statement/Pdo.php on line 235
+[22-Jul-2015 19:03:40 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1205 Lock wait timeout exceeded; try restarting transaction' in /backup/www/live/lib/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /backup/www/live/lib/Varien/Db/Statement/Pdo/Mysql.php(110): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /backup/www/live/app/code/core/Zend/Db/Statement.php(291): Varien_Db_Statement_Pdo_Mysql->_execute(Array)
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('UPDATE `index_p...', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('UPDATE `index_p...', Array)
+#6 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(635): Varien_Db_Adapter_Pdo_Mysql->query('UPDATE `index_p...', Array)
+#7 /backup/www/live/app/code/core/Mage/Core/Model/Re in /backup/www/live/lib/Zend/Db/Statement/Pdo.php on line 235
+[22-Jul-2015 19:24:22 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1205 Lock wait timeout exceeded; try restarting transaction' in /backup/www/live/lib/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /backup/www/live/lib/Varien/Db/Statement/Pdo/Mysql.php(110): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /backup/www/live/app/code/core/Zend/Db/Statement.php(291): Varien_Db_Statement_Pdo_Mysql->_execute(Array)
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('UPDATE `index_p...', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('UPDATE `index_p...', Array)
+#6 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(635): Varien_Db_Adapter_Pdo_Mysql->query('UPDATE `index_p...', Array)
+#7 /backup/www/live/app/code/core/Mage/Core/Model/Re in /backup/www/live/lib/Zend/Db/Statement/Pdo.php on line 235
+[27-Jul-2015 08:02:58 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1205 Lock wait timeout exceeded; try restarting transaction' in /backup/www/live/lib/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /backup/www/live/lib/Varien/Db/Statement/Pdo/Mysql.php(110): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /backup/www/live/app/code/core/Zend/Db/Statement.php(291): Varien_Db_Statement_Pdo_Mysql->_execute(Array)
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('UPDATE `catalog...', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('UPDATE `catalog...', Array)
+#6 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(635): Varien_Db_Adapter_Pdo_Mysql->query('UPDATE `catalog...', Array)
+#7 /backup/www/live/app/code/core/Mage/Eav/Model/Ent in /backup/www/live/lib/Zend/Db/Statement/Pdo.php on line 235
+[27-Jul-2015 09:01:32 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1205 Lock wait timeout exceeded; try restarting transaction' in /backup/www/live/lib/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /backup/www/live/lib/Varien/Db/Statement/Pdo/Mysql.php(110): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /backup/www/live/app/code/core/Zend/Db/Statement.php(291): Varien_Db_Statement_Pdo_Mysql->_execute(Array)
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('UPDATE `catalog...', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('UPDATE `catalog...', Array)
+#6 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(635): Varien_Db_Adapter_Pdo_Mysql->query('UPDATE `catalog...', Array)
+#7 /backup/www/live/app/code/core/Mage/Eav/Model/Ent in /backup/www/live/lib/Zend/Db/Statement/Pdo.php on line 235
+[27-Jul-2015 09:05:02 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1205 Lock wait timeout exceeded; try restarting transaction' in /backup/www/live/lib/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /backup/www/live/lib/Varien/Db/Statement/Pdo/Mysql.php(110): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /backup/www/live/app/code/core/Zend/Db/Statement.php(291): Varien_Db_Statement_Pdo_Mysql->_execute(Array)
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('UPDATE `catalog...', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('UPDATE `catalog...', Array)
+#6 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(635): Varien_Db_Adapter_Pdo_Mysql->query('UPDATE `catalog...', Array)
+#7 /backup/www/live/app/code/core/Mage/Eav/Model/Ent in /backup/www/live/lib/Zend/Db/Statement/Pdo.php on line 235
+[29-Sep-2015 22:20:02 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[29-Sep-2015 22:30:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[29-Sep-2015 22:40:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[29-Sep-2015 22:50:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[29-Sep-2015 23:00:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[29-Sep-2015 23:10:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[29-Sep-2015 23:20:02 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[29-Sep-2015 23:30:02 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[29-Sep-2015 23:40:02 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[29-Sep-2015 23:50:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 00:00:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 00:10:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[08004] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 00:20:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 00:30:02 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 00:40:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 00:50:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 01:00:02 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 01:10:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 01:20:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 01:30:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 01:40:02 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 01:50:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 02:00:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 02:10:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 02:20:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 02:30:02 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 02:40:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 02:50:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 03:00:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 03:10:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 03:20:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 03:30:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 03:40:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 03:50:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 04:00:02 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 04:10:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 04:20:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 04:30:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 04:40:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 04:50:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 05:00:02 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 05:10:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 05:20:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[30-Sep-2015 05:30:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1040] Too many connections' in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'mbemrocatalog', 'blablakrc75', Array)
+#1 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(320): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /backup/www/live/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /backup/www/live/lib/Varien/Db/Adapter/Pdo/Mysql.php(428): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /backup/www/live/app/code/core/Mage/Core/Model/Resource.php(179): Varien_Db_Adapter_Pdo_Mysql->query('SET NAMES utf8')
+#7 /backup/www/live/app/code/core/Mage/Core/Model/R in /backup/www/live/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144

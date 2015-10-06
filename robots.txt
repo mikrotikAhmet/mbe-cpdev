@@ -1,0 +1,8 @@
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: *
+Allow: /
+Crawl-delay: 10
+
+Sitemap: http://mbemrocatalog.com/sitemap_index.xml
