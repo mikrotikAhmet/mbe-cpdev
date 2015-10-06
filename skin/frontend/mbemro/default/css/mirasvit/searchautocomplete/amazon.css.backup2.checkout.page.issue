@@ -1,0 +1,353 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.searchautocomplete {
+  margin-bottom: 8px;
+  top: -5px;
+  right: 0px;
+  height: 34px;
+  width: 300px;
+  padding: 0px 0px 4px 0px;
+  __-webkit-border-radius: 0px 0px 0px 5px;
+  __-moz-border-radius: 0px 0px 0px 5px;
+  __border-radius: 0px 0px 0px 5px;
+  background: #fff;
+  display: block;
+}
+.searchautocomplete .sprite {
+  background: url('../../../images/mirasvit/sprite.png');
+}
+.searchautocomplete > label {
+  float: left;
+  margin-right: 10px;
+  color: #333;
+  font-weight: bold;
+  margin-top: 8px;
+  display:none;
+}
+.searchautocomplete .nav {
+  background: url('../../../images/mirasvit/sprite.png');
+  float: left;
+  height: 34px;
+  position: relative;
+  width: 255px;
+}
+.searchautocomplete .nav .nav-search-in {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 15;
+}
+.searchautocomplete .nav .nav-search-in .category {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  background: white;
+  border: 1px solid #DDD;
+  color: black;
+  cursor: pointer;
+  height: 29px;
+  left: 5px;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  position: absolute;
+  top: 5px;
+  visibility: visible;
+  width: auto;
+}
+.searchautocomplete .nav .nav-search-in .category-fake {
+  -webkit-border-radius: 5px 0px 0px 5px;
+  -moz-border-radius: 5px 0px 0px 5px;
+  border-radius: 5px 0px 0px 5px;
+  background-color: #fcfcfc;
+  background-image: -moz-linear-gradient(top, #ffffff, #f7f7f7);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f7f7f7));
+  background-image: -webkit-linear-gradient(top, #ffffff, #f7f7f7);
+  background-image: -o-linear-gradient(top, #ffffff, #f7f7f7);
+  background-image: linear-gradient(to bottom, #ffffff, #f7f7f7);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff7f7f7', GradientType=0);
+  border-right: 1px solid #dddddd;
+  color: #777;
+  cursor: pointer;
+  float: left;
+  font-size: 11px;
+  height: 27px;
+  line-height: 27px;
+  margin: 4px 0px 0px 2px;
+  padding: 0px 25px 0px 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+.searchautocomplete .nav .nav-search-in .nav-down-arrow {
+  background: url('../../../images/mirasvit/sprite.png');
+  width: 9px;
+  height: 5px;
+  background-position: -26px -34px;
+  display: block;
+  right: 10px;
+  top: 16px;
+  position: absolute;
+}
+.searchautocomplete .nav .nav-search-in:hover .category-fake {
+  background-color: #eeeeee;
+  background-image: -moz-linear-gradient(top, #f7f7f7, #e1e1e1);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f7f7f7), to(#e1e1e1));
+  background-image: -webkit-linear-gradient(top, #f7f7f7, #e1e1e1);
+  background-image: -o-linear-gradient(top, #f7f7f7, #e1e1e1);
+  background-image: linear-gradient(to bottom, #f7f7f7, #e1e1e1);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff7f7f7', endColorstr='#ffe1e1e1', GradientType=0);
+}
+.searchautocomplete .nav .nav-search-in:hover .nav-down-arrow {
+  background-position: -6px -34px;
+}
+.searchautocomplete .nav .nav-input {
+  *zoom: 1;
+  margin: 6px 0px 0px 10px;
+  padding: 0px 5px 0px 5px;
+  z-index: 12;
+  position: relative;
+}
+.searchautocomplete .nav .nav-input:before,
+.searchautocomplete .nav .nav-input:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.searchautocomplete .nav .nav-input:after {
+  clear: both;
+}
+.searchautocomplete .nav .nav-input input {
+  z-index: 10;
+  padding: 0px;
+  height: 23px;
+  border: 0px;
+  font-family: arial, sans-serif;
+  font-size: 11px;
+  background: transparent;
+  color: black;
+  outline: 0px;
+  margin-left: 5px;
+  width: 100%;
+}
+.searchautocomplete .nav .nav-input input.suggest {
+  display: none;
+  color: #999;
+  z-index: 9;
+}
+.searchautocomplete .nav-submit-button {
+  background: url('../../../images/mirasvit/sprite.png');
+  background-position: 0px -34px;
+  background-repeat: no-repeat;
+  float: left;
+  height: 34px;
+  padding-left: 5px;
+}
+
+/**
+.searchautocomplete .nav-submit-button .button {
+  width: 39px;
+  height: 34px;
+  padding: 0px 9px;
+  margin: 0px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  line-height: 12px;
+  font-size: 13px;
+  background-color: #CCC;
+  __-webkit-border-radius: 0px 5px 5px 0px;
+  __-moz-border-radius: 0px 5px 5px 0px;
+  __border-radius: 0px 5px 5px 0px;
+  z-index: 14;
+}
+**/
+
+.searchautocomplete .nav-submit-button .button {
+  width: 39px;
+  height: 34px;
+  padding: 0px 9px;
+  margin: 0px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  line-height: 12px;
+  font-size: 13px;
+  background-color: #10345A;
+  background-image: -moz-linear-gradient(top, #10345A, #15375C);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#10345A), to(#15375C));
+  background-image: -webkit-linear-gradient(top, #10345A, #15375C);
+  background-image: -o-linear-gradient(top, #10345A, #15375C);
+  background-image: linear-gradient(to bottom, #10345A, #15375C);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#10345A', endColorstr='#15375C', GradientType=0);
+  border: 1px solid #313a44;
+  -webkit-border-radius: 0px 5px 5px 0px;
+  -moz-border-radius: 0px 5px 5px 0px;
+  border-radius: 0px 5px 5px 0px;
+  z-index: 14;
+}
+
+
+.searchautocomplete .nav-submit-button .button:hover {
+  background-color: #39414b;
+  background-image: -moz-linear-gradient(top, #15375C, #10345A);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#15375C), to(#10345A));
+  background-image: -webkit-linear-gradient(top, #15375C, #10345A);
+  background-image: -o-linear-gradient(top, #15375C, #10345A);
+  background-image: linear-gradient(to bottom, #15375C, #10345A);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#15375C', endColorstr='#10345A', GradientType=0);
+}
+.searchautocomplete .searchautocomplete-placeholder {
+  background: #FFF;
+  border: 1px solid #ccc;
+  padding: 15px 10px 5px 10px;
+  position: absolute;
+  right: 678px;
+  top: 225px;
+  width: 318px;
+  z-index: 102;
+}
+.searchautocomplete .searchautocomplete-placeholder:before {
+  border-color: transparent transparent #CCC transparent;
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 5px;
+  height: 0;
+  width: 0;
+  top: -11px;
+  left: 30px;
+}
+.searchautocomplete .searchautocomplete-placeholder ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.searchautocomplete .searchautocomplete-placeholder ul li {
+  *zoom: 1;
+  text-align: left;
+  padding: 5px 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #CCCCCC;
+}
+.searchautocomplete .searchautocomplete-placeholder ul li:before,
+.searchautocomplete .searchautocomplete-placeholder ul li:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.searchautocomplete .searchautocomplete-placeholder ul li:after {
+  clear: both;
+}
+.searchautocomplete .searchautocomplete-placeholder ul li a {
+  text-decoration: none;
+}
+.searchautocomplete .searchautocomplete-placeholder ul li a.name {
+  color: #444;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 3px;
+  float:none;
+}
+.searchautocomplete .searchautocomplete-placeholder ul li a .pull-right {
+  float: right;
+}
+.searchautocomplete .searchautocomplete-placeholder ul li.active {
+  background-color: #FCFCC0;
+  cursor: pointer;
+}
+.searchautocomplete .searchautocomplete-placeholder ul li.active a {
+  text-decoration: none;
+}
+.searchautocomplete .searchautocomplete-placeholder ul li .searchautocomlete-image {
+  float: left;
+  margin: 0px 10px 5px 0px;
+  display:none;
+}
+.searchautocomplete .searchautocomplete-placeholder ul li .price-box {
+  font-weight: bold;
+  font-size: 13px;
+  color: #C76200;
+  float: right;
+  display:none;
+}
+.searchautocomplete .searchautocomplete-placeholder ul li .price-box .regular-price .price-label,
+.searchautocomplete .searchautocomplete-placeholder ul li .price-box .old-price .price-label,
+.searchautocomplete .searchautocomplete-placeholder ul li .price-box .special-price .price-label {
+  display: none;
+}
+.searchautocomplete .searchautocomplete-placeholder ul li .price-box .price-label {
+  font-weight: normal;
+  color: #999;
+}
+.searchautocomplete .searchautocomplete-placeholder ul li .price-box .old-price .price {
+  font-size: 0.9em;
+  color: #999;
+}
+.searchautocomplete .searchautocomplete-placeholder ul li .highlight strong {
+  color: #f00;
+}
+
+.highlight {
+	display:none;
+}
+
+.searchautocomplete .searchautocomplete-placeholder .index-title {
+  text-align: right;
+  color: #0A263C;
+  border-bottom: 1px solid #CCC;
+  padding: 2px 5px;
+}
+.searchautocomplete .searchautocomplete-placeholder .index-title span {
+  color: #666;
+  font-size: 0.9em;
+}
+.searchautocomplete .searchautocomplete-placeholder .all {
+  text-align: right;
+  margin: 10px 4px 5px 10px;
+}
+.searchautocomplete .searchautocomplete-loader {
+  position: absolute;
+  top: 11px;
+  right: 10px;
+  width: 16px;
+  height: 16px;
+  background: url('../../../images/mirasvit/loader.gif');
+}
+.searchautocomplete-widget {
+  position: relative;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: auto;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}

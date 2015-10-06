@@ -1,0 +1,48 @@
+#report,  {margin-top:20px}
+
+table.pivot ul {list-style-image:none; list-style-type:none; }
+
+table.pivot {border-collapse : collapse; text-align : right;}
+
+table.pivot td.resultcell, table.pivot .foldunfold{text-decoration : none; cursor:pointer; white-space:nowrap; border-left: 1px solid #E6E5E5;}
+table.pivot td.resultcell:hover, table.pivot .foldunfold:hover { text-decoration: underline; }
+
+table.pivot th, table.pivot td{padding :5px;}
+
+table.pivot tr.head{font-size : larger;text-align : center; border-bottom: 1px solid #E6E5E5; color: #032856;}
+
+table.pivot .total{ white-space:nowrap;}
+
+table.pivot tr.total th{text-align : left;}
+
+table.pivot tr.total td, table.pivot tr.total th{border-top : solid 1px #E6E5E5; }
+table.pivot tr.total td.coltotal {border-left: solid 1px #E6E5E5;}
+
+table.pivot td.total{border-left : solid 1px #E6E5E5;}
+
+table.pivot td.total.total1{border-left : none;}
+
+table.pivot tr.head th.groupby{ }
+
+table.pivot tr.head th.pivotcol{font-size : smaller;border : solid 1px #E6E5E5;}
+
+table.pivot th.groupby{text-align:left;font-weight : normal;}
+
+table.pivot .foldunfold
+{
+    color : Black;
+	background-image : url('../images/minus-tiny.png');
+	background-repeat : no-repeat;
+	background-position:left;
+	padding-left:18px;
+}
+
+table.pivot .foldunfold.collapsed{background-image : url('../images/plus-tiny.png');}
+
+.my-purchases h3 { border-bottom: solid 1px #E6E5E5;}
+
+ .datepicker {width: 80px;}
+
+.filter-all-time { margin-right: 14px;}
+#order-status { position: relative; top: -39px; left: 210px; }
+#customerreports-message { font-weight: bold; margin-bottom: 20px;}

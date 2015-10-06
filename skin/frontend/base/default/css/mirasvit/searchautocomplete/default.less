@@ -1,0 +1,169 @@
+@import "mixin.less";
+
+.searchautocomplete {
+    .search-autocomplete {
+        position: absolute;
+    }
+
+    .form-search {
+        overflow: none !important;
+        position: relative;
+    }
+
+    .sprite {
+        background: url('../../../images/mirasvit/sprite.png');
+    }
+
+    .nav-search-in {
+        position: absolute;
+        top: 2px;
+        left: 0px;
+        z-index: 11;
+
+        .category {
+            .opacity(0);
+            background: white;
+            border: 1px solid #DDD;
+            color: black;
+            cursor:pointer;
+            height:29px;
+            left: 5px;
+            margin: 0;
+            outline: 0;
+            padding: 0;
+            position: absolute;
+            top: 5px;
+            visibility: visible;
+            width: auto;
+        }
+
+
+        .category-fake {
+            height: 20px;
+            color: #777;
+            cursor: pointer;
+            float: left;
+            font-size: 11px;
+            padding: 0px 25px 0px 10px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .nav-down-arrow {
+            .sprite();
+            width: 9px;
+            height: 5px;
+            background-position: -26px -34px;
+            display: block;
+            right: 10px;
+            top: 16px;
+            position: absolute;
+        }
+
+        &:hover {
+            .category-fake {
+                color: #000;
+            }
+            .nav-down-arrow {
+                background-position: -6px -34px;
+            }
+        }
+
+    }
+
+    .searchautocomplete-placeholder {
+        .border-radius(5px 5px 5px 5px);
+        background: #FFF;
+        border: 1px solid #ccc;
+        padding-top: 15px;
+        position: absolute;
+        z-index: 102;
+
+        &:before {
+            border-color: transparent transparent #CCC transparent;
+            content: "";
+            position: absolute;
+            border-style: solid;
+            border-width: 5px;
+            height: 0;
+            width: 0;
+            top: -11px;
+            left: 30px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                .clearfix();
+                text-align: left;
+                padding: 5px 5px;
+
+                a {
+                    text-decoration: none;
+
+                    .pull-right {
+                        float: right;
+                    }
+                }
+
+                &.active {
+                    background-color: #eeeeee;
+                    cursor: pointer;
+
+                    a {
+                        text-decoration: none;
+                    }
+                }
+
+                .searchautocomlete-image {
+                    float: left;
+                    margin: 0px 10px 5px 0px;
+                }
+
+                .price-box {
+                    font-weight: bold;
+                    font-size: 13px;
+                    color: #C76200;
+                    float: right;
+
+                    .regular-price, .old-price, .special-price {
+                        .price-label {
+                            display: none;
+                        }
+                    }
+
+                    .price-label {
+                        font-weight: normal;
+                        color: #999;
+                    }
+
+                    .old-price {
+                        .price {
+                            font-size: 0.9em;
+                            color: #999;
+                        }
+                    }
+                }
+            }
+        }
+
+        .index-title {
+            text-align: right;
+            color: #0A263C;
+            border-bottom: 1px solid #CCC;
+            padding: 2px 5px;
+
+            span {
+                color: #666;
+                font-size: 0.9em;
+            }
+        }
+        .all {
+            text-align: right;
+            margin: 10px 10px 5px 10px;
+        }
+    }
+}

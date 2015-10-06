@@ -1,0 +1,22 @@
+/********Css For Category Sidebar Navigation ************/
+.block-category-nav{border:0 none;}
+.block-category-nav .block-title{background:#f7931d; border:0 none;padding: 5px 10px;border-radius: 5px 5px 0 0;}
+.block-category-nav .block-title strong{color: #FFFFFF; display: block; padding:0; font: bold 13px/16px Arial,Helvetica,sans-serif; min-height: 16px;text-transform: capitalize;}
+.block-category-nav .block-content{background:#FFFFFF; border:1px solid #DDDDDD; border-top:0 none; padding:0;}
+#sidenav{}
+#sidenav li{border-bottom:1px solid #DDDDDD; padding:3px 0;}
+#sidenav li.last{border:0 none;}
+/* #sidenav li:hover{background:#d9ecf2} */
+#sidenav li a{font-size:12px; font-weight:normal; color:#333333; text-decoration:none; padding-left:10px;}
+#sidenav li a.show-cat{background:url(images/arrow.png) center center no-repeat; padding-right:10px;}
+#sidenav li a.active{background:url(images/arrow_active.png) center center no-repeat; padding-right:10px;}
+#sidenav li a:hover{color:#f7931d;/*  text-decoration:underline; */}
+/* Level 0 */
+#sidenav li.level-top{line-height:25px;}
+#sidenav li.level-top a.level-top{ font-weight:bold;}
+#sidenav li ul.level0{padding:0 10px; display:none;}
+#sidenav li ul.level0 li{border-bottom:1px dotted #cacaca;}
+#sidenav li ul.level0 li.last{border:0 none;}
+/* Level 1 */
+#sidenav li ul li ul{ display:none;padding:0 10px;}
+#sidenav li ul li ul li a{color:#5a5a5a;}

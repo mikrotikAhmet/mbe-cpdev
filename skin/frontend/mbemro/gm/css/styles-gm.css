@@ -1,0 +1,64 @@
+#header-links {
+	margin-top: 0;
+}
+
+#header-links ul {
+	margin-left: 101px;
+}
+
+#header-links li {
+	margin-right: 80px;
+}
+
+div.header {
+	margin-bottom: 0;
+	padding-bottom: 15px;
+}
+
+div.header,
+#narrow-by-list,
+#nav-catalog,
+.home-page-content,
+.page,
+div.page > div.row {
+/*	background: #f1b51c; */
+}
+.header {
+	background: transparent url('../images/GM_Signature_Grey.png') no-repeat 503px 53px !important;
+}
+
+ul.external {
+	margin: 0 auto;
+	list-style-type:none;
+	padding:0;
+	width: 240px;
+}
+ul.external li {
+	width: 120px;
+	float: left;
+}
+#mmbdc {
+  margin-top: -15px;
+}
+
+.welcome-msg > a { display: none; }
+
+.btn-checkout span span {
+	background: url(../images/punchout.png) no-repeat -12px -56px transparent!important;
+	width: 110px;
+	height: 31px;
+}
+
+.btn-checkout:hover span span {
+	background: url(../images/punchout.png) no-repeat -12px -12px transparent!important;
+}
+
+.topCartHolder { z-index: 999999; }
+
+.service-menu div:nth-child(3){
+	display: none;
+}
+
+.call {
+    background: url('../images/call-us-gm.png') no-repeat 0 0 transparent !important;
+}

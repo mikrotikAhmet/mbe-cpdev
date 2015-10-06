@@ -1,0 +1,82 @@
+.nav-left, .nav-left ul, .nav-left li {
+    list-style: none;
+}
+ 
+.nav-left ul {
+    padding: 0;
+    margin: 0 0 0 18px;
+}
+
+.nav-left {
+    margin: 0 20px 0 0;
+    padding: 0;
+}
+
+.nav-left > li {
+    margin: 4px 0;
+}
+
+.nav-left > li li {
+    margin: 2px 0;
+}
+
+.nav-left a {
+    color: #333;
+    display: block;
+    outline: none;
+    text-decoration: none;
+}
+
+.nav-left li > a > span {
+    float: right;
+    font-size: 19px;
+    font-weight: bolder;
+}
+
+.nav-left li > a:hover > span {
+    color: #fff;
+}
+
+.nav-left li > a > span:after {
+    content: '\25be';
+}
+.nav-left li.open > a > span:after {
+    content: '\25b4';   
+}
+
+.nav-left a:hover, .nav-left li.active > a {
+	color:#15375C;
+}
+
+.nav-left > li.active > a  {
+	color:#15375C;
+}
+
+.nav-left li a {
+    font-size: 12px;
+    line-height: 18px;
+    padding: 0 10px 4px;
+	border-bottom: 1px solid #E6E5E5;
+	margin-bottom:4px;
+}
+
+.nav-left > li > a {
+    border-bottom: 1px solid #E6E5E5;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 4px 0;
+}
+
+.nav-left > li > a:last {
+    border-bottom: 0px solid #E6E5E5;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 4px 0;
+}
+
+.nav-left > li > a:last {
+    border-bottom: 0px solid #E6E5E5;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 4px 0;
+}

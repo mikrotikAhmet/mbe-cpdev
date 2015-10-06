@@ -1,0 +1,37 @@
+/* home slider */
+.homeSliderHolder {position: relative; padding: 10px 0 50px; width: 945px;margin: 0 auto;}
+.sliderStyle {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  -moz-box-shadow:    -5px 6px 7px 0px #858484;
+  -webkit-box-shadow: -5px 6px 7px 0px #858484;
+  box-shadow:         -5px 6px 7px 0px #858484;
+  }
+
+.sliderStyle li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+
+.sliderStyle li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  }
+
+.sliderStyle img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+}
+/* end slider css */

@@ -1,0 +1,174 @@
+.block-category-nav{border:0 none;}
+.block-category-nav .block-title{background:#195172;border-top:1px solid #C0CBD1;border-bottom:1px solid #C0CBD1; padding: 5px 10px 5px 30px;}
+.block-category-nav .block-title strong{color: #FFFFFF; display: block; padding:0; font: bold 13px/16px Arial,Helvetica,sans-serif; min-height: 16px;text-transform: capitalize;}
+.block-category-nav .block-content{background:#717171; border:1px solid #DDDDDD; border-top:0 none; padding:7px 10px 0 30px;}
+.block-category-nav .block-content a {color:#FFFFFF;}
+/*** ESSENTIAL STYLES ***/
+.sf-menu, .sf-menu * {
+	margin:			0;
+	padding:		0;
+	list-style:		none;
+}
+.sf-menu ul {
+	position:		absolute;
+	top:			-999em;
+}
+.sf-menu ul li {
+	/* width:			100%; */
+}
+.sf-menu li:hover {
+	visibility:		inherit; /* fixes IE7 'sticky bug' */
+}
+.sf-menu li {
+	position:		relative;
+}
+.sf-menu a {
+	display:		block;
+	position:		relative;
+}
+.sf-menu a:hover{color:#cfe6ff}
+.sf-menu li:hover ul,
+.sf-menu li.sfHover ul {
+    background: none repeat scroll 0 0 #717171;
+    border: 1px solid #DDDDDD;
+    box-shadow: 3px 3px 3px #464646;
+    left: 185px;
+    padding:10px;
+    top: 2.5px;
+    width: 180px;
+    z-index: 99999;
+}
+ul.sf-menu li:hover li ul,
+ul.sf-menu li.sfHover li ul {
+	top:			-999em;
+}
+ul.sf-menu li li:hover ul,
+ul.sf-menu li li.sfHover ul {
+	left:			185px; /* match ul width */
+	top:			0;
+}
+ul.sf-menu li li:hover li ul,
+ul.sf-menu li li.sfHover li ul {
+	top:			-999em;
+}
+ul.sf-menu li li li:hover ul,
+ul.sf-menu li li li.sfHover ul {
+	left:			10em; /* match ul width */
+	top:			0;
+}
+
+/*** DEMO SKIN ***/
+.sf-menu {}
+.sf-menu a {font-size:13px; font-weight:normal; color:#333333; text-decoration:none;}
+.sf-menu a, .sf-menu a:visited  {}
+.sf-menu li.last {background: none transparent!important;}
+.sf-menu li {padding:3px 0;}
+.sf-menu li li {
+	background:0 none;
+	width:100%;
+	float:left;
+}
+.sf-menu li li li {
+	
+}
+.sf-menu li li li a:hover{color:#cfe6ff}
+.sf-menu li.sfHover,
+.sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+	outline:		0;
+}
+
+/*** arrows **/
+.sf-menu a.sf-with-ul {min-width: 1px;}
+.sf-menu li.parent a.sf-with-ul {background: url(images/subnavarr.png) no-repeat scroll right center transparent;}
+.sf-menu li.sfHover a{color:#FFFFFF;}
+.sf-menu li.sfHover ul li a:hover{color:#cfe6ff}
+.sf-menu li.sfHover ul li.sfHover{/* background:#cfe6ff!important; */}
+.sf-menu li.sfHover li a{border:0 none;height: auto;}
+.sf-menu li.sfHover li.parent li a{background: none transparent!important;}
+.sf-menu li.sfHover li.parent a{
+    background: url(images/subnavarr.png) no-repeat scroll right center transparent;
+    color: #FFFFFF;
+	margin-right: 10px;
+}
+.sf-menu li.sfHover li li a{color:#FFFFFF;}
+.sf-menu li.sfHover ul li a{ padding-left: 0;padding-right: 10px;}
+.sf-menu li.sfHover ul li.sfHover a.hover{ color:#cfe6ff}
+.sf-menu li.sfHover a.level-top .sf-sub-indicator{ background:0 none;}
+a > .sf-sub-indicator {  /* give all except IE6 the correct values */
+	
+}
+/* apply hovers to modern browsers */
+a:focus > .sf-sub-indicator,
+a:hover > .sf-sub-indicator,
+a:active > .sf-sub-indicator,
+li:hover > a > .sf-sub-indicator,
+li.sfHover > a > .sf-sub-indicator {
+}
+
+/* point right for anchors in subs */
+.sf-menu ul .sf-sub-indicator { background-position:  -10px 0; }
+.sf-menu ul a > .sf-sub-indicator { background-position:  0 0; }
+/* apply hovers to modern browsers */
+.sf-menu ul a:focus > .sf-sub-indicator,
+.sf-menu ul a:hover > .sf-sub-indicator,
+.sf-menu ul a:active > .sf-sub-indicator,
+.sf-menu ul li:hover > a > .sf-sub-indicator,
+.sf-menu ul li.sfHover > a > .sf-sub-indicator {
+	background-position: -10px 0; /* arrow hovers for modern browsers*/
+}
+
+/*** shadows for all but IE6 ***/
+.sf-shadow ul {
+}
+.sf-shadow ul.sf-shadow-off {
+	background: transparent;
+}
+
+
+
+/* Ben */
+
+.block-category-nav .block-title {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-bottom: 0 none;
+    border-top: 0 none;
+    color: #000000;
+    padding: 0;
+	border-bottom: 1px solid #DDDDDD;
+	margin-bottom:8px;
+	padding-bottom:8px;
+}
+
+
+.block-category-nav .block-title strong {
+    color: #000000;
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.block-category-nav .block-content {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #717171;
+    border-color: -moz-use-text-color #DDDDDD #888888;
+    border-image: none;
+    border-right: 0 solid #DDDDDD;
+    border-style: none solid solid;
+    border-width: 0;
+    padding: 5px 9px;
+}
+
+
+.sf-menu li.last {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+	border-bottom:0;
+	padding-bottom:0;
+}
+
+
+.sf-menu li {
+    padding: 7px 0;
+}
