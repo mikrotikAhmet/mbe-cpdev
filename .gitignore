@@ -99,13 +99,14 @@ media/import/
 media/xmlconnect/
 media/catalog/product/cache/
 media/catalog/product/placeholder/default/
-/api.php
+api.php
 nbproject/
 pear
 pear/
 php.ini.sample
 pkginfo/
 RELEASE_NOTES.txt
+shell/
 shell/abstract.php
 shell/compiler.php
 shell/indexer.php
