@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="aca15869-57cf-4c69-bcae-00a8208ba8e1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/skin/frontend/mbemro/gm/css/styles-gm.css" afterPath="$PROJECT_DIR$/skin/frontend/mbemro/gm/css/styles-gm.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/skin/frontend/mbemro/mobile/css/styles-mobile.css" afterPath="$PROJECT_DIR$/skin/frontend/mbemro/mobile/css/styles-mobile.css" />
     </list>
     <ignored path="mbe-cpdev.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,21 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="styles-gm.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/skin/frontend/mbemro/gm/css/styles-gm.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="142" max-vertical-offset="1125">
-              <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="styles-mobile.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/skin/frontend/mbemro/mobile/css/styles-mobile.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.4108108" vertical-offset="29060" max-vertical-offset="29985">
-              <caret line="1912" column="4" selection-start-line="1912" selection-start-column="4" selection-end-line="1912" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.96756756" vertical-offset="30050" max-vertical-offset="31035">
+              <caret line="2063" column="0" selection-start-line="2063" selection-start-column="0" selection-end-line="2063" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -63,13 +52,13 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/skin/frontend/mbemro/gm/css/ie7.css" />
-        <option value="$PROJECT_DIR$/skin/frontend/mbemro/mobile/css/styles-mobile.css" />
         <option value="$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/header.phtml" />
         <option value="$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/head.phtml" />
         <option value="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/html/header.phtml" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/skin/frontend/mbemro/gm/css/styles-gm.css" />
+        <option value="$PROJECT_DIR$/skin/frontend/mbemro/mobile/css/styles-mobile.css" />
       </list>
     </option>
   </component>
@@ -417,7 +406,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/skin/frontend/mbemro/gm/css/styles-gm.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="142" max-vertical-offset="1125">
+        <state vertical-scroll-proportion="1.0799574" vertical-offset="7" max-vertical-offset="1125">
           <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
           <folding />
         </state>
@@ -425,8 +414,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/skin/frontend/mbemro/mobile/css/styles-mobile.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.4108108" vertical-offset="29060" max-vertical-offset="29985">
-          <caret line="1912" column="4" selection-start-line="1912" selection-start-column="4" selection-end-line="1912" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.96756756" vertical-offset="30050" max-vertical-offset="31035">
+          <caret line="2063" column="0" selection-start-line="2063" selection-start-column="0" selection-end-line="2063" selection-end-column="0" />
           <folding />
         </state>
       </provider>
