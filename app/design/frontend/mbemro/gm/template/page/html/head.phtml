@@ -98,3 +98,40 @@ Mage.Cookies.set('frontend','<?php echo Mage::getSingleton('catalog/session')->g
         background-image: none !important;
     }
 </style>
+<?php if (browserType()) { ?>
+<style>
+    .add-to-part {
+
+        width: 58% !important;
+    }
+
+    .product-view-price {
+
+        width: 25% !important;
+    }
+</style>
+<?php } ?>
+<?php
+
+    function browserType(){
+
+        preg_match('/MSIE (.*?);/', $_SERVER['HTTP_USER_AGENT'], $matches);
+        if(count($matches)<2){
+            preg_match('/Trident\/\d{1,2}.\d{1,2}; rv:([0-9]*)/', $_SERVER['HTTP_USER_AGENT'], $matches);
+        }
+
+        if (count($matches)>1){
+            //Then we're using IE
+            $version = $matches[1];
+
+            switch(true){
+                case ($version<=8):
+                    return true;
+                    break;
+
+                default:
+                    //You get the idea
+            }
+        }
+    }
+?>
