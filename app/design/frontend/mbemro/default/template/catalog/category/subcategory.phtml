@@ -85,7 +85,7 @@ $_subcats = $_category->getCollection()
 	?>
         <li class="<?php print $class;?>">
 			<?php $thumbnail = $category->getThumbnail(); ?>
-			<?php $thumbnail = $thumbnail ? Mage::getBaseUrl('media') . 'catalog' . DS . 'category' . DS . $thumbnail : $this->getSkinUrl('images/category-placeholder-blank-135.png'); ?>
+			<?php $thumbnail = $thumbnail ? Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'catalog' . DS . 'category' . DS . $thumbnail : $this->getSkinUrl('images/category-placeholder-blank-135.png'); ?>
             <a href="<?php echo $category->getUrl() ?>"><img src="<?php echo  $thumbnail ?>" alt="<?php echo $this->htmlEscape($category->getName()) ?>" width="135" height="135" />
                 <span class="category-name"><?php echo $category->getName() ?></span></a>
         </li>
