@@ -2,48 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aca15869-57cf-4c69-bcae-00a8208ba8e1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Block/Adminhtml/History.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Block/Adminhtml/History/Grid.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Block/Adminhtml/History/Grid/Link.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Block/Adminhtml/History/View.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Block/Adminhtml/History/View/Detail.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Helper/Data.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Clean.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/History.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/History/Data.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/History/Diff.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Category/Move.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Log.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Login.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Logout.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Model/Abstract.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Model/Delete.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Model/Save.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Product/Attribute/Update.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Product/Import.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Resource/History.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Resource/History/Collection.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/RowUrl/Model/Abstract.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/RowUrl/Model/Customer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/RowUrl/Model/Order.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/RowUrl/Model/Page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/RowUrl/Model/Product.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/System/Config/Source/Admin/User.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/System/Config/Source/History/Action.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/System/Config/Source/History/Status.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/System/Config/Source/SourceAbstract.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/controllers/Adminhtml/HistoryController.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/etc/adminhtml.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/etc/adminmonitoring.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/etc/config.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/etc/system.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/sql/cpdevelopment_adminmonitoring/install-1.0.0.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/sql/cpdevelopment_adminmonitoring/upgrade-1.0.0-1.0.1.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/sql/cpdevelopment_adminmonitoring/upgrade-1.0.1-1.0.2.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/sql/cpdevelopment_adminmonitoring/upgrade-1.0.2-1.0.3.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/design/adminhtml/default/default/layout/cpdevelopment_adminmonitoring.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/cpdevelopment/adminmonitoring/view.phtml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
     </list>
     <ignored path="mbe-cpdev.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,7 +26,20 @@
     <favorites_list name="mbe-cpdev" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name=".htaccess" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.htaccess">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.31982943" vertical-offset="0" max-vertical-offset="938">
+              <caret line="20" column="56" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
+              <folding>
+                <marker date="1444218787364" expanded="true" signature="1:207" placeholder="&lt;IfModule mod_rewrite.c&gt;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -86,6 +58,7 @@
         <option value="$PROJECT_DIR$/skin/frontend/mbemro/gm/css/styles-gm.css" />
         <option value="$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/head.phtml" />
         <option value="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/html/header.phtml" />
+        <option value="$PROJECT_DIR$/.htaccess" />
       </list>
     </option>
   </component>
@@ -129,6 +102,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="mbe-cpdev" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -183,7 +166,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -192,7 +175,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25537783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25537783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -311,35 +294,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/etc/config.xml">
+    <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3240">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/etc/modules/CpDevelopment_AdminMonitoring.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="938">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/adminhtml/default/default/layout/cpdevelopment_adminmonitoring.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="925">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/adminhtml/default/default/template/cpdevelopment/adminmonitoring/view.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1890">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.31982943" vertical-offset="0" max-vertical-offset="938">
+          <caret line="20" column="56" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
+          <folding>
+            <marker date="1444218787364" expanded="true" signature="1:207" placeholder="&lt;IfModule mod_rewrite.c&gt;" />
+          </folding>
         </state>
       </provider>
     </entry>

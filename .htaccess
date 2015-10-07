@@ -1,16 +1,21 @@
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
-</IfModule>
+#<IfModule mod_rewrite.c>
+#RewriteEngine On
+#RewriteBase /
+#RewriteRule ^index\.php$ - [L]
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule . /index.php [L]
+#</IfModule>
+#
+#
+#SetEnvIf Host mbemrodev.sentir-dev.io MAGE_RUN_CODE=base
+#SetEnvIf Host mbemrodev.sentir-dev.io MAGE_RUN_TYPE=website
+#
+#SetEnvIf Host mbemrogm.sentir-dev.io MAGE_RUN_CODE=gm
+#SetEnvIf Host mbemrogm.sentir-dev.io MAGE_RUN_TYPE=website
 
+SetEnvIf Host mbemrocatalog.com MAGE_RUN_CODE=base
+SetEnvIf Host mbemrocatalog.com MAGE_RUN_TYPE=website
 
-SetEnvIf Host mbemrodev.sentir-dev.io MAGE_RUN_CODE=base
-SetEnvIf Host mbemrodev.sentir-dev.io MAGE_RUN_TYPE=website
-
-SetEnvIf Host mbemrogm.sentir-dev.io MAGE_RUN_CODE=gm
-SetEnvIf Host mbemrogm.sentir-dev.io MAGE_RUN_TYPE=website
-
+SetEnvIf Host gm.mbemrocatalog.com MAGE_RUN_CODE=gm
+SetEnvIf Host gm.mbemrocatalog.com MAGE_RUN_TYPE=website
