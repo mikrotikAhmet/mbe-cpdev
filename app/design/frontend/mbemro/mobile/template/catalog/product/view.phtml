@@ -64,7 +64,7 @@ Mage::getResourceModel("customcatalog/product")->loadByProduct($_customProduct, 
                     <div class="col-xs-12 col-md-9">
                         <div class="row border_bottom">
                             <div class="col-xs-8"><h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1></div>
-                            <div class="col-xs-4"><?php echo $this->getChildHtml('product_type_data') ?></div>
+                            <div class="col-xs-4 product-view-price"><?php echo $this->getChildHtml('product_type_data') ?></div>
                         </div>
                         <div class="row visible-xs visible-sm border_bottom">
                             <img id="image-mobile" class="img-responsive" src="<?php print $this->helper('catalog/image')->init($_product, 'image')?>" alt="<?php $this->htmlEscape($this->getImageLabel())?>" title="<?php $this->htmlEscape($this->getImageLabel())?>" />
@@ -110,7 +110,7 @@ Mage::getResourceModel("customcatalog/product")->loadByProduct($_customProduct, 
                                 <?php if($showTierPrice) echo $this->getTierPriceHtml(); ?>
                                 <?php echo $this->getChildHtml('extrahint') ?>
                             </div><!-- .col-md-4 -->
-                            <div class="col-md-8 add-to-part" >
+                            <div class="col-md-8 add-to-part " >
 
                                 <?php //$this->getChildHtml('product.info.extrahint.qtyincrements');?>
                                 <?php if (!$this->hasOptions()):?>

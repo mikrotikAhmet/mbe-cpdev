@@ -97,8 +97,23 @@ div.pages strong {
 	width: 587px;
 }
 
+.button span{
+
+    display : none;
+}
+
 .button span span {
 	color: transparent;
+}
+
+.add-to-part {
+
+    width: 58% !important;
+}
+
+.product-view-price {
+
+    width: 25% !important;
 }
 
 .products-list .btn-cart-list {
