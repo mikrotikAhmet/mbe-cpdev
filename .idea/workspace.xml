@@ -4,7 +4,6 @@
     <list default="true" id="aca15869-57cf-4c69-bcae-00a8208ba8e1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/header.phtml" afterPath="$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/header.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mbe-cpdev.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/header.phtml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.80306345" vertical-offset="661" max-vertical-offset="1575">
-              <caret line="116" column="60" selection-start-line="116" selection-start-column="60" selection-end-line="116" selection-end-column="60" />
+              <caret line="116" column="54" selection-start-line="116" selection-start-column="54" selection-end-line="116" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -661,7 +660,7 @@
     <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/header.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.80306345" vertical-offset="661" max-vertical-offset="1575">
-          <caret line="116" column="60" selection-start-line="116" selection-start-column="60" selection-end-line="116" selection-end-column="60" />
+          <caret line="116" column="54" selection-start-line="116" selection-start-column="54" selection-end-line="116" selection-end-column="54" />
           <folding />
         </state>
       </provider>
