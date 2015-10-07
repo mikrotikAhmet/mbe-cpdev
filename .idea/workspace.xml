@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="aca15869-57cf-4c69-bcae-00a8208ba8e1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/header.phtml" afterPath="$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/header.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/head.phtml" afterPath="$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/head.phtml" />
     </list>
     <ignored path="mbe-cpdev.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,11 +38,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.phtml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="header.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/header.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.80306345" vertical-offset="661" max-vertical-offset="1575">
-              <caret line="116" column="56" selection-start-line="116" selection-start-column="56" selection-end-line="116" selection-end-column="56" />
+            <state vertical-scroll-proportion="-30.583334" vertical-offset="661" max-vertical-offset="1575">
+              <caret line="116" column="59" selection-start-line="116" selection-start-column="59" selection-end-line="116" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="head.phtml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/head.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8668147" vertical-offset="539" max-vertical-offset="1455">
+              <caret line="97" column="41" selection-start-line="97" selection-start-column="41" selection-end-line="97" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -73,11 +82,11 @@
         <option value="$PROJECT_DIR$/skin/frontend/mbemro/gm/css/ie7.css" />
         <option value="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/catalog/product/view.phtml" />
         <option value="$PROJECT_DIR$/app/code/core/Mage/Core/Model/Translate.php" />
-        <option value="$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/head.phtml" />
         <option value="$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/footer.phtml" />
         <option value="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/html/footer.phtml" />
         <option value="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Model/Abstract.php" />
         <option value="$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/header.phtml" />
+        <option value="$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/head.phtml" />
       </list>
     </option>
   </component>
@@ -634,14 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/head.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56048834" vertical-offset="440" max-vertical-offset="1440">
-          <caret line="72" column="7" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/skin/frontend/mbemro/gm/css/ie7.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4402985" vertical-offset="1102" max-vertical-offset="4515">
@@ -660,8 +661,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/header.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80306345" vertical-offset="661" max-vertical-offset="1575">
-          <caret line="116" column="56" selection-start-line="116" selection-start-column="56" selection-end-line="116" selection-end-column="56" />
+        <state vertical-scroll-proportion="-30.583334" vertical-offset="661" max-vertical-offset="1575">
+          <caret line="116" column="59" selection-start-line="116" selection-start-column="59" selection-end-line="116" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/head.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8668147" vertical-offset="539" max-vertical-offset="1455">
+          <caret line="97" column="41" selection-start-line="97" selection-start-column="41" selection-end-line="97" selection-end-column="41" />
           <folding />
         </state>
       </provider>
