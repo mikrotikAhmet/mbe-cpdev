@@ -44,21 +44,6 @@
 <?php echo $this->getChildHtml() ?>
 <?php echo $this->helper('core/js')->getTranslatorScript() ?>
 <?php echo $this->getIncludes() ?>
-<style>
-
-    header {
-        background: none !important;
-    }
-    .gm-patch{
-        margin-top: 80px !important;
-    }
-
-    .call {
-        margin: 61px 0 0 0px !important;
-        white-space: nowrap;
-        text-align: right;
-    }
-</style>
 <script type="text/javascript">
 (function() {
 
@@ -103,3 +88,18 @@ var cid=document.createElement("script");cid.async=true;cid.src="//seal.digicert
 <script>
 Mage.Cookies.set('frontend','<?php echo Mage::getSingleton('catalog/session')->getSessionId(); ?>');
 </script>
+<style>
+
+    header {
+        background: none !important;
+    }
+    .gm-patch{
+        margin-top: 80px !important;
+    }
+
+    .call {
+        margin: 61px 0 0 0px !important;
+        white-space: nowrap;
+        text-align: right;
+    }
+</style>
