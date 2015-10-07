@@ -4,7 +4,6 @@
     <list default="true" id="aca15869-57cf-4c69-bcae-00a8208ba8e1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/cms/mobile_home.phtml" afterPath="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/cms/mobile_home.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mbe-cpdev.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,8 +31,8 @@
       <file leaf-file-name="mobile_home.phtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/cms/mobile_home.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23156089" vertical-offset="0" max-vertical-offset="600">
-              <caret line="9" column="187" selection-start-line="9" selection-start-column="187" selection-end-line="9" selection-end-column="187" />
+            <state vertical-scroll-proportion="0.72041166" vertical-offset="0" max-vertical-offset="615">
+              <caret line="28" column="92" selection-start-line="28" selection-start-column="92" selection-end-line="28" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -526,8 +525,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/cms/mobile_home.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23156089" vertical-offset="0" max-vertical-offset="600">
-          <caret line="9" column="187" selection-start-line="9" selection-start-column="187" selection-end-line="9" selection-end-column="187" />
+        <state vertical-scroll-proportion="0.72041166" vertical-offset="0" max-vertical-offset="615">
+          <caret line="28" column="92" selection-start-line="28" selection-start-column="92" selection-end-line="28" selection-end-column="92" />
           <folding />
         </state>
       </provider>
