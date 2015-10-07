@@ -5,6 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/design/frontend/mbemro/default/template/catalog/category/subcategory.phtml" afterPath="$PROJECT_DIR$/app/design/frontend/mbemro/default/template/catalog/category/subcategory.phtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/catalog/category/subcategory.phtml" afterPath="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/catalog/category/subcategory.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mbe-cpdev.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,10 +30,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="mobile_home.phtml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mobile_home.phtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/cms/mobile_home.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="615">
+            <state vertical-scroll-proportion="0.23156089" vertical-offset="0" max-vertical-offset="615">
               <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="97" />
               <folding />
             </state>
@@ -42,18 +43,18 @@
       <file leaf-file-name="subcategory.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/default/template/catalog/category/subcategory.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.083333" vertical-offset="451" max-vertical-offset="1290">
-              <caret line="70" column="24" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
+            <state vertical-scroll-proportion="-18.708334" vertical-offset="451" max-vertical-offset="1290">
+              <caret line="87" column="109" selection-start-line="87" selection-start-column="109" selection-end-line="87" selection-end-column="109" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="subcategory.phtml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="subcategory.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/catalog/category/subcategory.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6037736" vertical-offset="443" max-vertical-offset="1065">
-              <caret line="80" column="99" selection-start-line="80" selection-start-column="99" selection-end-line="80" selection-end-column="99" />
+            <state vertical-scroll-proportion="-14.666667" vertical-offset="443" max-vertical-offset="1065">
+              <caret line="80" column="109" selection-start-line="80" selection-start-column="109" selection-end-line="80" selection-end-column="109" />
               <folding />
             </state>
           </provider>
@@ -81,8 +82,8 @@
         <option value="$PROJECT_DIR$/skin/frontend/mbemro/mobile/css/styles-mobile.css" />
         <option value="$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/head.phtml" />
         <option value="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/cms/mobile_home.phtml" />
-        <option value="$PROJECT_DIR$/app/design/frontend/mbemro/default/template/catalog/category/subcategory.phtml" />
         <option value="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/catalog/category/subcategory.phtml" />
+        <option value="$PROJECT_DIR$/app/design/frontend/mbemro/default/template/catalog/category/subcategory.phtml" />
       </list>
     </option>
   </component>
@@ -546,26 +547,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/cms/mobile_home.phtml">
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/catalog/category/subcategory.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="615">
-          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="97" />
+        <state vertical-scroll-proportion="-14.666667" vertical-offset="443" max-vertical-offset="1065">
+          <caret line="80" column="109" selection-start-line="80" selection-start-column="109" selection-end-line="80" selection-end-column="109" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/default/template/catalog/category/subcategory.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.083333" vertical-offset="451" max-vertical-offset="1290">
-          <caret line="70" column="24" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
+        <state vertical-scroll-proportion="-18.708334" vertical-offset="451" max-vertical-offset="1290">
+          <caret line="87" column="109" selection-start-line="87" selection-start-column="109" selection-end-line="87" selection-end-column="109" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/catalog/category/subcategory.phtml">
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/cms/mobile_home.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6037736" vertical-offset="443" max-vertical-offset="1065">
-          <caret line="80" column="99" selection-start-line="80" selection-start-column="99" selection-end-line="80" selection-end-column="99" />
+        <state vertical-scroll-proportion="0.23156089" vertical-offset="0" max-vertical-offset="615">
+          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="97" />
           <folding />
         </state>
       </provider>
