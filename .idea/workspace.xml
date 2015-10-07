@@ -2,7 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aca15869-57cf-4c69-bcae-00a8208ba8e1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/etc/modules/CpDevelopment_AdminMonitoring.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Block/Adminhtml/History.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Block/Adminhtml/History/Grid.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Block/Adminhtml/History/Grid/Link.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Block/Adminhtml/History/View.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Block/Adminhtml/History/View/Detail.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Helper/Data.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Clean.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/History.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/History/Data.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/History/Diff.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Category/Move.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Log.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Logout.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Model/Abstract.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Model/Delete.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Model/Save.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Product/Attribute/Update.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Product/Import.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Resource/History.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Resource/History/Collection.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/RowUrl/Model/Abstract.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/RowUrl/Model/Customer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/RowUrl/Model/Order.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/RowUrl/Model/Page.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/RowUrl/Model/Product.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/System/Config/Source/Admin/User.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/System/Config/Source/History/Action.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/System/Config/Source/History/Status.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/System/Config/Source/SourceAbstract.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/controllers/Adminhtml/HistoryController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/etc/adminhtml.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/etc/adminmonitoring.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/etc/config.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/etc/system.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/sql/cpdevelopment_adminmonitoring/install-1.0.0.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/sql/cpdevelopment_adminmonitoring/upgrade-1.0.0-1.0.1.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/sql/cpdevelopment_adminmonitoring/upgrade-1.0.1-1.0.2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/sql/cpdevelopment_adminmonitoring/upgrade-1.0.2-1.0.3.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/design/adminhtml/default/default/layout/cpdevelopment_adminmonitoring.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/cpdevelopment/adminmonitoring/view.phtml" afterPath="" />
     </list>
     <ignored path="mbe-cpdev.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -88,70 +129,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="mbe-cpdev" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mbe-cpdev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mbe-cpdev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mbe-cpdev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mbe-cpdev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mbe-cpdev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mbe-cpdev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="etc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mbe-cpdev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mbe-cpdev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="etc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
