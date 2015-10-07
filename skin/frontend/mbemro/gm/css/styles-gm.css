@@ -23,9 +23,11 @@ div.header,
 div.page > div.row {
 /*	background: #f1b51c; */
 }
-.header {
-	background: transparent url('../images/GM_Signature_Grey.png') no-repeat 503px 53px !important;
+
+.gm-patch{
+    margin-top: 80px !important;
 }
+
 
 ul.external {
 	margin: 0 auto;
@@ -60,5 +62,7 @@ ul.external li {
 }
 
 .call {
-    background: url('../images/call-us-gm.png') no-repeat 0 0 transparent !important;
+    margin: 61px 0 0 0px !important;
+    white-space: nowrap;
+    text-align: right;
 }

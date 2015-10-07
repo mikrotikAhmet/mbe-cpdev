@@ -2,51 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aca15869-57cf-4c69-bcae-00a8208ba8e1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Block/Adminhtml/History.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Block/Adminhtml/History/Grid.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Block/Adminhtml/History/Grid/Link.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Block/Adminhtml/History/View.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Block/Adminhtml/History/View/Detail.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Helper/Data.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Clean.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/History.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/History/Data.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/History/Diff.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Category/Move.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Log.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Login.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Logout.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Model/Abstract.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Model/Delete.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Model/Save.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Product/Attribute/Update.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Product/Import.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Resource/History.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Resource/History/Collection.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/RowUrl/Model/Abstract.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/RowUrl/Model/Customer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/RowUrl/Model/Order.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/RowUrl/Model/Page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/RowUrl/Model/Product.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/System/Config/Source/Admin/User.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/System/Config/Source/History/Action.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/System/Config/Source/History/Status.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/System/Config/Source/SourceAbstract.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/controllers/Adminhtml/HistoryController.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/etc/adminhtml.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/etc/adminmonitoring.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/etc/config.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/etc/system.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/sql/cpdevelopment_adminmonitoring/install-1.0.0.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/sql/cpdevelopment_adminmonitoring/upgrade-1.0.0-1.0.1.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/sql/cpdevelopment_adminmonitoring/upgrade-1.0.1-1.0.2.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/sql/cpdevelopment_adminmonitoring/upgrade-1.0.2-1.0.3.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/design/adminhtml/default/default/layout/cpdevelopment_adminmonitoring.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/cpdevelopment/adminmonitoring/view.phtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/etc/modules/CpDevelopment_AdminMonitoring.xmlOLD" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/head.phtml" afterPath="$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/head.phtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/header.phtml" afterPath="$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/header.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/mbe-cpdev.iml" afterPath="$PROJECT_DIR$/.idea/mbe-cpdev.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/skin/frontend/mbemro/gm/css/styles-gm.css" afterPath="$PROJECT_DIR$/skin/frontend/mbemro/gm/css/styles-gm.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/skin/frontend/mbemro/mobile/css/styles-mobile.css" afterPath="$PROJECT_DIR$/skin/frontend/mbemro/mobile/css/styles-mobile.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mbe-cpdev.iws" />
@@ -71,7 +30,28 @@
     <favorites_list name="mbe-cpdev" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="head.phtml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/head.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.81687015" vertical-offset="254" max-vertical-offset="1245">
+              <caret line="75" column="4" selection-start-line="75" selection-start-column="4" selection-end-line="75" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/header.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.7083335" vertical-offset="487" max-vertical-offset="1425">
+              <caret line="63" column="65" selection-start-line="63" selection-start-column="65" selection-end-line="63" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -84,7 +64,11 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/skin/frontend/mbemro/gm/css/ie7.css" />
+        <option value="$PROJECT_DIR$/skin/frontend/mbemro/mobile/css/styles-mobile.css" />
+        <option value="$PROJECT_DIR$/skin/frontend/mbemro/gm/css/styles-gm.css" />
         <option value="$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/header.phtml" />
+        <option value="$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/head.phtml" />
       </list>
     </option>
   </component>
@@ -150,7 +134,327 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="skin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="skin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="skin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbemro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="skin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbemro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="skin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbemro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbemro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbemro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbemro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbemro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbe-cpdev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mbemro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -164,6 +468,26 @@
     <property name="FullScreen" value="false" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -178,7 +502,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -187,7 +511,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25537783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25537783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -247,18 +571,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/gm/layout/page.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.09594883" vertical-offset="90" max-vertical-offset="3300">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/skin/frontend/mbemro/gm/css/ie7.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2228144" vertical-offset="1732" max-vertical-offset="4290">
+          <caret line="39" column="11" selection-start-line="31" selection-start-column="0" selection-end-line="45" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/skin/frontend/mbemro/gm/css/styles-gm.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9055982" vertical-offset="180" max-vertical-offset="1110">
+          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/skin/frontend/mbemro/mobile/css/styles-mobile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33296213" vertical-offset="1441" max-vertical-offset="29985">
+          <caret line="116" column="5" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/header.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="1395">
-          <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+        <state vertical-scroll-proportion="-4.7083335" vertical-offset="487" max-vertical-offset="1425">
+          <caret line="63" column="65" selection-start-line="63" selection-start-column="65" selection-end-line="63" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/head.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1185">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.81687015" vertical-offset="254" max-vertical-offset="1245">
+          <caret line="75" column="4" selection-start-line="75" selection-start-column="4" selection-end-line="75" selection-end-column="4" />
           <folding />
         </state>
       </provider>
