@@ -2,6 +2,86 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aca15869-57cf-4c69-bcae-00a8208ba8e1" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Block/Adminhtml/History.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Block/Adminhtml/History/Grid.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Block/Adminhtml/History/Grid/Link.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Block/Adminhtml/History/View.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Block/Adminhtml/History/View/Detail.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Helper/Data.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Clean.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/History.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/History/Data.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/History/Diff.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Observer/Category/Move.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Observer/Log.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Observer/Login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Observer/Logout.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Observer/Model/Abstract.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Observer/Model/Delete.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Observer/Model/Save.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Observer/Product/Attribute/Update.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Observer/Product/Import.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Resource/History.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Resource/History/Collection.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/RowUrl/Model/Abstract.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/RowUrl/Model/Customer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/RowUrl/Model/Order.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/RowUrl/Model/Page.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/RowUrl/Model/Product.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/System/Config/Source/Admin/User.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/System/Config/Source/History/Action.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/System/Config/Source/History/Status.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/System/Config/Source/SourceAbstract.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/controllers/Adminhtml/HistoryController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/etc/adminhtml.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/etc/adminmonitoring.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/etc/config.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/etc/system.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/sql/cpdevelopment_adminmonitoring/install-1.0.0.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/sql/cpdevelopment_adminmonitoring/upgrade-1.0.0-1.0.1.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/sql/cpdevelopment_adminmonitoring/upgrade-1.0.1-1.0.2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/sql/cpdevelopment_adminmonitoring/upgrade-1.0.2-1.0.3.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Block/Adminhtml/History.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Block/Adminhtml/History.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Block/Adminhtml/History/Grid.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Block/Adminhtml/History/Grid.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Block/Adminhtml/History/Grid/Link.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Block/Adminhtml/History/Grid/Link.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Block/Adminhtml/History/View.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Block/Adminhtml/History/View.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Block/Adminhtml/History/View/Detail.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Block/Adminhtml/History/View/Detail.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Helper/Data.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Helper/Data.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Clean.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Clean.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Config.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Config.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/History.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/History.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/History/Data.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/History/Data.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/History/Diff.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/History/Diff.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Observer/Category/Move.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Category/Move.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Observer/Log.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Log.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Observer/Login.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Login.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Observer/Logout.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Logout.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Observer/Model/Abstract.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Model/Abstract.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Observer/Model/Delete.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Model/Delete.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Observer/Model/Save.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Model/Save.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Observer/Product/Attribute/Update.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Product/Attribute/Update.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Observer/Product/Import.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Product/Import.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Resource/History.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Resource/History.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/Resource/History/Collection.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Resource/History/Collection.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/RowUrl/Model/Abstract.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/RowUrl/Model/Abstract.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/RowUrl/Model/Customer.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/RowUrl/Model/Customer.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/RowUrl/Model/Order.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/RowUrl/Model/Order.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/RowUrl/Model/Page.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/RowUrl/Model/Page.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/RowUrl/Model/Product.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/RowUrl/Model/Product.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/System/Config/Source/Admin/User.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/System/Config/Source/Admin/User.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/System/Config/Source/History/Action.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/System/Config/Source/History/Action.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/System/Config/Source/History/Status.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/System/Config/Source/History/Status.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/Model/System/Config/Source/SourceAbstract.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/System/Config/Source/SourceAbstract.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/controllers/Adminhtml/HistoryController.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/controllers/Adminhtml/HistoryController.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/etc/adminhtml.xml" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/etc/adminhtml.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/etc/adminmonitoring.xml" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/etc/adminmonitoring.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/etc/config.xml" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/etc/config.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/etc/system.xml" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/etc/system.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/sql/cpdevelopment_adminmonitoring/install-1.0.0.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/sql/cpdevelopment_adminmonitoring/install-1.0.0.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/sql/cpdevelopment_adminmonitoring/upgrade-1.0.0-1.0.1.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/sql/cpdevelopment_adminmonitoring/upgrade-1.0.0-1.0.1.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/sql/cpdevelopment_adminmonitoring/upgrade-1.0.1-1.0.2.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/sql/cpdevelopment_adminmonitoring/upgrade-1.0.1-1.0.2.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/sql/cpdevelopment_adminmonitoring/upgrade-1.0.2-1.0.3.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/sql/cpdevelopment_adminmonitoring/upgrade-1.0.2-1.0.3.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mbe-cpdev.iws" />
@@ -352,7 +432,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/community/CpDevelopmentOLD/AdminMonitoring/etc/config.xml">
+    <entry file="file://$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/etc/config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3240">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
