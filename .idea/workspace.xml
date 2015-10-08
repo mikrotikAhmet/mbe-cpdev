@@ -4,6 +4,7 @@
     <list default="true" id="aca15869-57cf-4c69-bcae-00a8208ba8e1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Model/Abstract.php" afterPath="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Model/Abstract.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/etc/local.xml" afterPath="$PROJECT_DIR$/app/etc/local.xml" />
     </list>
     <ignored path="mbe-cpdev.iws" />
@@ -32,9 +33,27 @@
       <file leaf-file-name="Abstract.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Model/Abstract.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6061269" vertical-offset="1276" max-vertical-offset="2295">
-              <caret line="127" column="51" selection-start-line="127" selection-start-column="51" selection-end-line="127" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.83588624" vertical-offset="1246" max-vertical-offset="2400">
+              <caret line="139" column="27" selection-start-line="139" selection-start-column="27" selection-end-line="139" selection-end-column="27" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-25.583334" vertical-offset="166" max-vertical-offset="1095">
+              <caret line="75" column="31" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
+              <folding>
+                <marker date="1444319503127" expanded="false" signature="1020:1066" placeholder="..." />
+                <marker date="1444319503127" expanded="true" signature="1067:1490" placeholder="..." />
+                <marker date="1444319503127" expanded="false" signature="1081:1129" placeholder="..." />
+                <marker date="1444319503127" expanded="true" signature="1130:1309" placeholder="..." />
+                <marker date="1444319503127" expanded="false" signature="1143:1242" placeholder="..." />
+                <marker date="1444319503127" expanded="true" signature="1243:1303" placeholder="..." />
+                <marker date="1444319503127" expanded="true" signature="1312:1484" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,6 +87,7 @@
         <option value="$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/head.phtml" />
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/app/etc/local.xml" />
+        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Model/Abstract.php" />
       </list>
     </option>
@@ -698,10 +718,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-25.583334" vertical-offset="166" max-vertical-offset="1095">
+          <caret line="75" column="31" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
+          <folding>
+            <marker date="1444319503127" expanded="false" signature="1020:1066" placeholder="..." />
+            <marker date="1444319503127" expanded="true" signature="1067:1490" placeholder="..." />
+            <marker date="1444319503127" expanded="false" signature="1081:1129" placeholder="..." />
+            <marker date="1444319503127" expanded="true" signature="1130:1309" placeholder="..." />
+            <marker date="1444319503127" expanded="false" signature="1143:1242" placeholder="..." />
+            <marker date="1444319503127" expanded="true" signature="1243:1303" placeholder="..." />
+            <marker date="1444319503127" expanded="true" signature="1312:1484" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/code/community/CpDevelopment/AdminMonitoring/Model/Observer/Model/Abstract.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6061269" vertical-offset="1276" max-vertical-offset="2295">
-          <caret line="127" column="51" selection-start-line="127" selection-start-column="51" selection-end-line="127" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.83588624" vertical-offset="1246" max-vertical-offset="2400">
+          <caret line="139" column="27" selection-start-line="139" selection-start-column="27" selection-end-line="139" selection-end-column="27" />
           <folding />
         </state>
       </provider>

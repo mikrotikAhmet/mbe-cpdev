@@ -125,17 +125,24 @@ abstract class CpDevelopment_AdminMonitoring_Model_Observer_Model_Abstract
 			$objectTypeExcludes = array_merge($objectTypeExcludes, $partialAdminRouteExcludes[$fullActionName]);
 		}
 
-		$objectTypeExcludesFiltered = array_filter(
-			$objectTypeExcludes,
-			function ($className) use ($savedModel) {
 
-                if ($className){
-                    return is_a($savedModel, $className);
-                }
-                    return 0;
+//		$objectTypeExcludesFiltered = array_filter(
+//			$objectTypeExcludes,
+//			function ($className) use ($savedModel) {
+//
+//                    return is_a($savedModel, $className);
+//
+//			}
+//		);
 
-			}
-		);
+        foreach ($objectTypeExcludes as $excludedObject){
+
+            if ($savedModel instanceof $excludedObject) {
+                $objectTypeExcludesFiltered = array($excludedObject);
+            } else {
+                $objectTypeExcludesFiltered = array();
+            }
+        }
 
 		return (count($objectTypeExcludesFiltered) > 0);
 
