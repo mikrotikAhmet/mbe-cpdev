@@ -41,8 +41,8 @@
       <file leaf-file-name="header.phtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/header.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.80525166" vertical-offset="659" max-vertical-offset="1590">
-              <caret line="116" column="60" selection-start-line="116" selection-start-column="60" selection-end-line="116" selection-end-column="60" />
+            <state vertical-scroll-proportion="0.8380744" vertical-offset="659" max-vertical-offset="1605">
+              <caret line="118" column="59" selection-start-line="118" selection-start-column="59" selection-end-line="118" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -791,8 +791,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/gm/template/page/html/header.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80525166" vertical-offset="659" max-vertical-offset="1590">
-          <caret line="116" column="60" selection-start-line="116" selection-start-column="60" selection-end-line="116" selection-end-column="60" />
+        <state vertical-scroll-proportion="0.8380744" vertical-offset="659" max-vertical-offset="1605">
+          <caret line="118" column="59" selection-start-line="118" selection-start-column="59" selection-end-line="118" selection-end-column="59" />
           <folding />
         </state>
       </provider>
