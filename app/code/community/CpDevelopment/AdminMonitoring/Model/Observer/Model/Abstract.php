@@ -128,21 +128,14 @@ abstract class CpDevelopment_AdminMonitoring_Model_Observer_Model_Abstract
 		$objectTypeExcludesFiltered = array_filter(
 			$objectTypeExcludes,
 			function ($className) use ($savedModel) {
-//                if (is_a($savedModel, $className)){
-//                    return is_a($savedModel, $className);
-//                } else {
-//                    return false;
-//                }
-                echo '<pre>';
-                print_r($savedModel);
-                print_r($className);
-                print_r(is_a($savedModel, $className));
+
+                if ($className){
+                    return is_a($savedModel, $className);
+                }
+                    return false;
+
 			}
 		);
-
-        echo '<pre>';
-        print_r($objectTypeExcludes);
-        die();
 
 		return (count($objectTypeExcludesFiltered) > 0);
 
