@@ -132,7 +132,7 @@ abstract class CpDevelopment_AdminMonitoring_Model_Observer_Model_Abstract
                 if ($className){
                     return is_a($savedModel, $className);
                 }
-                    return false;
+                    return 0;
 
 			}
 		);
