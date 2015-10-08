@@ -134,9 +134,9 @@ abstract class CpDevelopment_AdminMonitoring_Model_Observer_Model_Abstract
 //                    return false;
 //                }
                 echo '<pre>';
-//                print_r($savedModel);
+                print_r($savedModel);
                 print_r($className);
-//                print_r(is_a($savedModel, $className));
+                print_r(is_a($savedModel, $className));
 			}
 		);
 
