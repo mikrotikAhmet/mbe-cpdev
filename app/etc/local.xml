@@ -43,7 +43,7 @@
                     <host><![CDATA[localhost]]></host>
                     <username><![CDATA[mbemrocatalog]]></username>
                     <password><![CDATA[blablakrc75]]></password>
-                    <dbname><![CDATA[mbemrocatalog]]></dbname>
+                    <dbname><![CDATA[mbemrocatalog_dev]]></dbname>
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>
                     <type><![CDATA[pdo_mysql]]></type>
