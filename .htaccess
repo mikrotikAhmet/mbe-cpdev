@@ -1,21 +1,54 @@
-#<IfModule mod_rewrite.c>
-#RewriteEngine On
-#RewriteBase /
-#RewriteRule ^index\.php$ - [L]
-#RewriteCond %{REQUEST_FILENAME} !-f
-#RewriteCond %{REQUEST_FILENAME} !-d
-#RewriteRule . /index.php [L]
-#</IfModule>
-#
-#
-#SetEnvIf Host mbemrodev.sentir-dev.io MAGE_RUN_CODE=base
-#SetEnvIf Host mbemrodev.sentir-dev.io MAGE_RUN_TYPE=website
-#
-#SetEnvIf Host mbemrogm.sentir-dev.io MAGE_RUN_CODE=gm
-#SetEnvIf Host mbemrogm.sentir-dev.io MAGE_RUN_TYPE=website
+############################################
+## enable apache served files compression
+    # Insert filter on all content
+    SetOutputFilter DEFLATE
+    # Insert filter on selected content types only
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript
 
-SetEnvIf Host mbemrocatalog.com MAGE_RUN_CODE=base
-SetEnvIf Host mbemrocatalog.com MAGE_RUN_TYPE=website
+    # Netscape 4.x has some problems...
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
 
-SetEnvIf Host gm.mbemrocatalog.com MAGE_RUN_CODE=gm
-SetEnvIf Host gm.mbemrocatalog.com MAGE_RUN_TYPE=website
+    # Netscape 4.06-4.08 have some more problems
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+
+    # MSIE masquerades as Netscape, but it is fine
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+
+    # Don't compress images
+    SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+
+    # Make sure proxies don't deliver the wrong content
+    <IfModule mod_headers.c>
+    # Make sure proxies don.t deliver the wrong content
+        Header append Vary User-Agent env=!dont-vary
+    </IfModule>
+
+    ############################################
+    ## Add default Expires header
+    <ifmodule mod_expires.c>
+    <Filesmatch "\.(jpg|jpeg|png|gif|js|css|swf|ico|woff|mp3)$">
+        ExpiresActive on
+        ExpiresDefault "access plus 1 year"
+    </Filesmatch>
+    </ifmodule>
+
+    ############################################
+    ## If running in cluster environment, uncomment this
+
+        FileETag none
+    ############################################
+
+    <IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^index\.php$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.php [L]
+    </IfModule>
+
+SetEnvIf Host mbemrodev.sentir-dev.io MAGE_RUN_CODE=base
+SetEnvIf Host mbemrodev.sentir-dev.io MAGE_RUN_TYPE=website
+
+SetEnvIf Host mbemrogm.sentir-dev.io MAGE_RUN_CODE=gm
+SetEnvIf Host mbemrogm.sentir-dev.io MAGE_RUN_TYPE=website

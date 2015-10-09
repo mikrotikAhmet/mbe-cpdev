@@ -60,6 +60,10 @@
 	    <prefix>username_</prefix>
 	</cache>
 	-->
+        <cache>
+            <backend>apc</backend>
+            <prefix>MBE_</prefix>
+        </cache>
     </global>
     <admin>
         <routers>
