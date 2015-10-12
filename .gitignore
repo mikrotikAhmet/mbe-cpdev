@@ -2,7 +2,6 @@
 .htaccess.sample
 .modgit/
 .modman/
-app/etc/local.xml
 app/code/community/Phoenix/
 app/code/community/Cm/
 app/code/core/

@@ -62,7 +62,7 @@
 	-->
         <cache>
             <backend>apc</backend>
-            <prefix>MBE_</prefix>
+            <prefix>MBEDEV_</prefix>
         </cache>
     </global>
     <admin>
