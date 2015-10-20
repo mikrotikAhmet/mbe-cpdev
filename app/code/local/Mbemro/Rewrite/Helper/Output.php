@@ -4,6 +4,7 @@ class Mbemro_Rewrite_Helper_Output extends Mage_Catalog_Helper_Output
 {
     public function getMbemroProductUrl($product)
     {
+        return $product->getProductUrl();
         $_categories = $product->getCategoryIds();
         // print "productId: "  . $product->getId();
         // print_r($_categories);

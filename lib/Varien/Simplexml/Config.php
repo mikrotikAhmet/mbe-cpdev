@@ -600,5 +600,4 @@ class Varien_Simplexml_Config
         $this->getNode()->extend($config->getNode(), $overwrite);
         return $this;
     }
-
 }
