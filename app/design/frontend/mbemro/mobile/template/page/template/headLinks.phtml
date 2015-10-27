@@ -48,7 +48,7 @@
 		<li><a href="<?php echo $this->getUrl('about-us') ?>"><?php echo $this->__('About MBE'); ?></a></li>
 		<li><a href="<?php echo $this->getUrl('request-a-quote') ?>"><?php echo $this->__('Request A Quote'); ?></a></li>
 		<?php $session = Mage::getSingleton('customer/session', array('name'=>'frontend')); ?>
-		<?php if(!$Mage::getSingleton('customer/session')->isLoggedIn()): ?>
+		<?php if(!$session->isLoggedIn()): ?>
 			<li><a href="<?php echo $this->getUrl('customer/account/login/') ?>"><?php echo $this->__('My Account/Log In'); ?></a></li>
 		 	<li><a href="<?php echo $this->getUrl('customer/account/create/') ?>"><?php echo $this->__('Register'); ?></a></li>
 		<?php else :?>
