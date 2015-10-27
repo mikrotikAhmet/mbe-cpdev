@@ -248,8 +248,8 @@ class Mage_Captcha_Model_Zend extends Zend_Captcha_Image implements Mage_Captcha
      */
     public function getImgUrl()
     {
-//        return $this->_helper->getImgUrl();
-            return 'http://mbemrodev.sentir-dev.io/media/captcha/base/';
+        return $this->_helper->getImgUrl();
+//            return 'http://mbemrodev.sentir-dev.io/media/captcha/base/';
     }
 
     /**
