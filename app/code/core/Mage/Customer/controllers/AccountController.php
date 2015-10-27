@@ -251,9 +251,6 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
     public function logoutSuccessAction()
     {
         $layout = $this->loadLayout();
-
-        $layout->getUpdate()->addHandle('customer_logged_out');
-        
         $this->renderLayout();
     }
 
