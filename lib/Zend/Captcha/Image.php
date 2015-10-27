@@ -41,15 +41,16 @@ class Zend_Captcha_Image extends Zend_Captcha_Word
      *
      * @var string
      */
-    protected $_imgDir = "./images/captcha/";
+//    protected $_imgDir = "./images/captcha/";
+    protected $_imgDir = "./media/captcha/base/";
 
     /**
      * URL for accessing images
      *
      * @var string
      */
-    protected $_imgUrl = "/images/captcha/";
-
+//    protected $_imgUrl = "/images/captcha/";
+        protected $_imgUrl = "/media/captcha/base/";
     /**
      * Image's alt tag content
      *
