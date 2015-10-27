@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aca15869-57cf-4c69-bcae-00a8208ba8e1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/code/core/Mage/Customer/controllers/AccountController.php" afterPath="$PROJECT_DIR$/app/code/core/Mage/Customer/controllers/AccountController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/html/header.phtml" afterPath="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/html/header.phtml" />
     </list>
     <ignored path="mbe-cpdev.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,12 +40,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.phtml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="header.phtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/html/header.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.75" vertical-offset="315" max-vertical-offset="1410">
-              <caret line="66" column="101" selection-start-line="66" selection-start-column="101" selection-end-line="66" selection-end-column="101" />
-              <folding />
+            <state vertical-scroll-proportion="0.19977802" vertical-offset="0" max-vertical-offset="1425">
+              <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,10 +62,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccountController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AccountController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Customer/controllers/AccountController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.92230856" vertical-offset="2604" max-vertical-offset="14835">
+            <state vertical-scroll-proportion="-34.625" vertical-offset="2604" max-vertical-offset="14835">
               <caret line="252" column="38" selection-start-line="252" selection-start-column="38" selection-end-line="252" selection-end-column="38" />
               <folding />
             </state>
@@ -109,8 +111,8 @@
         <option value="$PROJECT_DIR$/app/code/core/Mage/Captcha/Model/Zend.php" />
         <option value="$PROJECT_DIR$/lib/Zend/Captcha/Image.php" />
         <option value="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/template/headLinks.phtml" />
-        <option value="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/html/header.phtml" />
         <option value="$PROJECT_DIR$/app/code/core/Mage/Customer/controllers/AccountController.php" />
+        <option value="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/html/header.phtml" />
       </list>
     </option>
   </component>
@@ -731,19 +733,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/html/header.phtml">
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Customer/controllers/AccountController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.75" vertical-offset="315" max-vertical-offset="1410">
-          <caret line="66" column="101" selection-start-line="66" selection-start-column="101" selection-end-line="66" selection-end-column="101" />
+        <state vertical-scroll-proportion="-34.625" vertical-offset="2604" max-vertical-offset="14835">
+          <caret line="252" column="38" selection-start-line="252" selection-start-column="38" selection-end-line="252" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Customer/controllers/AccountController.php">
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/html/header.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.92230856" vertical-offset="2604" max-vertical-offset="14835">
-          <caret line="252" column="38" selection-start-line="252" selection-start-column="38" selection-end-line="252" selection-end-column="38" />
-          <folding />
+        <state vertical-scroll-proportion="0.19977802" vertical-offset="0" max-vertical-offset="1425">
+          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

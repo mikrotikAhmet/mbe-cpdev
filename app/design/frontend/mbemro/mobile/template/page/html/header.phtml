@@ -33,6 +33,7 @@
             <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" class="img-responsive" alt="<?php echo $this->getLogoAlt() ?>" /></a>
             <div class="clear"></div>
             <p>A Minority eBusiness Enterprise servicing all of your MRO needs</p>
+            <p><?php echo $session->getId()?></p>
             <div class="hide-p visible-lg visible-md">
                 <?php //echo  str_replace('<p></p>', '', $this->getLayout()->createBlock('cms/block')->setBlockId('head-search')->toHtml());  ?>
                 <?php echo $this->getChildHtml('topSearch');  ?>
