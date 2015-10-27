@@ -65,8 +65,8 @@
       <file leaf-file-name="AccountController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Customer/controllers/AccountController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58934516" vertical-offset="2664" max-vertical-offset="14760">
-              <caret line="236" column="44" selection-start-line="236" selection-start-column="44" selection-end-line="236" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.6892342" vertical-offset="2664" max-vertical-offset="14850">
+              <caret line="242" column="9" selection-start-line="242" selection-start-column="9" selection-end-line="242" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -743,8 +743,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Customer/controllers/AccountController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58934516" vertical-offset="2664" max-vertical-offset="14760">
-          <caret line="236" column="44" selection-start-line="236" selection-start-column="44" selection-end-line="236" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.6892342" vertical-offset="2664" max-vertical-offset="14850">
+          <caret line="242" column="9" selection-start-line="242" selection-start-column="9" selection-end-line="242" selection-end-column="9" />
           <folding />
         </state>
       </provider>

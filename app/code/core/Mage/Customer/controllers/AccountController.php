@@ -236,6 +236,12 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
 
         Mage::getSingleton('customer/session')->setCustomer(Mage::getModel('customer/customer'))->setId(null);
 
+        $cookies = Mage::getSingleton('core/cookie')->get();
+
+        foreach($cookies as $cookieName) {
+            Mage::getSingleton('core/cookie')->delete($cookieName);
+        }
+
 
         $this->_redirect('*/*/logoutSuccess');
     }
