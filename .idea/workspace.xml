@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="aca15869-57cf-4c69-bcae-00a8208ba8e1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Zend/Captcha/Image.php" afterPath="$PROJECT_DIR$/lib/Zend/Captcha/Image.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/code/core/Mage/Captcha/Model/Zend.php" afterPath="$PROJECT_DIR$/app/code/core/Mage/Captcha/Model/Zend.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mbe-cpdev.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,8 +30,8 @@
       <file leaf-file-name="Image.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/Zend/Captcha/Image.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49234137" vertical-offset="5595" max-vertical-offset="9000">
-              <caret line="422" column="56" selection-start-line="422" selection-start-column="56" selection-end-line="422" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.5415755" vertical-offset="5595" max-vertical-offset="9030">
+              <caret line="425" column="32" selection-start-line="425" selection-start-column="32" selection-end-line="425" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -729,8 +727,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/Zend/Captcha/Image.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49234137" vertical-offset="5595" max-vertical-offset="9000">
-          <caret line="422" column="56" selection-start-line="422" selection-start-column="56" selection-end-line="422" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.5415755" vertical-offset="5595" max-vertical-offset="9030">
+          <caret line="425" column="32" selection-start-line="425" selection-start-column="32" selection-end-line="425" selection-end-column="32" />
           <folding />
         </state>
       </provider>
