@@ -65,17 +65,8 @@ $session = Mage::getSingleton('customer/session', array('name'=>'frontend'));
                     <img class="img-responsive pull-right" src="/skin/frontend/mbemro/mobile/images/call-us.png"/>
                 </div>
                 <div class="row no-margin">
-                    <p class="welcome-msg">
-                        <?php
-                        $customer = $session->getCustomer();
-                        //echo $customer->getName();
-                        echo "Welcome, " . $customer->getFirstname() . ".&nbsp;";
-                        ?>
-                        <a href="<?php echo Mage::helper('customer')->getLogoutUrl();?>">Not <?php echo $customer->getFirstname();?>?</a>
-                    </p>
                     <?php
-//                         echo $this->getChildHtml('welcomeMessage');
-
+                    echo $this->getChildHtml('welcomeMessage');
                     ?>
                 </div>
                 <div class="row topCartHolder">
