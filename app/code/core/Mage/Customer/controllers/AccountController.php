@@ -228,11 +228,11 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
      */
     public function logoutAction()
     {
-        $this->_getSession()->logout()
-            ->renewSession();
+//        $this->_getSession()->logout()
+//            ->renewSession();
 
 
-//        Mage::getSingleton('customer/session')->logout();
+        Mage::getSingleton('customer/session')->logout();
 
 
         $this->_redirect('*/*/logoutSuccess');
