@@ -124,10 +124,24 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
             $this->_redirect('*/*/');
             return;
         }
+
+        $uniqueId= time().'-'.mt_rand();
+
+
         $this->getResponse()->setHeader('Login-Required', 'true');
         $this->loadLayout();
-        $this->_initLayoutMessages('customer/session');
-        $this->_initLayoutMessages('catalog/session');
+//        $this->_initLayoutMessages('customer/session');
+//        $this->_initLayoutMessages('catalog/session');
+
+
+
+        $sess_var = array (
+            "custId" => Mage::getSingleton('customer/session')->getCustomer()->getId(),
+            "value"=> $uniqueId
+        );
+
+        Mage::getSingleton('customer/session')->setMyVal($sess_var);
+
         $this->renderLayout();
     }
 
