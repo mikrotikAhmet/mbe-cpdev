@@ -26,8 +26,8 @@
 /**
  * @var Mage_Page_Block_Html_Header $this
  */
-$session = Mage::getSingleton('customer/session', array('name'=>'frontend'));
-$session_new = Mage::getSingleton('customer/session')->getMyValue();
+//$session = Mage::getSingleton('customer/session', array('name'=>'frontend'));
+$session = Mage::getSingleton('customer/session')->getMyValue();
 ?>
 <div class="row header">
     <div class="col-sm-4 col-xs-12 logowrap no-padding">
@@ -40,7 +40,7 @@ $session_new = Mage::getSingleton('customer/session')->getMyValue();
                 <?php //echo  str_replace('<p></p>', '', $this->getLayout()->createBlock('cms/block')->setBlockId('head-search')->toHtml());  ?>
                 <?php echo $this->getChildHtml('topSearch');  ?>
             </div>
-			<?php if ($session->isLoggedIn()):?>
+			<?php if ($session):?>
 			<div class="row visible-xs" id="user-menu">
 				<span class="glyphicon glyphicon-align-justify"></span> Menu
 			</div>

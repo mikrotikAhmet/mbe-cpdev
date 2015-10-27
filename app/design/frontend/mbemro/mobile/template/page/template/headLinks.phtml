@@ -28,6 +28,8 @@
 /**
  * @see Mage_Page_Block_Template_Links
  */
+//$session = Mage::getSingleton('customer/session', array('name'=>'frontend'));
+$session = Mage::getSingleton('customer/session')->getMyValue();
 ?>
 
 <nav class="navbar navbar-default" role="navigation" id="header-links">
@@ -47,8 +49,7 @@
       	<li><a href="<?php echo $this->getUrl('customer-service') ?>"><?php echo $this->__('Customer Service'); ?></a></li>
 		<li><a href="<?php echo $this->getUrl('about-us') ?>"><?php echo $this->__('About MBE'); ?></a></li>
 		<li><a href="<?php echo $this->getUrl('request-a-quote') ?>"><?php echo $this->__('Request A Quote'); ?></a></li>
-		<?php $session = Mage::getSingleton('customer/session', array('name'=>'frontend')); ?>
-		<?php if(!$session->isLoggedIn()): ?>
+		<?php if(!$session): ?>
 			<li><a href="<?php echo $this->getUrl('customer/account/login/') ?>"><?php echo $this->__('My Account/Log In'); ?></a></li>
 		 	<li><a href="<?php echo $this->getUrl('customer/account/create/') ?>"><?php echo $this->__('Register'); ?></a></li>
 		<?php else :?>

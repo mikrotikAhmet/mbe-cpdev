@@ -39,6 +39,7 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
      * @var array
      */
     protected $_cookieCheckActions = array('loginPost', 'createpost');
+    protected $_unique_session;
 
     /**
      * Retrieve customer session model object
@@ -125,22 +126,17 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
             return;
         }
 
-        $uniqueId= time().'-'.mt_rand();
+        $this->_unique_session= time().'-'.mt_rand();
 
 
         $this->getResponse()->setHeader('Login-Required', 'true');
         $this->loadLayout();
-//        $this->_initLayoutMessages('customer/session');
-//        $this->_initLayoutMessages('catalog/session');
+        $this->_initLayoutMessages('customer/session');
+        $this->_initLayoutMessages('catalog/session');
 
 
 
-//        $sess_var = array (
-//            "custId" => Mage::getSingleton('customer/session')->getCustomer()->getId(),
-//            "value"=> $uniqueId
-//        );
-
-        Mage::getSingleton('customer/session')->setMyValue($uniqueId);
+        Mage::getSingleton('customer/session')->setMyValue($this->_unique_session);
 
         $this->renderLayout();
     }
@@ -255,6 +251,10 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
         foreach($cookies as $cookieName) {
             Mage::getSingleton('core/cookie')->delete($cookieName);
         }
+
+        $this->_unique_session = null;
+
+        Mage::getSingleton('customer/session')->setMyValue(null);
 
         $this->_redirect('*/*/logoutSuccess');
     }
