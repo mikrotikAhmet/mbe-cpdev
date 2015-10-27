@@ -241,6 +241,8 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
         $this->_getSession()->logout()
             ->renewSession();
 
+//        Mage::getSingleton('customer/session')->logout();
+
         Mage::getSingleton('customer/session')->setCustomer(Mage::getModel('customer/customer'))->setId(null);
 
         $cookies = Mage::getSingleton('core/cookie')->get();
@@ -250,9 +252,6 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
         }
 
         Mage::getSingleton('customer/session')->unsMyValue();
-        
-        $layout = $this->loadLayout();
-        $this->renderLayout();
 
         $this->_redirect('*/*/logoutSuccess');
     }
