@@ -38,7 +38,7 @@
                 <?php echo $this->getChildHtml('topSearch');  ?>
 				<?php $session = Mage::getSingleton('customer/session', array('name'=>'frontend'));?>
             </div>
-			<?php if ($session->isLoggedIn):?>
+			<?php if ($session->isLoggedIn()):?>
 			<div class="row visible-xs" id="user-menu">
 				<span class="glyphicon glyphicon-align-justify"></span> Menu
 			</div>
