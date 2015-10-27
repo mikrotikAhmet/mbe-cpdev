@@ -419,13 +419,14 @@ class Zend_Captcha_Image extends Zend_Captcha_Word
     public function generate()
     {
 
+        $id = parent::generate();
+
         if ( ! is_writable(dirname($this->getImgDir()))) {
-           echo $this->getImgDir().' must be writable!';
+            echo $this->getImgDir().' must be writable!';
         }
 
         echo $this->getImgDir();
-
-        $id = parent::generate();
+        exit('---/////----');
         $tries = 5;
         // If there's already such file, try creating a new ID
         while($tries-- && file_exists($this->getImgDir() . $id . $this->getSuffix())) {
