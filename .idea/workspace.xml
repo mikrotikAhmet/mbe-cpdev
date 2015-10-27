@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aca15869-57cf-4c69-bcae-00a8208ba8e1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/code/core/Mage/Customer/controllers/AccountController.php" afterPath="$PROJECT_DIR$/app/code/core/Mage/Customer/controllers/AccountController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/template/headLinks.phtml" afterPath="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/template/headLinks.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/html/header.phtml" afterPath="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/html/header.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mbe-cpdev.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="headLinks.phtml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="headLinks.phtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/template/headLinks.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-29.333334" vertical-offset="61" max-vertical-offset="1005">
-              <caret line="51" column="26" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.7045952" vertical-offset="61" max-vertical-offset="1005">
+              <caret line="47" column="76" selection-start-line="47" selection-start-column="76" selection-end-line="47" selection-end-column="76" />
               <folding>
                 <element signature="e#6#968#0#PHP" expanded="true" />
                 <element signature="e#978#1024#0#PHP" expanded="true" />
@@ -43,10 +40,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.phtml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="header.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/html/header.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3163152" vertical-offset="0" max-vertical-offset="1440">
+            <state vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="1440">
               <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -114,8 +111,8 @@
         <option value="$PROJECT_DIR$/app/code/core/Mage/Captcha/Model/Zend.php" />
         <option value="$PROJECT_DIR$/lib/Zend/Captcha/Image.php" />
         <option value="$PROJECT_DIR$/app/code/core/Mage/Customer/controllers/AccountController.php" />
-        <option value="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/template/headLinks.phtml" />
         <option value="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/html/header.phtml" />
+        <option value="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/template/headLinks.phtml" />
       </list>
     </option>
   </component>
@@ -733,23 +730,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/template/headLinks.phtml">
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/html/header.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.333334" vertical-offset="61" max-vertical-offset="1005">
-          <caret line="51" column="26" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
+        <state vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="1440">
+          <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
           <folding>
-            <element signature="e#6#968#0#PHP" expanded="true" />
-            <element signature="e#978#1024#0#PHP" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/html/header.phtml">
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/page/template/headLinks.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3163152" vertical-offset="0" max-vertical-offset="1440">
-          <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.7045952" vertical-offset="61" max-vertical-offset="1005">
+          <caret line="47" column="76" selection-start-line="47" selection-start-column="76" selection-end-line="47" selection-end-column="76" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#6#968#0#PHP" expanded="true" />
+            <element signature="e#978#1024#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
