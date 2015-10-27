@@ -425,6 +425,8 @@ class Zend_Captcha_Image extends Zend_Captcha_Word
             echo $this->getImgDir().' must be writable!';
         }
 
+        echo $this->getImgDir();
+
         $tries = 5;
         // If there's already such file, try creating a new ID
         while($tries-- && file_exists($this->getImgDir() . $id . $this->getSuffix())) {
