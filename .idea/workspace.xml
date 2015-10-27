@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aca15869-57cf-4c69-bcae-00a8208ba8e1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Zend/Captcha/Image.php" afterPath="$PROJECT_DIR$/lib/Zend/Captcha/Image.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <ignored path="mbe-cpdev.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,12 +27,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Image.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Image.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/Zend/Captcha/Image.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5743983" vertical-offset="5580" max-vertical-offset="9015">
+            <state vertical-scroll-proportion="-21.875" vertical-offset="5580" max-vertical-offset="9015">
               <caret line="426" column="0" selection-start-line="426" selection-start-column="0" selection-end-line="426" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.21334793" vertical-offset="0" max-vertical-offset="1110">
+              <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+              <folding>
+                <marker date="1445958342971" expanded="false" signature="1020:1066" placeholder="..." />
+                <marker date="1445958342971" expanded="true" signature="1067:1490" placeholder="..." />
+                <marker date="1445958342971" expanded="false" signature="1081:1129" placeholder="..." />
+                <marker date="1445958342971" expanded="true" signature="1130:1309" placeholder="..." />
+                <marker date="1445958342971" expanded="false" signature="1143:1242" placeholder="..." />
+                <marker date="1445958342971" expanded="true" signature="1243:1303" placeholder="..." />
+                <marker date="1445958342971" expanded="true" signature="1312:1484" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -102,11 +119,11 @@
         <option value="$PROJECT_DIR$/app/code/local/Mbemro/Rewrite/Helper/Output.php" />
         <option value="$PROJECT_DIR$/lib/Varien/Simplexml/Config.php" />
         <option value="$PROJECT_DIR$/app/design/frontend/mbemro/mobile/template/captcha/zend.phtml" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/js/mage/captcha.js" />
         <option value="$PROJECT_DIR$/app/code/core/Mage/Captcha/controllers/RefreshController.php" />
         <option value="$PROJECT_DIR$/app/code/core/Mage/Captcha/Model/Zend.php" />
         <option value="$PROJECT_DIR$/lib/Zend/Captcha/Image.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -159,74 +176,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mbe-cpdev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mbe-cpdev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mbe-cpdev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mbe-cpdev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mbe-cpdev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Zend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mbe-cpdev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mbe-cpdev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Zend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Captcha" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mbe-cpdev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mbe-cpdev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -678,22 +627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3607383" vertical-offset="164" max-vertical-offset="1080">
-          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding>
-            <marker date="1445955394403" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1445955394403" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1445955394403" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1445955394403" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1445955394403" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1445955394403" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1445955394403" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/mage/captcha.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="172" max-vertical-offset="1395">
@@ -728,9 +661,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/Zend/Captcha/Image.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5743983" vertical-offset="5580" max-vertical-offset="9015">
+        <state vertical-scroll-proportion="-21.875" vertical-offset="5580" max-vertical-offset="9015">
           <caret line="426" column="0" selection-start-line="426" selection-start-column="0" selection-end-line="426" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21334793" vertical-offset="0" max-vertical-offset="1110">
+          <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+          <folding>
+            <marker date="1445958342971" expanded="false" signature="1020:1066" placeholder="..." />
+            <marker date="1445958342971" expanded="true" signature="1067:1490" placeholder="..." />
+            <marker date="1445958342971" expanded="false" signature="1081:1129" placeholder="..." />
+            <marker date="1445958342971" expanded="true" signature="1130:1309" placeholder="..." />
+            <marker date="1445958342971" expanded="false" signature="1143:1242" placeholder="..." />
+            <marker date="1445958342971" expanded="true" signature="1243:1303" placeholder="..." />
+            <marker date="1445958342971" expanded="true" signature="1312:1484" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
