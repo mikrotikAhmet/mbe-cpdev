@@ -242,9 +242,6 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
             Mage::getSingleton('core/cookie')->delete($cookieName);
         }
 
-        $layout->getUpdate()->addHandle('customer_logged_out');
-
-
         $this->_redirect('*/*/logoutSuccess');
     }
 
@@ -253,7 +250,10 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
      */
     public function logoutSuccessAction()
     {
-        $this->loadLayout();
+        $layout = $this->loadLayout();
+
+        $layout->getUpdate()->addHandle('customer_logged_out');
+        
         $this->renderLayout();
     }
 
