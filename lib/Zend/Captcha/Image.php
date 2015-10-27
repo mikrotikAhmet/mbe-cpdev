@@ -437,7 +437,6 @@ class Zend_Captcha_Image extends Zend_Captcha_Word
             $this->_gc();
         }
 
-        echo $this->getWord();
         return $id;
     }
 
