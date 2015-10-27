@@ -135,12 +135,12 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
 
 
 
-        $sess_var = array (
-            "custId" => Mage::getSingleton('customer/session')->getCustomer()->getId(),
-            "value"=> $uniqueId
-        );
+//        $sess_var = array (
+//            "custId" => Mage::getSingleton('customer/session')->getCustomer()->getId(),
+//            "value"=> $uniqueId
+//        );
 
-        Mage::getSingleton('customer/session')->setMyVal($sess_var);
+        Mage::getSingleton('customer/session')->setMyValue($uniqueId);
 
         $this->renderLayout();
     }
