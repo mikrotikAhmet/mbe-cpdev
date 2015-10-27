@@ -27,7 +27,6 @@
  * @var Mage_Page_Block_Html_Header $this
  */
 ?>
-<?php $session = Mage::getSingleton('customer/session', array('name'=>'frontend'));?>
 <div class="row header">
     <div class="col-sm-4 col-xs-12 logowrap no-padding">
         <div class="logoHolder">
@@ -37,6 +36,7 @@
             <div class="hide-p visible-lg visible-md">
                 <?php //echo  str_replace('<p></p>', '', $this->getLayout()->createBlock('cms/block')->setBlockId('head-search')->toHtml());  ?>
                 <?php echo $this->getChildHtml('topSearch');  ?>
+				<?php $session = Mage::getSingleton('customer/session', array('name'=>'frontend'));?>
             </div>
 			<?php if ($session->isLoggedIn()):?>
 			<div class="row visible-xs" id="user-menu">
@@ -64,25 +64,7 @@
                 <div class="row call text-center no-border no-margin" style="margin: 60px 0 0 0 !important;    white-space: nowrap;">
                     <img class="img-responsive pull-right" src="/skin/frontend/mbemro/mobile/images/call-us.png"/>
                 </div>
-                    <div class="row no-margin">
-
-                        <?php
-                        if($session->isLoggedIn()) {
-                            ?>
-                            <p class="welcome-msg">
-                                <?php
-                                $customer = $session->getCustomer();
-                                //echo $customer->getName();
-                                echo "Welcome, " . $customer->getFirstname() . ".&nbsp;";
-                                ?>
-                                <a href="<?php echo Mage::helper('customer')->getLogoutUrl();?>">Not <?php echo $customer->getFirstname();?>?</a>
-                            </p>
-                        <?php
-                        }
-                        ?>
-
-                    </div>
-<!--                <div class="row no-margin">--><?php //echo $this->getChildHtml('welcomeMessage'); ?><!--</div>-->
+                <div class="row no-margin"><?php echo $this->getChildHtml('welcomeMessage'); ?></div>
                 <div class="row topCartHolder">
                     <?php echo $this->getChildHtml('topCart'); ?>
                 </div>

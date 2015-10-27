@@ -234,6 +234,8 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
 
         Mage::getSingleton('customer/session')->logout();
 
+        Mage::getSingleton('customer/session')->setCustomer(Mage::getModel('customer/customer'))->setId(null);
+
 
         $this->_redirect('*/*/logoutSuccess');
     }
