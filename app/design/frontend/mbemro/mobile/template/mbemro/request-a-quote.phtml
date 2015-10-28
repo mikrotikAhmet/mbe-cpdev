@@ -3,9 +3,6 @@ $is_post = $this->getRequest()->isPost();
 $params  = $this->getRequest()->getParams();
 
 if ($is_post) :
-    // echo '<pre>';
-    // print_r($params);
-    // echo '</pre>';
 
     $body = "Quote Request\n\n";
     $body.= "Name: " . (isset($params['first_name']) ? $params['first_name'] : '') . " " . (isset($params['last_name']) ? $params['last_name'] : '') . "\n";
@@ -25,10 +22,13 @@ if ($is_post) :
     $error      = null;
 
     //check captcha first
-	$_captcha = Mage::getModel('customer/session')->getData('user_create_word');  
-	if ($_captcha['data'] != $params['captcha']['user_create']) {  
-	    $error = 'Please provide correct captcha value.'; 
-	}
+	$_captcha = Mage::getModel('customer/session')->getData('user_create_word');
+
+    if ($_captcha) {
+        if ($_captcha['data'] != $params['captcha']['user_create']) {
+            $error = 'Please provide correct captcha value.';
+        }
+    }
 		
     if (!$error && isset($_FILES['file']) && $_FILES['file']['name'] != '') {
 
@@ -62,7 +62,7 @@ if ($is_post) :
         $mail->addTo(Mage::getStoreConfig('sales_email/request_a_quote/recipient_email'));
         $mail->setBodyText($body);
         $mail->setSubject('Quote Request');
-        $mail->setFrom('contact@mbemrocatalog.com');
+        $mail->setFrom('ahmet.gudenoglu@gmail.com');
 
         // attachment
         if ($filetarget) {

@@ -189,9 +189,11 @@ class Mage_Captcha_Model_Zend extends Zend_Captcha_Image implements Mage_Captcha
      */
     protected function _isUserAuth()
     {
-        return Mage::app()->getStore()->isAdmin()
-            ? Mage::getSingleton('admin/session')->isLoggedIn()
-            : Mage::getSingleton('customer/session')->isLoggedIn();
+//        return Mage::app()->getStore()->isAdmin()
+//            ? Mage::getSingleton('admin/session')->isLoggedIn()
+//            : Mage::getSingleton('customer/session')->isLoggedIn();
+
+        return false;
     }
 
     /**
@@ -290,7 +292,8 @@ class Mage_Captcha_Model_Zend extends Zend_Captcha_Image implements Mage_Captcha
      */
     public function getImgSrc()
     {
-        return $this->getImgUrl() . $this->getId() . $this->getSuffix();
+//        return $this->getImgUrl() . $this->getId() . $this->getSuffix();
+        return Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).'/media/captcha/base/'.$this->getId() . $this->getSuffix();
     }
 
     /**

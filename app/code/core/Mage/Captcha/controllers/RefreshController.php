@@ -45,6 +45,7 @@ class Mage_Captcha_RefreshController extends Mage_Core_Controller_Front_Action
         $captchaModel = Mage::helper('captcha')->getCaptcha($formId);
         $this->getLayout()->createBlock($captchaModel->getBlockName())->setFormId($formId)->setIsAjax(true)->toHtml();
         $this->getResponse()->setBody(json_encode(array('imgSrc' => $captchaModel->getImgSrc())));
+//         $this->getResponse()->setBody(json_encode(array('imgSrc' => 'http://mbemrodev.sentir-dev.io/media/captcha/base/e3ebe52a5daacf135e4fbd190d050459.png')));
         $this->setFlag('', self::FLAG_NO_POST_DISPATCH, true);
     }
 }

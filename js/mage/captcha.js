@@ -41,6 +41,7 @@ Captcha.prototype = {
                     } else {
                         if (elem) Element.removeClassName(elem, 'refreshing');
                     }
+
                 }
             },
             method: 'post',
