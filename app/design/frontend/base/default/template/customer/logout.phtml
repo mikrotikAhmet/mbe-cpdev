@@ -23,18 +23,6 @@
  * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
-Mage::getSingleton('customer/session')->logout();
-
-Mage::getSingleton('customer/session')->setCustomer(Mage::getModel('customer/customer'))->setId(null);
-
-$cookies = Mage::getSingleton('core/cookie')->get();
-
-foreach($cookies as $cookieName) {
-    Mage::getSingleton('core/cookie')->delete($cookieName);
-}
-
-Mage::getSingleton('customer/session')->unsMyValue();
-
 ?>
 <div class="page-title">
     <h1><?php echo Mage::helper('customer')->__('You are now logged out') ?></h1>
