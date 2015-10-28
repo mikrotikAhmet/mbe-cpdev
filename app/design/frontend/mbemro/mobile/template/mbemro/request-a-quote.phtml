@@ -3,7 +3,10 @@ $is_post = $this->getRequest()->isPost();
 $params  = $this->getRequest()->getParams();
 
 if ($is_post) :
-
+//     echo '<pre>';
+//     print_r($params);
+//     echo '</pre>';
+//exit();
     $body = "Quote Request\n\n";
     $body.= "Name: " . (isset($params['first_name']) ? $params['first_name'] : '') . " " . (isset($params['last_name']) ? $params['last_name'] : '') . "\n";
     $body.= "Email: " . (isset($params['email']) ? $params['email'] : '') . "\n";
@@ -62,7 +65,7 @@ if ($is_post) :
         $mail->addTo(Mage::getStoreConfig('sales_email/request_a_quote/recipient_email'));
         $mail->setBodyText($body);
         $mail->setSubject('Quote Request');
-        $mail->setFrom('ahmet.gudenoglu@gmail.com');
+        $mail->setFrom('contact@mbemrocatalog.com');
 
         // attachment
         if ($filetarget) {
